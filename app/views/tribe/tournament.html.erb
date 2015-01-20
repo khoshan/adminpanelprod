@@ -1,0 +1,29 @@
+<%= render "tribe/menu" %>
+<h2>Tournaments detail</h2><br>
+<table border="1">
+  <tr>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Duration</th>
+    <th>Clan ID</th>
+    <th>Clan Name</th>
+    <th>Clan Symbol</th>
+    <th>Member ID</th>
+    <th>Pearls</th>
+  </tr>
+  <% @testarr[@currentitem-1].each do |row| %>
+      <tr>
+        <td><%=row[0]%></td>
+        <td><%=row[1]%></td>
+        <td><%=row[2]%></td>
+        <td><%=row[3]%></td>
+        <td><%=row[4]%></td>
+        <td><%=row[5]%></td>
+        <td><%=row[6]%></td>
+        <td><%=row[7]%></td>
+      </tr>
+  <% end %>
+  <br>
+  <h2><%= paginate @itemarr %></h2>
+
+</table>

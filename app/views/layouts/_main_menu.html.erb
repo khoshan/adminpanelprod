@@ -1,0 +1,25 @@
+<div id="cssmenu">
+<ul class="cssmenuUL">
+   <li width="10%" id="dashBoard"><a href="/lumba/dashboard"><span>Dashboard</span></a></li>
+   <li id="gameVars" width="10%"><a href="/lumba/gamedata"><span>Game Data (Static)</span></a></li>
+   <li id="setLang" width="10%"><a href="/lumba/setlang"><span>Languages</span></a></li>
+   <li id="profanity" width="10%"><a href="/lumba/profanity"><span>Profanity<br/>(Text)</span></a></li>
+   <li id="bundle" width="10%"><a href="/lumba/bundle"><span>Bundle</span></a></li>
+   <li id="gamestate" width="10%"><a href="/lumba/gamestate"><span>Game State </span></a></li>
+   <li id="tribe" width="10%"><a href="/lumba/tribe"><span>Tribes</span></a></li>
+   <li id="sendemail" width="10%"><a href="/lumba/sendemail"><span>Send Email</span></a></li>
+   <li class="last" id="adminUsers" width="10%"><a href="/lumba/adminUsers"><span>Admin Users</span></a></li>
+   <li class="last" id="sendnotification" width="10%"><a href="/lumba/sendnotification"><span>Send Notification</span></a></li>
+   <li class="last" id="changetimezone" width="10%"><a href="/lumba/changeTimezone"><span>TimeZone</span></a></li>
+   <li class="last" id="adjustcallbackdata"><a href="/lumba/adjustcallbackdata"><span>Adjust callback data</span></a></li>
+  <% if session[:user]%><span style="float: right"><%= cookies[:login_username] %> | <a href="/lumba/logout"><u><font color="red">Logout</font></u></a></span><% end %>
+</ul>
+</div>
+<div style="height: 30px;color: gray;background-color: #b5b5b5;margin: 0px;padding: 0px; width: 1300px; margin: 0 auto;">
+<font color="red">
+<%if !@error_string.nil?%>
+<%= @error_string.force_encoding('utf-8')%>
+<%end%>
+</font>
+</div>
+

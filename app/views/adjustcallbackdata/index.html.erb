@@ -1,0 +1,19 @@
+<table id="adjust_callback_data" style="font-size:11px"></table>
+
+<script>
+    $("#adjust_callback_data").gridview(
+            {
+                method: 'GET',
+                url: '/lumba/adjustcallbackdata/show_log',
+                dataType: 'json',
+                cols : [
+                    {display: 'userId', name : 'userId', width : 230, align: 'left'},
+                    {display: 'error', name : 'error', width : 880, align: 'left'},
+                    {display: 'createdAt', name : 'createdAt', width : 120, align: 'center'},
+                ],
+                title: 'Adjust Callback Data',
+                rp: 50,
+                height: 500
+            }
+    );
+</script>

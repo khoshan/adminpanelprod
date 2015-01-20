@@ -1,0 +1,21 @@
+Unit	Unit Group	Preferred Target	Preferred Target Damage	Attack Type	Attack Target	Damage Type	Splash radius	Housing Space	Training Time (s)	Movement Speed	Attack Speed (s)	Barracks Level	Range (tiles)	Search Radius (tiles )	Max Level
+Mercenary	Ground	None	1	Melee	Ground	Single	0	1	20	32	1	1	0.4	0	6
+Archer	Ground	None	1	Ranged	Total	Single	0	1	25	48	1	2	3.5	0	6
+Saluki	Ground	Resources	2	Melee	Ground	Single	0	1	30	64	0.25	3	0.4	0	5
+Giant	Ground	Defenses	1	Melee	Ground	Single	0	5	120	24	2	4	1	0	6
+Gerbil	Ground	Walls	40	Melee	Ground	Splash	2	2	120	48	1	5	0.5	0	5
+Falcon	Air	Defenses	1	Ranged	Ground	Splash	1.2	5	480	20	4	6	0.5	0	6
+Rifleman	Ground	None	1	Ranged	Total	Splash	0.3	4	480	32	1.5	7	3	0	5
+DoveNet	Air	None	1	Ranged	Ground	Splash	2	14	900	32	0.175	8	5	0	3
+GiantFalcon	Air	None	1	Ranged	Total	Splash	0.3	20	1800	32	0.375	9	3	0	3
+Camel	Ground	None	1	Melee	Ground	Single	0	25	2700	32	2.5	10	0.8	0	3
+Minion	Air	None	1	Ranged	Total	Single	0	2	45	64	1	1	2.75	0	5
+Valkyrie	Ground	None	1	Melee	Ground	Splash	0	8	900	48	1.8	3	0.5	0	4
+HogRider	Ground	None	1	Melee	Ground	Single	0	6	300	48	1	2	0.6	0	5
+Hero	Ground	None	1	Melee	Ground	Single	0	0	0	32	1.2	0	1	13	30
+Teacher	Ground	None	1	Melee	Total	Single	0	0	0	48	0.75	0	5	13	30
+Carpenter	Ground	None	1	Melee	Ground	Single	0	1	20	60	1	1	0.4	0	6
+Villager1	Ground	None	1	Melee	Ground	Single	0	1	20	40	1	1	0.4	0	6
+Villager2	Ground	None	1	Melee	Ground	Single	0	1	20	40	1	1	0.4	0	6
+BlackArmySoldier	Ground	None	1	Melee	Ground	Single	0	1	20	64	1	1	0.4	0	6
+ColonialSoldier	Ground	None	1	Melee	Ground	Single	0	1	20	40	1	1	0.4	0	6

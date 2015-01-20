@@ -1,0 +1,60 @@
+Type	Description	PrefabName
+0	"Toé ra _ lính khi lính Elixir b_ gi_t (tr_ Giant,Dragon,Balloon, Healer, PEKKA)"	AnimSplat
+1	"Toé ra _ lính khi Giant,Dragon,Balloon, Healer, PEKKA b_ gi_t"	AnimSplat_big
+2	Toé ra _ lính khi lính Dark Elixir b_ gi_t	AnimSplat_dark
+3	Hi_u _ng xu_t hi_n _ __i t__ng b_ Archer Queen t_n công	ArcherQueenHit
+4	Hi_u _ng xu_t hi_n _ __i t__ng b_ Barbarian King t_n công	BarbarianKingHit
+5	Hi_u _ng xu_t hi_n _ __u nòng súng c_a Cannon m_i khi b_n	CannonShoot
+6	Hi_u _ng xu_t hi_n _ công trình v_a m_i hoàn thành	CompleteBD
+7	Hi_u _ng xu_t hi_n khi Giant Bomb Phát n_	Explosion1
+8	Hi_u _ng xu_t hi_n khi Bomb phát n_	Explosion
+9	Xu_t hi_n khi Barbarian King ho_c Archer Queen ch_t	HeroDie
+10	Xu_t hi_n khi __n Mortar va ch_m v_i m_t __t và phát n_	MortarExplosion
+11	Xu_t hi_n khi __t công trình vào v_ trí m_i	MovebuildingParticle
+12	Xu_t hi_n _ công trình ho_c lính __i ph__ng khi lính xác __nh m_c tiêu t_n công	CircleTarget
+13	Xu_t hi_n b_ x__ng khi lính ch_t	GhostEffect
+14	"Toé ra _ lính khi lính Elixir còn s_ng sau khi k_t thúc tr_n __u (tr_ Giant,Dragon,Balloon, Healer, PEKKA)"	AnimSplat
+15	"Toé ra _ lính khi Giant,Dragon,Balloon, Healer, PEKKA còn s_ng sau khi k_t thúc tr_n __u"	AnimSplat_big
+16	Toé ra _ lính khi lính Dark Elixir còn s_ng sau khi k_t thúc tr_n __u	AnimSplat_dark
+17	"Nh_n vào Gold mine khi collect gold ho_c nh_n vào nút ""Collect"" _ Gold mine"	GoldParticleSystem
+18	"Nh_n vào Elixir Collector khi collect Elixir ho_c nh_n vào nút ""Collect"" _ Elixir Collector"	WaterParticleSystem
+19	"Nh_n vào  Dark Elixir Drill khi collect Dark Elixir ho_c nh_n vào nút ""Collect"" _ Dark Elixir Drill"	OilParticleSystem
+20	Tóe ra khi nh_n ___c kim c__ng	Diamond
+21	Tóe ra khi Gold mine ho_c Gold Storage b_ _ánh	GoldParticleSystem
+22	Tóe ra khi Elixir Collector ho_c Elixir Storage b_ _ánh	WaterParticleSystem
+23	Tóe ra khi Dark Elixir Drill  ho_c Dark Elixir Storage b_ _ánh	OilParticleSystem
+24	"Khi nh_n ___c _i_m kinh nghi_m t_ xây nhà, phá nhà chính c_a __ch, d_n d_p obstacles"	Exp
+25	Khi nhà b_ n_ (tr_ Elixir Storage và Dark Elixir Storage)	BuildingsDestroyed
+26	Elixir Storage và Dark Elixir Storage n_	BuildingsDestroyed
+27	B_t __u xây nhà	White Smoke Particle System
+28	D_n Tombstone	"White Smoke Particle System,Elixir"
+29	D_n Dark Tombstone	"White Smoke Particle System,OilParticleSystem"
+30	Nh_n vào 1 nhà b_t k_	Grass
+31	Hi_n ra _ lính khi th_ quân vào tr_n __u (tr_ Giant)	Deploy
+32	Hi_n ra _ lính khi th_ Giant vào tr_n __u	"Deploy,MovebuildingParticle"
+33	__t nhà xu_ng sau khi di chuy_n	MovebuildingParticle
+34	Nh_n vào t_ng _á	Rock
+35	Nh_n vào b_i cây	Grass
+36	Nh_n vào cái cây	Wood
+37	Bay lên _ nhà Builder's Hut khi có Builder r_nh r_i	BuilderHut
+38	Air Bomb	Master_AirBombExplosion_01
+39	Seeking air mine	Master_AirBombExplosion_02
+40	Bullet hit effect	BulletHitSmoke
+41	Bullet shoot effect	CannonFire
+42	DeathAnimation	DeathAnimation
+43	Leaves falling	Leaves
+44	Gerbil Attack	GerbilExplode
+45	Falcon bomb effect	FireBomb
+46	dead tree destroyed	DeadTreeDestroyed
+47	flower and plant destroyed	FlowerPlantDestroyed
+48	rock destroyed	RockDestroyed
+49	tree destroyed	TreeDestroyed
+50	Rage spell effect	CamelMilk_Unit
+51	Jump spell effect	HealingHerbs_Unit
+52	Bomber effect	SmokeTrail
+53	Saluki Dirt	DirtSaluki
+54	Falcon attack dust	FalconDust
+55	Light Spell	SanStorm_Effect_Light
+56	Heal Spell	HealingHerbs_Effect
+57	Rage Spell	CamelMilk_Effect
+58	Jump spell	Coffee_Effect

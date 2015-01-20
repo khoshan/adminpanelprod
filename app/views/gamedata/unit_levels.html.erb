@@ -1,0 +1,57 @@
+<%= render "gamedata/menu" %>
+<%= render "gamedata/menu_googlespreadsheet" %>
+<table>
+<tr>
+<td><button type="submit" onclick="exportfileproduction(3, false, '');">Publish production</button></td>
+</tr>
+</table>
+
+
+<div class="outer-container"> <!-- absolute positioned container -->
+<div class="inner-container">
+
+    <div class="table-header">
+        <table id="headertable" width="200px" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="header-cell">Type</th>
+                    <th class="header-cell">Level</th>
+                    <th class="header-cell">DamagePerSecond</th>
+                    <th class="header-cell">HitPoints</th>
+                    <th class="header-cell">TrainingCostInElixir</th>
+                    <th class="header-cell">UpgradeCostInElixir</th>
+                    <th class="header-cell">LaboratoryLevelRequired</th>
+                    <th class="header-cell">UpgradeTimeInHours</th>
+                    <th class="header-cell">TownHallLevelRequired</th>
+                    <th class="header-cell">RegenerationTimeInMinutes</th>
+                    <th class="header-cell">UpgradeCostInDarkElixir</th>
+                    <th class="header-cell">TrainingCostInDarkElixir</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-body">
+      <table class="ex1" style="font-size:13px" id="tblunit_levels">
+    <tbody>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td width="20%" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulType"><%= row['Type']%></div></div></td>
+          <td width="30%" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulLevel"><%= row['Level']%></div></div></td>
+          <td width="30%" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulDamagePerSecond"><%= row['DamagePerSecond']%></div></div></td>
+          <td width='15%' class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulHitPoints"><%= row['HitPoints']%></div></div></td>
+          <td width='15%' class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulTrainingCostInElixir"><%= row['TrainingCostInElixir']%></div></div></td>
+          <td width='15%' class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulUpgradeCostInElixir"><%= row['UpgradeCostInElixir']%></div></div></td>
+          <td width='15%' class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulLaboratoryLevelRequired"><%= row['LaboratoryLevelRequired']%></div></div></td>
+          <td width='15%' class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulUpgradeTimeInHours"><%= row['UpgradeTimeInHours']%></div></div></td>
+          <td width='15%' class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulTownHallLevelRequired"><%= row['TownHallLevelRequired']%></div></div></td>
+          <td width='15%' class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulRegenerationTimeInMinutes"><%= row['RegenerationTimeInMinutes']%></div></div></td>
+          <td width='15%' class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulUpgradeCostInDarkElixir"><%= row['UpgradeCostInDarkElixir']%></div></div></td>
+          <td width='15%' class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ulTrainingCostInDarkElixir"><%= row['TrainingCostInDarkElixir']%></div></div></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+</div>
+</div>
+</div> 
+</div>

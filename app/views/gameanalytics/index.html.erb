@@ -1,0 +1,34 @@
+<table>
+<tr>
+<td>
+<%= form_tag({:action => :index}, :multipart => true) do %>
+Game version: <select id="version" name="game_version">
+    <option value="">-</option>
+    <% @game_versions.each_hash do |row|%>
+      <option value="<%= row['NextGameVersion']%>"><%= row['NextGameVersion']%></option>
+     <% end%>
+  </select>
+<% end %>
+</td>
+</tr>
+</table>
+
+<td><button name="exportgameanalytics" type="submit" onclick="exportfile(20, false, '');">Publish development</button></td>
+<td><button type="submit" onclick="exportfileproduction(20, false, '');">Publish production</button></td>
+
+<button name="editmultigameanalytics" type="submit" onclick="copyContentGameanalytics(1);">Save</button>
+<table class="ex1" style="font-size:13px" id="tblsetbundle">
+    <tbody>
+     <tr><th>pkId</th><th>Key</th><th>Value</th><th>LastMod</th></tr>
+  </tbody>
+</table>
+
+
+
+<script>
+$("#version").val('<%= @game_version%>');
+$('#version').change(function(){
+    var pathname = window.location.pathname;
+    post_to_url("/lumba/switchserver/switchversion", { game_version: $(this).val(),currenturl: pathname })
+  });
+</script>

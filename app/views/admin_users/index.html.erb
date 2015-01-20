@@ -1,0 +1,35 @@
+<span>Create / Edit / Delete Admin user</span><font color="red">(Production server)</font>
+<br/>
+<table><tr><td>
+<form action="/lumba/adminUsers" method="post">
+<tr>
+  <%= text_field_tag 'admin_name', "name" %><br/>
+</tr><tr>
+  <%= text_field_tag 'admin_email', "email" %><br/>
+</tr><tr>
+  <%= password_field_tag 'admin_password', "password" %>
+</tr><tr>
+  <%= submit_tag( "Done" ) %>
+</tr>
+</form>
+</td><td><tr></tr><tr></tr><tr>
+or <a>Cancel</a>
+</tr>
+</td>
+</tr>
+</table>
+<br/>
+<table class="ex1" style="font-size:13px" id="tbladminusers">
+    <tbody>
+     <tr><th>Id</th><th>Name</th><th>Email</th><th>Password</th><th>Action</th></tr>
+     <% @admin_users.each_hash do |row|%>
+        <tr>
+          <td width="5%"><div class="adminIDCell"><%= row['id']%></div></td>
+          <td width="20%"><div contenteditable class="admin_username"><%= row['username']%></td>
+          <td width="30%"><div contenteditable class="admin_useremail"><%= row['email']%></td>
+          <td width="30%"><div contenteditable class="admin_userpassword"><%= row['password']%></td>
+          <td width='15%' style="padding-left:40px"><button value="<%= row['id']%>" name="deleteadminuser" type="submit" onclick="copyContentAdminUser(this.value);">Delete</button> <button value="<%= row['id']%>" id="editadminuser" onclick="copyContentAdminUser(this.value);">Edit</button></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>

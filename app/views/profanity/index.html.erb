@@ -1,0 +1,111 @@
+<table style="width:100%;">
+<tr>
+<td>
+<form accept-charset="UTF-8" action="/lumba/profanity" enctype="multipart/form-data" method="post">
+<font color="red">(Development server)</font> Game version:  <select id="version" name="game_version">
+    <option value="">-</option>
+    <% @version_array.each do |row|%>
+      <option value="<%= row['NextGameVersion']%>"><%= row['NextGameVersion']%></option>
+     <% end%>
+  </select>
+</form>
+</td>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td><button name="exportprofanity" type="submit" onclick="exportfileproduction(23, false, '');">Publish Arabic production</button></td>
+<td><button name="exportprofanityenglish" type="submit" onclick="exportfileproduction(24, false, '');">Publish English production</button></td>
+</tr>
+</table>
+<table style="width:100%">
+<tr>
+<form accept-charset="UTF-8" action="/lumba/profanity" id="googlespreadsheetformprofanity" method="post">
+<td>Google spreadsheet url: <%= text_field_tag 'googleurlRef', "" %></td>
+<td><input type="button" id="updateprofanityfromgoogle" value="UpdateFromGoogle"/> </td>
+<td><input type="button" id="exportprofanitytogoogle" type="button" value="ExportToGoogle"/></td>
+</form>
+</tr>
+</table>
+
+
+
+
+<br/>
+
+
+<div id="table-wrapper">
+  <div id="table-scroll">
+<table class="ex1" style="font-size:13px; color:blue" id="tblsetlang">
+    <thead>
+      <tr><th><span class="text">pkId</span></th><th><span class="text">AR</span></th><th><span class="text">EN</span></th><th><span class="text">LastMod</span></th></tr>
+    </thead>
+    <tbody>
+     <% if !@profanitiestext.nil?%>
+     <% @profanitiestext.each_hash do |row|%>
+        <tr>
+          <td width="5%"><div class="customerIDCell"><%= row['pkID']%></div></td>
+          <td width="30%"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="ar"><%= row['AR'].force_encoding('utf-8')%></div></div></td>
+          <td width="30%"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="en"> <%= row['EN'].force_encoding('utf-8')%></div></div></td>
+          <td width='15%'><div contenteditable name=e[]><%= row['lastMod'].in_time_zone(Time.zone)%></td>
+        </tr>
+     <% end%>
+     <% end%>
+  </tbody>
+</table>
+</div>
+</div>
+<script>
+$("#version").val('<%= @game_version%>');
+$( "#updateprofanityfromgoogle" ).click(function() {
+    if($( "#version" ).val() === "") {
+      alert("Please choose game version");
+      return false;
+    }
+    else {
+      $( "#dialog-goolge_form" ).dialog( "open" );
+      $( "#confirmgoogleaccount" ).click(function() {
+        var input = "<input name='game_version' type='hidden' value='" + $( "#version" ).val() + "'>";
+        var input1 = "<input name='commit' type='hidden' value='UpdateFromGoogle'>";
+        var input2 = "<input name='googleemail' type='hidden' value='" + $( "#googleemail" ).val() + "'>";
+        var input3 = "<input name='googlepassword' type='hidden' value='" + $( "#googlepassword" ).val() + "'>";
+        $('#googlespreadsheetformprofanity').append($(input));
+        $('#googlespreadsheetformprofanity').append($(input1));
+        $('#googlespreadsheetformprofanity').append($(input2));
+        $('#googlespreadsheetformprofanity').append($(input3));
+        $('#googlespreadsheetformprofanity').submit();
+        /*exportfile(x, true, $( "#password" ).val());*/
+        $( "#dialog-goolge_form" ).dialog( "close" );
+      });
+    }
+  });
+
+$( "#exportprofanitytogoogle" ).click(function() {
+    if($( "#version" ).val() === "") {
+      alert("Please choose game version");
+      return false;
+    }
+    else {
+      $( "#dialog-goolge_form" ).dialog( "open" );
+      $( "#confirmgoogleaccount" ).click(function() {
+        var input = "<input name='game_version' type='hidden' value='" + $( "#version" ).val() + "'>";
+        var input1 = "<input name='commit' type='hidden' value='ExportToGoogle'>";
+        var input2 = "<input name='googleemail' type='hidden' value='" + $( "#googleemail" ).val() + "'>";
+        var input3 = "<input name='googlepassword' type='hidden' value='" + $( "#googlepassword" ).val() + "'>";
+        $('#googlespreadsheetformprofanity').append($(input));
+        $('#googlespreadsheetformprofanity').append($(input1));
+        $('#googlespreadsheetformprofanity').append($(input2));
+        $('#googlespreadsheetformprofanity').append($(input3));
+        $('#googlespreadsheetformprofanity').submit();
+        /*exportfile(x, true, $( "#password" ).val());*/
+        $( "#dialog-goolge_form" ).dialog( "close" );
+      });
+    }
+  });
+  $('#version').change(function(){
+    var pathname = window.location.pathname;
+    post_to_url("/lumba/switchserver/switchversion", { game_version: $(this).val(),currenturl: pathname })
+  });
+</script>

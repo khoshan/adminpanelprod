@@ -1,0 +1,225 @@
+<%= render "gamedata/menu" %>
+<table>
+<tr>
+<td>Start date:</td>
+<td><input type="text" id="purchasestartdate" class="datepicker" />
+00:00:00
+</td>
+</tr>
+<tr>
+<td>End date:</td>
+<td><input type="text" id="purchaseenddate" class="datepicker" />
+23:59:59
+</td>
+</tr>
+<tr><td>TimeZone:</td><td><input type="radio" name="timetoget" value="1"> UTC <input type="radio" name="timetoget" value="0" checked> (GMT-06:00) Pacific Time (US & Canada)</td></tr>
+<tr>
+<td>
+<button name="downloadpurchasesios" type="submit" id="downloadpurchasesios">In-app purchase</button>
+</td>
+  <td><select name="selectexporttype" id="selectexporttype">
+  <option value="doc" selected>Google Docs</option>
+  <option value="csv">Download .csv file</option>
+</select><input type="radio" name="typeiap" value="1"> All purchases <input type="radio" name="typeiap" value="2" checked> Valid purchases</td>
+<% if (!@file_array.nil?) %>
+  <tr><td></td><td>
+  <% @file_array.each_with_index do |row, i| %>
+    <button name="downloadexportfile" type="submit" id="<%=row.to_s%>" class="downloadexportfile">Download file <%=(i+1).to_s %></button>
+  <% end %>
+  </td></tr>
+<% end %>
+</tr><tr>
+<!-- <button name="downloadpurchaseandroid" type="submit" id="downloadpurchaseandroid">In-app purchase android</button> -->
+<td><button name="newpurchaseView" type="submit" id="newpurchaseView">New paying users</button></td>
+<tr/>
+<td><button name="uniquepurchaseView" type="submit" id="uniquepurchaseView">Unique paying users</button></td>
+<tr/>
+<td><button name="totalvalidpurchase" type="submit" id="totalvalidpurchase">Total Valid Purchase</button>
+</td>
+<tr/>
+  <tr>
+    <td>
+      <button name="topclanpurchase" type="submit" id="topclanpurchase">Clan Purchase</button>
+    </td>
+    <td>
+      <select name="topclan" id="topclan">
+        <% @topclan.each_hash do |row| %>
+            <option value=<%= row['id'] %>><%= row['name'].force_encoding("utf-8") %></option>
+        <% end %>
+      </select>
+    </td>
+  </tr>
+</table>
+<br/>
+<% if (!@file_array_link.nil?) %>
+  
+  <% @file_array_link.each_with_index do |row, i| %>
+    Link <%=(i+1).to_s%>: <a href="<%= row.to_s%>"><%= row.to_s%></a>
+    <br/>
+  <% end %>
+  
+<% end %>
+<a href="<%= @error_string%>"><%= @error_string%></a>
+<script>
+$( "#datepicker" ).datepicker();
+var selected = $("input[name='timetoget']:checked");
+$("input[name='timetoget']").on('change', function() {
+   selected = $("input[name='timetoget']:checked");
+});
+$( "#newpurchaseView" ).click(function() {
+    if($( "#purchasestartdate" ).val() === "") {
+        alert("Please choose start date");
+        return false;
+    } 
+    if($( "#purchaseenddate" ).val() === "") {
+        alert("Please choose end date");
+        return false;
+    }
+    var selectedVal = "";
+    if (selected.length > 0) {
+      selectedVal = selected.val();
+    } else {
+      alert("Please choose timezone");
+      return false;
+    }
+    post_to_url("/lumba/gamedata/purchases", { newpurchaseView: "newpurchaseView", newpurchasedate: $("#newpurchasedate").val(), purchasestartdate: $("#purchasestartdate").val(), purchaseenddate: $("#purchaseenddate").val(), timetocheck: selectedVal })
+});
+
+$( "#totalvalidpurchase" ).click(function() {
+    if($( "#purchasestartdate" ).val() === "") {
+        alert("Please choose start date");
+        return false;
+    } 
+    if($( "#purchaseenddate" ).val() === "") {
+        alert("Please choose end date");
+        return false;
+    }
+    var selectedVal = "";
+    if (selected.length > 0) {
+        selectedVal = selected.val();
+    } else {
+        alert("Please choose timezone");
+        return false;
+    }
+    post_to_url("/lumba/gamedata/purchases", { totalvalidpurchase: "totalvalidpurchase", purchasestartdate: $("#purchasestartdate").val(), purchaseenddate: $("#purchaseenddate").val(), timetocheck: selectedVal })
+});
+
+$( "#topclanpurchase" ).click(function() {
+    if($( "#purchasestartdate" ).val() === "") {
+        alert("Please choose start date");
+        return false;
+    }
+    if($( "#purchaseenddate" ).val() === "") {
+        alert("Please choose end date");
+        return false;
+    }
+    var selectedVal = "";
+    if (selected.length > 0) {
+        selectedVal = selected.val();
+    } else {
+        alert("Please choose timezone");
+        return false;
+    }
+    post_to_url("/lumba/gamedata/purchases", { topclanpurchase: "topclanpurchase", purchasestartdate: $("#purchasestartdate").val(), purchaseenddate: $("#purchaseenddate").val(), timetocheck: selectedVal, topclan: $("#topclan").val() })
+});
+
+$( "#uniquepurchaseView" ).click(function() {
+    if($( "#purchasestartdate" ).val() === "") {
+        alert("Please choose start date");
+        return false;
+    } 
+    if($( "#purchaseenddate" ).val() === "") {
+        alert("Please choose end date");
+        return false;
+    }
+    var selectedVal = "";
+    if (selected.length > 0) {
+        selectedVal = selected.val();
+    } else {
+        alert("Please choose timezone");
+        return false;
+    }
+    post_to_url("/lumba/gamedata/purchases", { uniquepurchaseView: "uniquepurchaseView", purchasestartdate: $("#purchasestartdate").val(), purchaseenddate: $("#purchaseenddate").val(), timetocheck: selectedVal })
+});
+
+$( "#downloadpurchasesios" ).click(function() {
+        if($( "#purchasestartdate" ).val() === "") {
+          alert("Please choose start date");
+          return false;
+        } 
+        if($( "#purchaseenddate" ).val() === "") {
+          alert("Please choose end date");
+          return false;
+        }
+        var startdate = $("#purchasestartdate").val() + " 00:00:00 -08:00"
+        var enddate = $("#purchaseenddate").val() + " 23:59:59 -08:00"
+        var selectedVal = "";
+        var typeiap = $("input[name='typeiap']:checked").val();
+        var selectexporttype =$('#selectexporttype').val();
+        if (selected.length > 0) {
+          selectedVal = selected.val();
+        } else {
+          alert("Please choose timezone");
+          return false;
+        }
+        if (selectedVal == 1){
+          startdate = $("#purchasestartdate").val() + " 00:00:00 +00:00"
+          enddate = $("#purchaseenddate").val() + " 23:59:59 +00:00"
+        }
+        post_to_url("/lumba/gamedata/purchases", { downloadpurchasesios: "downloadpurchasesios", purchasestartdate: startdate, purchaseenddate: enddate, timetocheck: selectedVal,typeiap: typeiap, selectexporttype: selectexporttype })
+      });
+
+$( "#exportpurchasetogoogleios" ).click(function() {
+        if($( "#purchasestartdate" ).val() === "") {
+          alert("Please choose start date");
+          return false;
+        } 
+        if($( "#purchaseenddate" ).val() === "") {
+          alert("Please choose end date");
+          return false;
+        }
+        var startdate = $("#purchasestartdate").val() + " 00:00:00 -07:00"
+        var enddate = $("#purchaseenddate").val() + " 23:59:59 -07:00"
+          var input1 = "<input name='commit' type='hidden' value='exportpurchasetogoogleios'>";
+          var input4 = "<input name='purchasestartdate' type='hidden' value='" + startdate + "'>";
+          var input5 = "<input name='purchaseenddate' type='hidden' value='" + enddate + "'>";
+          $('#googlespreadsheetformpurchase').append($(input1));
+          $('#googlespreadsheetformpurchase').append($(input4));
+          $('#googlespreadsheetformpurchase').append($(input5));
+          $('#googlespreadsheetformpurchase').submit();
+      });
+
+$( "#exportpurchasetogoogleandroid" ).click(function() {
+        if($( "#purchasestartdate" ).val() === "") {
+          alert("Please choose start date");
+          return false;
+        } 
+        if($( "#purchaseenddate" ).val() === "") {
+          alert("Please choose end date");
+          return false;
+        }
+        var startdate = $("#purchasestartdate").val() + " 00:00:00 -07:00"
+        var enddate = $("#purchaseenddate").val() + " 23:59:59 -07:00"
+        post_to_url("/lumba/gamedata/purchases", { exportpurchasetogoogleandroid: "exportpurchasetogoogleandroid", purchasestartdate: startdate, purchaseenddate: enddate })
+      });
+
+$( "#downloadpurchaseandroid" ).click(function() {
+        if($( "#purchasestartdate" ).val() === "") {
+          alert("Please choose start date");
+          return false;
+        } 
+        if($( "#purchaseenddate" ).val() === "") {
+          alert("Please choose end date");
+          return false;
+        }
+        post_to_url("/lumba/gamedata/purchases", { downloadpurchaseandroid: "downloadpurchaseandroid", purchasestartdate: $("#purchasestartdate").val(), purchaseenddate: $("#purchaseenddate").val() })
+      });
+$(".downloadexportfile").click(function(event){
+  post_to_url("/lumba/gamedata/purchases", { downloadexportfile: "downloadexportfile", itempath: event.target.id})
+});
+  $('#version').change(function(){
+    var pathname = window.location.pathname;
+    post_to_url("/lumba/switchserver/switchversion", { game_version: $(this).val(),currenturl: pathname })
+  });
+
+</script>

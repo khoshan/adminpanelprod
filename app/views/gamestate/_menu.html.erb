@@ -1,0 +1,165 @@
+<!-- Migrate Data: <form accept-charset="UTF-8" id="gamestatecopydata" action="/lumba/gamestate/user_details" method="post">
+  UserId: <%= text_field_tag 'userIdtocopy', "" %>
+  Source version: <%= text_field_tag 'sourceversion', "" %>
+  Destination version: <%= text_field_tag 'destinationversion', "" %>
+  <input type="button" id="gamestate_copy" value="Copy"/>
+</form>
+-->
+
+Copy userdata
+<form accept-charset="UTF-8" id="gamestatecopydata" action="/lumba/gamestate/user_details" method="post">
+  Source userId: <%= text_field_tag 'srcuserId', "" %>
+  Destination userId: <%= text_field_tag 'destuserId', "" %>
+  <input type="button" id="gamestate_copy" value="Copy"/>
+</form>
+<%= @copy_user_result%>
+<hr/>
+Copy GameState to dev
+<form accept-charset="UTF-8" id="gamestatecopygamestatetodev" action="/lumba/gamestate/user_details" method="post">
+  Source UserId (Prod): <%= text_field_tag 'userIdsourcecopytodev', "" %>
+  Destination UserId (Dev): <%= text_field_tag 'userIddestinationcopytodev', "" %>
+  (Optional) OldGS Date: <input type="text" id="oldgsdate"  value="" />
+  <input type="button" id="gamestate_copy_to_dev" value="Copy To Dev"/>
+</form>
+<hr/>
+<form action="/lumba/gamestate" method="post">
+<font color="red">(Production server)</font> SFS Version to view game state: <%= text_field_tag 'sfs_version', @sfs_version %>
+<br/>
+<input type="button" id="gamestate_list_blocked_leaderboard" value="Download blocked leaderboard players"/>
+<input type="button" id="gamestate_list_blocked_tribe" value="Download blocked from Tribe players"/>
+</form>
+<br/>
+<form accept-charset="UTF-8" id="gamestateview" action="/lumba/gamestate/user_details" method="post">
+  UserId: <%= text_field_tag 'userIdGameState', @user_id, onchange: "changeuserid();" %>
+  Email: <%= text_field_tag 'emailtb', '' %>
+  <%if !@name.nil?%>
+  Name: <%= text_field_tag 'nametb', ''.force_encoding('utf-8') %>
+  <% end%>
+  <%if @name.nil?%>
+  Name: <%= text_field_tag 'nametb', '' %>
+  <% end%>
+  Dagger: <%= text_field_tag 'trophiestb', '' %>
+  <input type="button" id="gamestate_view" value="View"/>
+</form>
+
+<script>
+$( "#gamestate_go" ).click(function() {
+        var input = "<input name='sfs_version' type='hidden' value='" + $( "#sfs_version" ).val() + "'>";
+        var input1 = "<input name='commit' type='hidden' value='Go'>";
+        $('#gamestatego').append($(input));
+        $('#gamestatego').append($(input1));
+        $('#gamestatego').submit();
+  });
+$( "#gamestate_view" ).click(function() {
+    if(($( "#userIdGameState" ).val() === "") && ($( "#nametb" ).val() === "") && ($( "#emailtb" ).val() === "")) {
+      alert("Please input userId or name or email");
+      return false;
+    }
+        var input = "<input name='sfs_version' type='hidden' value='" + $( "#sfs_version" ).val() + "'>";
+        var input1 = "<input name='commit' type='hidden' value='View'>";
+        $('#gamestateview').append($(input));
+        $('#gamestateview').append($(input1));
+        $('#gamestateview').submit();
+  });
+
+$( "#gamestate_copy" ).click(function() {
+    if($( "#srcuserId" ).val() === "") {
+      alert("Please input source userId");
+      return false;
+    } else if ($( "#destuserId" ).val() === "") {
+      alert("Please input destination userId");
+      return false;
+    } else {
+        var input = "<input name='src_userId' type='hidden' value='" + $( "#srcuserId" ).val() + "'>";
+        var input1 = "<input name='dest_userId' type='hidden' value='" + $( "#destuserId" ).val() + "'>";
+        var input2 = "<input name='commit' type='hidden' value='CopyUserData'>";
+        $('#gamestatecopydata').append($(input));
+        $('#gamestatecopydata').append($(input1));
+        $('#gamestatecopydata').append($(input2));
+        $('#gamestatecopydata').submit();
+    }
+  });
+
+$( "#gamestate_copy_to_dev" ).click(function() {
+    if($( "#userIdsourcecopytodev" ).val() === "") {
+      alert("Please input Production userId");
+      return false;
+    } else if ($( "#userIddestinationcopytodev" ).val() === "") {
+      alert("Please input Development userId");
+      return false;
+    } else {
+        var input = "<input name='userId_prod_source' type='hidden' value='" + $( "#userIdsourcecopytodev" ).val() + "'>";
+        var input1 = "<input name='userId_dev_destination' type='hidden' value='" + $( "#userIddestinationcopytodev" ).val() + "'>";
+        var input2 = "<input name='commit' type='hidden' value='CopyUserDataFromProdToDev'>";
+        var input3 = "<input name='old_GameState_Date' type='hidden' value='" + $( "#oldgsdate" ).val() + "'>";
+        $('#gamestatecopygamestatetodev').append($(input));
+        $('#gamestatecopygamestatetodev').append($(input1));
+        $('#gamestatecopygamestatetodev').append($(input2));
+        $('#gamestatecopygamestatetodev').append($(input3));
+        $('#gamestatecopygamestatetodev').submit();
+    }
+  });
+
+$( "#gamestate_list_blocked_leaderboard" ).click(function() {
+/*    if($( "#sfs_version" ).val() === "") {
+      alert("Please input sfs_version");
+      return false;
+    }
+    else {
+*/
+        var input = "<input name='sfs_version' type='hidden' value='" + $( "#sfs_version" ).val() + "'>";
+        var input1 = "<input name='commit' type='hidden' value='gamestate_list_blocked_leaderboard'>";
+        $('#gamestateview').append($(input));
+        $('#gamestateview').append($(input1));
+        $('#gamestateview').submit();
+//    }
+  });
+
+$( "#gamestate_list_blocked_tribe" ).click(function() {
+/*    if($( "#sfs_version" ).val() === "") {
+      alert("Please input sfs_version");
+      return false;
+    }
+    else {
+*/        var input = "<input name='sfs_version' type='hidden' value='" + $( "#sfs_version" ).val() + "'>";
+        var input1 = "<input name='commit' type='hidden' value='gamestate_list_blocked_tribe'>";
+        $('#gamestateview').append($(input));
+        $('#gamestateview').append($(input1));
+        $('#gamestateview').submit();
+//    }
+  });
+
+function changeuserid(){
+$("input[type=submit]").hide();;
+}
+</script>
+
+<font color="green"><%= @cpblscmessage %></font>
+<font color="red"><%= @cpblerrmessage %></font>
+
+<font color=red><%= @successText %></font>
+<font color=red><%= @failText %></font>
+<br>
+<table>
+  <tr>
+    <td><%= @userIdText %></td>
+    <td><%= @userId %></td>
+  </tr>
+  <tr>
+    <td><%= @reporterText %></td>
+    <td><%= @reporterEmailbuoi %></td>
+  </tr>
+  <tr>
+    <td><%= @summaryText %></td>
+    <td><%= @jtitle %></td>
+  </tr>
+  <tr>
+    <td><%= @descriptionText %></td>
+    <td><%= @jdescription %></td>
+  </tr>
+  <tr>
+    <td><%= @jiraLinkText %></td>
+    <td><a href ="<%= @jlink %>"><%= @jlink %></a></td>
+  </tr>
+</table>
+

@@ -1,0 +1,1 @@
+User Host	Query Time	DB	Start Time (UTC)	SQL Text

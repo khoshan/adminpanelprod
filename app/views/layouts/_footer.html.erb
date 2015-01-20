@@ -1,0 +1,36 @@
+<!--
+<div id="footer">
+Curent server: <%= @selectedServer%>
+Choose server to view: 
+<form>
+<select id="selectserver" value="<%= @selectedServer%>">
+<option value="nextversionserver">Next Server </option>
+<option value="currentversionserver">Current Server </option>
+</select>
+</form>
+<% if @selectedServer.eql?("currentversionserver")%>
+<button id="copytonextserver">Copy data to next server</button>
+<%end%>
+<br/>
+@copyright abcxxoo
+</div>
+<script>
+$("#selectserver").val('<%= @selectedServer%>');
+$('#selectserver').change(function(){
+alert($(this).val());
+var pathname = window.location.pathname;
+alert(pathname);
+post_to_url("/lumba/switchserver", { server_change: $(this).val(),currenturl: pathname })
+});
+
+$('#copytonextserver').click(function(){
+var pathname = window.location.pathname;
+post_to_url("/lumba/switchserver/apply_to_other_server", { currenturl: pathname })
+});
+</script>
+-->
+<!--
+<!-- % if session[:user]%>
+    <a href="/lumba/logout"><span style="float: right"><u>Logout</u></span></a>
+<!-- % end%>
+-->

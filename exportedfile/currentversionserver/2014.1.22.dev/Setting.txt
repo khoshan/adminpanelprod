@@ -1,0 +1,3 @@
+Key	Value
+SAVE_INTERVAL	29
+IAP_RATIO	0.7

@@ -1,0 +1,271 @@
+﻿/* grid CSS Document */
+.gridview {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	position: relative;
+	border: 0px solid #eee;
+	overflow: hidden;
+	color: #000;
+}
+
+.gridview div.titleDiv {
+	background: url(images/homepage01.jpg) repeat-x top;
+	border: 1px solid #ccc;
+	border-bottom: 0px;
+	border-top: 0px;
+	font-weight: bold;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+}
+
+.gridview div.titleDiv div {
+	padding: 6px;
+	white-space: nowrap;
+}
+
+.gridview div.headerDivBox {
+	float: left;
+	padding-right: 40px;
+}
+
+.gridview div.tbar  {
+	background: #fafafa url(images/bg.gif) repeat-x top;
+	position: relative;
+	border: 1px solid #ccc;
+	border-bottom: 0px;
+	overflow: hidden;
+}
+
+.gridview div.tbarsub {
+	float: left;
+	clear: both;
+	padding: 1px;
+}
+
+.gridview div.separator {
+	float: left;
+	height: 22px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #fff;
+	margin: 1px;
+}
+
+.gridview div.tbr_btn {
+	float: left;
+	display: block;
+	cursor: pointer;
+	padding: 1px;
+}
+
+.gridview div.tbr_btn div {
+	float: left;
+	padding: 1px 3px;
+}
+
+.gridview div.tbr_btn span {
+	float: left;
+	display: block;
+	padding: 3px;
+}
+
+.gridview div.tbr_btn:hover,.gridview div.tbr_btn.fbOver {
+	padding: 0px;
+	border: 1px solid #ccc;
+}
+
+.gridview div.tbr_btn:hover div,.gridview div.tbr_btn.fbOver div {
+	padding: 0px 2px;
+	border-left: 1px solid #fff;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+}
+
+/* end toolbar*/
+.gridview div.headerDiv {
+	background: #fafafa url(images/fhbg.gif) repeat-x bottom;
+	position: relative;
+	border: 1px solid #ccc;
+	border-bottom: 0px;
+	overflow: hidden;
+}
+
+.gridview div.headerDiv table {
+	border-right: 1px solid #fff;
+}
+
+.gridview div.clresize {
+	float: left;
+	position: absolute;
+	z-index: 2;
+	overflow: visible;
+}
+
+.gridview div.clresize div {
+	float: left;
+	background: none;
+	display: block;
+	position: absolute;
+	height: 24px;
+	width: 5px;
+	cursor: col-resize;
+}
+
+.gridview div.clresize div:hover,.gridview div.clresize div.resize {
+	background: url(images/line.gif) repeat-y 2px center;
+}
+
+.gridview div.bodyDiv table {
+	margin-bottom: 10px;
+}
+
+.gridview div.bodyDiv {
+	border: 1px solid #ccc;
+	border-top: 0px;
+	background: #fff;
+	overflow: auto;
+	position: relative;
+}
+
+.gridview div.bodyDiv table {
+	border-bottom: 1px solid #ccc;
+}
+
+.gridview div.headerDiv th,.gridview  div.bodyDiv td{
+	text-align: left;
+	border-right: 1px solid #ddd;
+	border-left: 1px solid #fff;
+	overflow: hidden;
+	vertical-align: top !important;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.gridview div.headerDiv th div,.gridview  div.bodyDiv td  div{
+	padding: 5px;
+	border-left: 0px solid #fff;
+}
+
+.gridview div.headerDiv th {
+	font-weight: normal;
+	height: 24px;
+	cursor: default;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.gridview div.bodyDiv td {
+	border-bottom: 1px solid #fff;
+	vertical-align: top;
+	white-space: nowrap;
+}
+
+.gridview div.headerDiv th div {
+	
+}
+
+.gridview div.bodyDiv td div {
+	border-top: 0px solid #fff;
+	padding-bottom: 4px;
+}
+
+.gridview tr.stripped td {
+	background: #f7f7f9;
+	border-bottom: 1px solid #f7f7f7;
+}
+
+.gridview div.bodyDiv tr:hover td
+	{
+	background: #d9ebf5;
+	border-left: 1px solid #eef8ff;
+	border-bottom: 1px dotted #a8d8eb;
+}
+
+.gridview div.bodyDiv tr.trSelected:hover td,.gridview div.bodyDiv tr.trOver.trSelected td,.gridview tr.trSelected td
+	{
+	background: #b6ff00 repeat-x top;
+	border-right: 1px solid #d2e3ec;
+	border-left: 1px solid #eef8ff;
+	border-bottom: 1px solid #a8d8eb;
+}
+
+.gridview div.tsk {
+	background: url(images/bg.gif) repeat-x 0 -1px;
+	border: 1px solid #ccc;
+	border-top: 0px;
+	overflow: hidden;
+	white-space: nowrap;
+	position: relative;
+}
+
+.gridview div.tsk div.tsk2 {
+	margin: 3px;
+	margin-left: -2px;
+	float: left;
+	width: 1024px;
+}
+
+div.grp {
+	float: left;
+	background: none;
+	height: 24px;
+	margin: 0px 5px;
+}
+
+.gridview div.tsk .pstate,.gridview div.tsk .pcontrol {
+	position: relative;
+	top: 5px;
+	overflow: visible;
+}
+
+.gridview div.tsk input {
+	vertical-align: text-top;
+	position: relative;
+	top: -5px;
+}
+
+.gridview div.tsk  div.taskbutton {
+	float: left;
+	width: 22px;
+	height: 22px;
+	border: 0px;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.gridview div.tsk  div.taskbutton:hover,.gridview div.tsk  div.taskbutton.pBtnOver
+	{
+	width: 20px;
+	height: 20px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+.gridview div.tsk  div.taskbutton span {
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: left;
+}
+
+.gridview div.tsk  div.taskbutton:hover span,.gridview div.tsk  div.taskbutton.pBtnOver span
+	{
+	width: 19px;
+	height: 19px;
+	border-top: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+
+.gridview .prv {
+	background: url(images/prev.gif) no-repeat center;
+}
+
+.gridview .nxt {
+	background: url(images/next.gif) no-repeat center;
+}
+
+.gridview .reload , .reload.loading {
+	background: url(images/load.png) no-repeat center;
+}

@@ -1,0 +1,20 @@
+<font color="red">(Production server)</font>
+<form action="/lumba/sendnotification" method="post">
+<table>
+<tr><td> English Message:
+</td><td>
+  <%= text_area_tag 'englishmessage', "", :size => "55x5" %><br/>
+</td>
+</tr><tr>
+<td>Arabic Message:
+</td><td>
+  <%= text_area_tag 'arabicmessage', "", :size => "55x5" %><br/>
+</td>
+</tr>
+</tr><tr>
+<td>
+  <%= submit_tag( "Send" ) %>
+</td><td></td>
+</tr>
+</table>
+</form>

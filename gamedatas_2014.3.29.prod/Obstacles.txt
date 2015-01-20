@@ -1,0 +1,17 @@
+Type name	Type	Removal time	Experience Gained	Removal Cost Gold	Removal Cost Elixir	Respawn Weight	Removal Benefit Elixir	Removal Benefit Dark Elixir	Init Position	Object Type	PrefabName	DisplayName	NumTileOneSide	HasBase
+bush	0	10	3	0	125	0.1	0	0	4,4,34,6,19,14,20,31	7	Bush2	Bush2	2	1
+bush	1	15	3	0	315	0.2	0	0	15,5,18,8,32,20	7	Bush1	Bush1	2	1
+tree	2	30	5	0	1250	0.1	0	0	28,4,32,3	7	Tree	Tree	2	1
+deadpalm	3	30	5	0	1250	0.1	0	0	4,14,15,35,37,5,12,14,9,22	7	DeadPalm	DeadPalm	2	1
+camelskeleton	4	30	5	0	1250	0.2	0	0	3,25,36,13	7	CamelSkeleton	CamelSkeleton	2	1
+minipalmtree	5	30	5	0	2500	0.2	0	0	6,24,6,26,12,25,37,19	7	MiniPalm	MiniPalm	2	1
+palmtree	6	45	6	0	9375	0.05	0	0	11,4,23,4,30,7,4,19,12,31,22,36,27,33,36,28	7	PalmTree	PalmTree	2	1
+palmtrees	7	60	7	0	12500	0.05	0	0	31,12,7,33	7	PalmGroup	PalmGroup	2	1
+smallrock	8	20	4	625	0	0	0	0	7,28,20,34,31,25	7	SmallRock	SmallRock	2	1
+tinyrock	9	20	4	625	0	0	0	0	4,23,7,22	7	XSmallRocks	XSmallRocks	2	1
+verysmallrock	10	20	4	625	0	0	0	0	12,23,31,30	7	TinyRocks	TinyRocks	2	1
+crackedrock	11	20	4	625	0	0	0	0	8,3,20,4,9,9	7	CrackedRock	CrackedRock	2	1
+mediumrock	12	45	6	12500	0	0	0	0	24,9,12,27,34,23	7	MediumRock	MediumRock	2	1
+largerock	13	60	7	25000	0	0	0	0	5,6,9,12,22,13,36,8,9,28,35,34	7	LargeRock	LargeRock	3	1
+grave	14	0	0	0	0	0	25	0		7	Grave_Light	Grave_Light	1	0
+darkgrave	15	0	0	0	0	0	0	5		7	Grave_Dark	Grave_Dark	1	0

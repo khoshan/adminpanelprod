@@ -1,0 +1,1 @@
+Notification_Reward=Congratulations! Your tribe placed top 3 in the tournament and you won pearls!

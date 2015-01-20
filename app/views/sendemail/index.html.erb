@@ -1,0 +1,64 @@
+Lumba Send Email <font color="red">(Production server)</font>
+<br/>
+<table class="ex1" style="font-size:13px" id="tblsendmail">
+    <tbody>
+     <tr><th>pkId</th><th>username</th><th>email</th><th>LastMod</th><th>expiry_date</th><th>Action</th></tr>
+     <% @user_emails.each_hash do |row|%>
+        <tr>
+          <td width="5%"><div class="emailIDCell"><%= row['id']%></div></td>
+          <td width="20%"><div contenteditable class="username"><%= row['username']%></td>
+          <td width="30%"><div contenteditable class="email"><%= row['email']%></td>
+          <td width='15%'><div contenteditable name=e[]><%= row['latMod']%></td>
+          <td width='20%'> <input style="width:90%" type="text" class="datepicker" name="datepicker" value="<%= row['expiry_date']%>"/></td>
+<!--          <td width='15%'><button value="<%= row['pkID']%>" name="deleteid" type="submit" onclick="copyContent(this.value);">Delete</button></td> -->
+          <td width='15%'><button value="<%= row['id']%>" name="editusersendmail" type="submit" onclick="copyContentUserSendMail(this.value);">Save</button></td>
+          <td width='15%'><button value="<%= row['email']%>" class="opener">Email</button></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+
+<br/>
+<table><tr><td>UserName:</td><td> <input id="sendmail_username" name="sendmail_username" type="text"></td></tr>
+<tr><td>Email:</td><td> <input id="sendmail_email" name="sendmail_email" type="text"></td></tr>
+<tr><td>Expiry Date: </td><td><input type="text" id="add_datepicker" class="datepicker" /></td>
+<tr><td><button id="addusersendmail">Add</button></td></tr>
+</table>
+
+<div id="dialog" title="Send Email" style="background-color: aliceblue; width:400px">
+  <form action="/lumba/sendemail" method="post">
+  Email: <input type="text" readonly="readonly" name="emailfield" id="emailfield" style="width:270px"/>
+  Content: <textarea id="emailbody" name="emailbody" style="width:274px;height:47px"></textarea>
+  <%= submit_tag( "Send" ) %>
+</form>
+</div>
+ 
+
+<script>
+$( "#datepicker" ).datepicker();
+$( "#addusersendmail" ).click(function() {
+  var post = "true";
+  if(post === "true"){
+    post_to_url("/lumba/sendemail", { actionadd: "add", sendmail_username: $( "#sendmail_username" ).val(), sendmail_email: $( "#sendmail_email" ).val(), sendemail_datepicker: $("#add_datepicker").val() })
+  }
+});
+
+$(function() {
+    $( "#dialog" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "blind",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });
+ 
+    $( ".opener" ).click(function() {
+      $( "#dialog" ).dialog( "open" );
+      $("#emailfield").val($(this).attr("value"));
+    });
+  });
+</script>

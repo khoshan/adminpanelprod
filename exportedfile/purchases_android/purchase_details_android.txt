@@ -1,0 +1,1 @@
+userId	DiwanLevel	GameLevel	Coins	Water	Oil	Pearls	Daggers	Status	purchasedPearls	purchasedItemId	paidAmount	currency	country	installAt	createdAt

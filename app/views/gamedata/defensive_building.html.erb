@@ -1,0 +1,62 @@
+<%= render "gamedata/menu" %>
+<%= render "gamedata/menu_googlespreadsheet" %>
+<table>
+<tr>
+<td><button type="submit" onclick="exportfileproduction(4, false, '');">Publish production</button></td>
+</tr>
+</table>
+
+
+<div class="outer-container"> <!-- absolute positioned container -->
+<div class="inner-container">
+
+    <div class="table-header">
+        <table id="headertable" width="200px" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="header-cell">Unit</th>
+                    <th class="header-cell">RangeStart</th>
+                    <th class="header-cell">RangeEnd</th>
+                    <th class="header-cell">Explodetime</th>
+                    <th class="header-cell">AttackSpeedInSeconds</th>
+                    <th class="header-cell">DamageType</th>
+                    <th class="header-cell">DamageRadius</th>
+                    <th class="header-cell">UnitTypeTargeted</th>
+                    <th class="header-cell">PreferredTarget</th>
+                    <th class="header-cell">PreferredTargetBonus</th>
+                    <th class="header-cell">NumberOfRounds</th>
+                    <th class="header-cell">MaxLevel</th>
+                    <th class="header-cell">SizeLimit</th>
+                    <th class="header-cell">AirRange</th>
+                    <th class="header-cell">UnitType</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-body">
+     <table class="ex1" style="font-size:13px" id="tbldefensive_building">
+    <tbody>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbUnit"><%= row['Unit']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbRangeStart"><%= row['RangeStart']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbRangeEnd"><%= row['RangeEnd']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbExplodetime"><%= row['Explodetime']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbAttackSpeedInSeconds"><%= row['AttackSpeedInSeconds']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbDamageType"><%= row['DamageType']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbDamageRadius"><%= row['DamageRadius']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbUnitTypeTargeted"><%= row['UnitTypeTargeted']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbPreferredTarget"><%= row['PreferredTarget']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbPreferredTargetBonus"><%= row['PreferredTargetBonus']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbNumberOfRounds"><%= row['NumberOfRounds']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbMaxLevel"><%= row['MaxLevel']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbSizeLimit"><%= row['SizeLimit']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbAirRange"><%= row['AirRange']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="dbUnitType"><%= row['UnitType']%></div></div></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+</div>
+</div>
+</div> 

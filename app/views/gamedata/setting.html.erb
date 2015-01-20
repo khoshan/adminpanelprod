@@ -1,0 +1,364 @@
+<%= render "gamedata/menu" %>
+<!--<%=button_to "Export setting", :action=>'setting', :exportsetting=>'exportsetting'%>-->
+<table>
+<tr>
+  <td><button id="saveasdefault">Save as Default</button></td>
+</tr>
+</table>
+<br/>
+Setting Info
+<table width="100%" class="ex1" style="table-layout:fixed; font-size:13px; border:1px solid;" id="tblsettinginfo">
+<thead>
+        <tr><th><span class="text">Key</th><th><span class="text">Value</th><th><span class="text">English Version</th><th><span class="text">Arabic Version</th></tr>
+        </thead>
+    <tbody>
+      <% @datas_settinginfo.each_hash do |row|%>
+        <tr>
+          <td style="text-align: left;">SaveInterval</td>
+          <td><div contenteditable class="settinginfoSaveInterval"><%= row['SAVE_INTERVAL']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">PING_INTERVAL_SECONDS</td>
+          <td><div contenteditable class="settingPING_INTERVAL_SECONDS"><%= row['PING_INTERVAL_SECONDS']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">REQUEST_TIME_OUT</td>
+          <td><div contenteditable class="settingREQUEST_TIME_OUT"><%= row['REQUEST_TIME_OUT']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">SAVE_HISTORY_MINUTES</td>
+          <td><div contenteditable class="settingSAVE_HISTORY_MINUTES"><%= row['SAVE_HISTORY_MINUTES']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">SEND_TROOP_SECONDS</td>
+          <td><div contenteditable class="settingSEND_TROOP_SECONDS"><%= row['SEND_TROOP_SECONDS']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">SHOULD_FIND_SFS_SERVER</td>
+          <td><div contenteditable class="settingSHOULD_FIND_SFS_SERVER"><%= row['SHOULD_FIND_SFS_SERVER']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Iap Ratio</td>
+          <td><div contenteditable class="settinginfoiapratio"><%= row['IAP_RATIO']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Gem_Range_For_Calculate_Time<br/>(Convert from time to gem)</td>
+          <td><div contenteditable class="settinggemrangeforcalculatetime"><%= row['Gem_Range_For_Calculate_Time']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Gold_Water_Rangei<br/>(Convert from gold or water to gem)</td>
+          <td><div contenteditable class="settinggoldwaterrange"><%= row['Gold_Water_Range']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Oil_Range<br/>(Use for converting from oil to gem)</td>
+          <td><div contenteditable class="settingoilrange"><%= row['Oil_Range']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Gem_Range_For_Calculate_Resource<br/>(Use for converting from resources to gem)</td>
+          <td><div contenteditable class="settinggemrangeforcalculateresource"><%= row['Gem_Range_For_Calculate_Resource']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">TERM_SERVICE_LINK</td>
+          <td><!--<div contenteditable class="settingTERM_SERVICE_LINK"><%= row['TERM_SERVICE_LINK']%>--></td>
+          <td><div contenteditable class="settingTERM_SERVICE_LINK_EN"><%= row['TERM_SERVICE_LINK_EN']%></td>
+          <td><div contenteditable class="settingTERM_SERVICE_LINK_AR"><%= row['TERM_SERVICE_LINK_AR']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">POLICY_LINK</td>
+          <td><!--<div contenteditable class="settingPOLICY_LINK"><%= row['POLICY_LINK']%> --></td>
+          <td><div contenteditable class="settingPOLICY_LINK_EN"><%= row['POLICY_LINK_EN']%></td>
+          <td><div contenteditable class="settingPOLICY_LINK_AR"><%= row['POLICY_LINK_AR']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">FACEBOOK_LINK</td>
+          <td><div contenteditable class="settingFACEBOOK_LINK"><%= row['FACEBOOK_LINK']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">TWITTER_LINK</td>
+          <td><div contenteditable class="settingTWITTER_LINK"><%= row['TWITTER_LINK']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">COME_BACK_NOTIFICATION_DURATION <br/>(In seconds)</td>
+          <td><div contenteditable class="settingCOME_BACK_NOTIFICATION_DURATION"><%= row['COME_BACK_NOTIFICATION_DURATION']%></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">SIGNATURE_ORDER<br/></td>
+          <td ><div contenteditable class="settingSIGNATURE_ORDER"><%= row['SIGNATURE_ORDER']%></td>
+          <td ></td>
+          <td ></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">SERVER_MAINTAIN<br/>(0: server is running, 1: server is stopped)</td>
+          <td ><div contenteditable class="settingGAME_MAINTAIN"><%= row['GAME_MAINTAIN']%></td>
+          <td ></td>
+          <td ></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">CHAT_INTERVAL<br/>(in seconds, EX: 1.0)</td>
+          <td ><div contenteditable class="settingCHAT_INTERVAL"><%= row['CHAT_INTERVAL']%></td>
+          <td ></td>
+          <td ></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">ENABLE_LOG<br/>(0: off logging, 1: on logging)</td>
+          <td ><div contenteditable class="settingENABLE_LOG"><%= row['ENABLE_LOG']%></td>
+          <td ></td>
+          <td ></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">ENABLE_ADJUST_LOG<br/>(0: off logging, 1: on logging)</td>
+          <td ><div contenteditable class="settingENABLE_ADJUST_LOG"><%= row['ENABLE_ADJUST_LOG']%></td>
+          <td ></td>
+          <td ></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">ENABLE_IAP_LOG<br/>(0: off logging, 1: on logging)</td>
+          <td ><div contenteditable class="settingENABLE_IAP_LOG"><%= row['ENABLE_IAP_LOG']%></td>
+          <td ></td>
+          <td ></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">MAX_LOG<br/>(EX: 100)</td>
+          <td ><div contenteditable class="settingMAX_LOG"><%= row['MAX_LOG']%></td>
+          <td ></td>
+          <td ></td>
+        </tr>
+      <% end%>
+        <tr>
+          <td></td>
+          <td align="center">
+            <button name="editsettinginfo" type="submit" onclick="copyContentSettingInfo();">Save Setting Info</button>
+            <!-- <button type="submit" onclick="exportfile(17, false, '');">Publish development</button> -->
+            <button type="submit" onclick="exportfileproduction(17, false, '');">Publish production</button>
+          </td>
+        </tr>
+  </tbody>
+</table>
+<br/>
+<b>Version loadbalancers:</b>
+<table width="100%" class="ex1" style="font-size:13px; border:1px solid;" id="tblsetting">
+    <tbody>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td style="text-align: left;" width="10%">pkID</td>
+          <td ><div class="settingpkID"><%= row['pkID']%></td>
+        </tr>
+          <td style="text-align: left;">SaveInterval</td>
+          <td><div contenteditable class="settingSaveInterval"><%= row['SaveInterval']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">CurrentGameVersion</td>
+          <td><div contenteditable class="settingGameVersion"><%= row['GameVersion']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">NextGameVersion</td>
+          <td><div contenteditable class="settingNextGameVersion"><%= row['NextGameVersion']%></td>
+        </tr>
+        <tr>  
+          <td style="text-align: left;">softMovedVersions1</td>
+          <td><div contenteditable class="settingsoftMovedVersions1"><%= row['softMovedVersions1']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">softMovedVersions2</td>
+          <td><div contenteditable class="settingsoftMovedVersions2"><%= row['softMovedVersions2']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">MaintainVersions</td>
+          <td><div contenteditable class="settingmaintainVersions"><%= row['maintainVersions']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">EnableGhost</td>
+          <td><div contenteditable class="settingEnableGhost"><%= row['enableGhost']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">SubVersions <br/>(EX: 2014.4.10:1.0-1.1-1.2)</td>
+          <td><div contenteditable class="settingsubVersions"><%= row['subVersions']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">Forced Update SubVersionClanIds <br/>(EX: 2014.4.10:1.0->54_15;1.1->*)</td>
+          <td><div contenteditable class="settingsubVersionsClanIds"><%= row['forcedUpdateSubVersionClanIds']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">resourceFileNames</td>
+          <td style="position: absolute;"><div contenteditable class="settingresourceFileNames"><%= row['resourceFileNames']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">forcedUpdateClanIds</td>
+          <td><div contenteditable class="settingforcedUpdateClanIds"><%= row['forcedUpdateClanIds']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">en_androidAppUrl</td>
+          <td><div contenteditable class="settingandroidAppUrl_en"><%= row['en_androidAppUrl']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">en_iosAppUrl</td>
+          <td align="center" style="position: absolute;"><div contenteditable class="settingiosAppUrl_en"><%= row['en_iosAppUrl']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">ar_androidAppUrl</td>
+          <td><div contenteditable class="settingandroidAppUrl_ar"><%= row['ar_androidAppUrl']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">ar_iosAppUrl</td>
+          <td align="center" style="position: absolute;"><div contenteditable class="settingiosAppUrl_ar"><%= row['ar_iosAppUrl']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">lastMod</td>
+          <td align="center"><div contenteditable><%= row['lastMod'].in_time_zone(Time.zone)%></td>
+        </tr>
+        <tr>
+          <td align="center"><button value="<%= row['pkID']%>" name="editsetting" type="submit" onclick="copyContentSetting(this.value);">Save</button></td>
+          <!-- <td><button type="submit" onclick="exportfile(16, false, '');">Publish development</button> -->
+          <button type="submit" onclick="exportfileproduction(16, false, '');">Publish production</button></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+
+<br/>
+<b>Version Smartfox</b>
+<table width="100%" class="ex1" style="font-size:13px; border:1px solid;" id="tblsettingsfs">
+<tbody>
+     <% @datasfs.each_hash do |row|%>
+        <tr>
+          <td style="text-align: left;" width="10%">ID</td>
+          <td ><div class="sfsId"><%= row['id']%></td>
+        </tr>
+          <td style="text-align: left;">FromVersion:</td>
+          <td><div contenteditable class="sfsfromVersion"><%= row['fromVersion']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">ToVersion:</td>
+          <td><div contenteditable class="sfstoVersion"><%= row['toVersion']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">UpdateType:<br></td>
+          <td><div contenteditable class="sfsupdateType"><%= row['updateType']%> </td>
+        </tr>
+        <tr>  
+          <td style="text-align: left;">Description:</td>
+          <td><div contenteditable class="sfsdescription"><%= row['description']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">iosNewVersionUrl:</td>
+          <td><div contenteditable class="sfsiosNewVersionUrl"><%= row['iosNewVersionUrl']%></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;">androidNewVersionUrl:</td>
+          <td style="position: absolute;"><div contenteditable class="sfsandroidNewVersionUrl"><%= row['androidNewVersionUrl']%></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td align="center"><button value="<%= row['id']%>" name="editsettingsfs" type="submit" onclick="copyContentSettingSFS(this.value);">Save</button></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+<br/>
+<table><tr><td>FromVersion:</td><td> <input id="fromversion" name="fromversion" type="text"></td></tr>
+<tr><td>ToVersion:</td><td> <input id="toversion" name="toversion" type="text"></td></tr>
+<tr><td>UpdateType:</td><td> <input id="updatetype" name="updatetype" type="text"> 0: upgrade only, 1: force upgrade</td></tr>
+<tr><td>Description:</td><td> <input id="description" name="description" type="text"></td></tr>
+<tr><td>iosNewVersionUrl:</td><td> <input id="iosnewversionurl" name="iosnewversionurl" type="text"></td></tr>
+<tr><td>androidNewVersionUrl:</td><td> <input id="androidnewversionurl" name="androidnewversionurl" type="text"></td></tr>
+<tr><td><button id="addversionsfs">Add Version SFS</button></td></tr>
+</table>
+
+<br/>
+<b>TournamentDuration</b>
+<table width="100%" class="ex1" style="font-size:13px; border:1px solid;">
+<tr><td>TournamentDuration (minutes):</td><td> <input id="tournamentDuration" name="tournamentDuration" type="text" value="<%= @tournamentDuration%>"></td></tr>
+<tr><td>Start time: (2014/2/25 17:05:00)</td><td> <input id="tournamentDuration_endtime" name="tournamentDuration_endtime" type="text" value="<%= @tournamentDuration_endtime%>"> UTC</td></tr>
+<tr><td>Rewards:</td><td> <input id="tournamentDuration_rewards" name="tournamentDuration_rewards" type="text" value="<%= @tournamentDuration_rewards%>"></td></tr>
+<tr><td><button id="publishtournamentDuration">Publish server</button></td></tr>
+</table>
+
+<br/>
+<b>Dagger Search Ranges</b>
+<table width="100%" class="ex1" style="font-size:13px; border:1px solid;">
+<tr><td>dagger_search_ranges:</td><td> <input id="dagger_ranges" name="dagger_ranges" type="text" value="<%= @dagger_ranges%>"></td><td><button id="publish_dagger_ranges">Publish server</button></td></tr>
+</table>
+<br/>
+<b>Match Limit</b>
+<table width="100%" class="ex1" style="font-size:13px; border:1px solid;">
+<tr><td>match_limit:</td><td> <input id="match_limit" name="match_limit" type="text" value="<%= @match_limit %>"></td><td><button id="publish_match_limit">Publish server</button></td></tr>
+</table>
+<br/>
+<b>Purchases</b>
+<table width="100%" class="ex1" style="font-size:13px; border:1px solid;">
+<tr><td>Identifiers english:</td><td> <input id="purchase_identifiers_en" name="purchase_identifiers_en" style="width: 1100px;" type="text" value="<%= @purchase_identifiers_en%>"></td></tr>
+<tr><td>Identifiers arabic:</td><td> <input id="purchase_identifiers_ar" name="purchase_identifiers_ar" style="width: 1100px;" type="text" value="<%= @purchase_identifiers_ar%>"></td></tr>
+<tr><td>Products:</td><td> <input id="purchase_products" name="purchase_products" type="text" style="width: 1100px;" value="<%= @purchase_products%>"></td></tr>
+<tr><td>Kochava:</td><td><input type="radio" name="mygroup" value="1"> On <input type="radio" name="mygroup" value="0"> Off</td></tr>
+<tr><td><button id="publishpurchase">Publish server</button></td></tr>
+</table>
+
+</div>
+
+<form action="/lumba/gamedata/setting" method="post">
+  Unuse Versions: <input type="text" name="unuseversions" id="unuseversions" style="width:270px"/>
+  <%= submit_tag( "Delete Unuse Version" ) %>
+</form>
+
+<script>
+var value = 0;
+$("input[name=mygroup][value=" + <%= @kochava_on%> + "]").attr('checked', 'checked');
+
+$( "#addversionsfs" ).click(function() {
+    post_to_url("/lumba/gamedata/setting", { actionaddversionsfs: "addversionsfs", fromversion: $( "#fromversion" ).val(), toversion: $( "#toversion" ).val(), updatetype: $( "#updatetype" ).val(), description: $( "#description" ).val(), iosnewversionurl: $( "#iosnewversionurl" ).val(), androidnewversionurl: $( "#androidnewversionurl" ).val() })
+});
+
+$( "#publish_dagger_ranges" ).click(function() {
+post_to_url("/lumba/gamedata/setting", { publish_dagger_ranges: "publish_dagger_ranges", dagger_ranges: $( "#dagger_ranges" ).val()})
+});
+
+$( "#publish_match_limit" ).click(function() {
+post_to_url("/lumba/gamedata/setting", { publish_match_limit: "publish_match_limit", match_limit: $( "#match_limit" ).val()})
+});
+
+$( "#publishtournamentDuration" ).click(function() {
+post_to_url("/lumba/gamedata/setting", { publishtournamentDuration: "publishtournamentDuration", tournamentDuration: $( "#tournamentDuration" ).val(),tournamentDuration_endtime: $("#tournamentDuration_endtime").val(), tournamentDuration_rewards: $("#tournamentDuration_rewards").val()})
+});
+
+$( "#saveasdefault" ).click(function() {
+post_to_url("/lumba/gamedata/setting", { saveasdefault: "saveasdefault", game_version: $( "#version" ).val()})
+});
+
+$( "#publishpurchase" ).click(function() {
+var selectedVal = "";
+var selected = $("input[name='mygroup']:checked");
+if (selected.length > 0) {
+    selectedVal = selected.val();
+}
+
+post_to_url("/lumba/gamedata/setting", { publishPurchase: "publishPurchase", purchase_identifiers_en: $( "#purchase_identifiers_en" ).val(), purchase_identifiers_ar: $( "#purchase_identifiers_ar" ).val(), purchase_products: $( "#purchase_products" ).val(), kochavastatus: selectedVal, game_version: $( "#version" ).val()})
+});
+</script>

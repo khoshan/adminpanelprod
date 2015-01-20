@@ -1,0 +1,43 @@
+Note	Type	Build Cost Elixir	Build Cost Dark Elixir	Build Cost Gold	Build Cost Gem	Level Require	Object Type	PrefabName	DisplayName	NumTileOneSide	HasBase
+lanternpole	0	6250	0	0	0	1	6	LanternPole	Lantern Pole	2	1
+flowerbed	1	0	0	6250	0	1	6	FlowerBed1	Flower Bed	2	1
+flag	2	0	0	0	65	1	6	Flag	Flag	2	1
+torch	3	6250	0	0	0	1	6	Torch	Torch	2	1
+cornflowerbed	4	0	0	6250	0	1	6	FlowerBed1	Cornflower Bed	2	1
+sunflowerbed	5	0	0	0	15	1	6	FlowerBed2	Sunflower Bed	2	1
+flowerbed	6	6250	0	0	0	1	6	FlowerBed3	Flower Bed	2	1
+palmtree	7	0	0	6250	0	1	6	DecoPalm	Palm Tree	3	1
+rallyflag	8	0	0	0	15	1	6	RallyFlag	Rally Flag	2	1
+deadpalm	9	1	0	0	0	1	6	SP_DeadPalm	Dead Palm	2	1
+flag	10	1	0	0	0	1	6	SP_Flag	Flag	2	1
+rallyflag	11	1	0	0	0	1	6	SP_RallyFlag	Rally Flag	2	1
+rocklarge	12	1	0	0	0	1	6	SP_RockLarge	Rock Large	2	1
+rockmedium	13	1	0	0	0	1	6	SP_RockMedium	Rock Medium	2	1
+rockgroup	14	1	0	0	0	1	6	SP_RocksGroup	Rock Group	3	1
+rocksmall	15	1	0	0	0	1	6	SP_RockSmall	Rock Small	2	1
+skull	16	1	0	0	0	1	6	SP_Skull	Skull	2	1
+torch	17	1	0	0	0	1	6	SP_Torch	Torch	2	1
+tree	18	1	0	0	0	1	6	SP_Tree	Tree	2	1
+camelskeleton	19	1	0	0	0	1	6	CamelSkeleton	Camel Skeleton	2	1
+FLAG_ABUDHABI	20	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_BAHRAIN	21	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_BAHRAIN2	22	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_EGYPT	23	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_FUJAIRAH	24	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_HAIL	25	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_HEJAZ	26	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_JORDAN1	27	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_JORDAN2	28	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_KUWAIT1	29	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_KUWAIT2	30	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_OMAN	31	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_QATAR1	32	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_QATAR2	33	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_SAUDI1	34	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_SAUDI2	35	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_SAUDI3	36	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_SAUDI4	37	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_SAUDI5	38	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_SYRIA	39	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_UAE	40	0	0	100000	0	1	6	Flag	 	2	1
+FLAG_UMMALQUWAIN	41	0	0	100000	0	1	6	Flag	 	2	1

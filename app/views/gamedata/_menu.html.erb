@@ -1,0 +1,145 @@
+<div id="appRefData">
+
+<table style="width:100%;">
+<tr>
+<td style="width: 70%;text-align: center;">
+  <form id="uploadform" accept-charset="UTF-8" action="/lumba/uploadgamedata" enctype="multipart/form-data" method="post">
+<font color="red">(Production server)</font> Game version:  <select id="version" name="game_version">
+    <option value="">-</option>
+    <% @version_array.each do |row|%>
+      <option value="<%= row['NextGameVersion']%>"><%= row['NextGameVersion']%></option>
+     <% end%>
+  </select>
+  </form>
+</td>
+
+<td>
+<form accept-charset="UTF-8" action="/lumba/gamedata/downloadgamedata" id="downloadform" method="post">
+  <input id="downloadgamedatafile" type="submit" value="Download gamedata files" name="submit">
+  </form>
+</td>
+
+</tr>
+</table>
+
+  <div id="cssmenu2">
+  <ul id="cssmenu2ul">
+    <li id="campaign" class="active"><a href="/lumba/gamedata/campaign"><span>Campaign</span></a></li>
+    <li id="combat_units"> <a href="/lumba/gamedata/combat_units">Combat Units</a></li>
+    <li id="unit_levels"> <a href="/lumba/gamedata/unit_levels">Unit Levels</a></li>
+    <li id="defensive_building"> <a href="/lumba/gamedata/defensive_building">Defensive Buildings</a></li>
+    <li id="defensive_buildings_level"> <a href="/lumba/gamedata/defensive_buildings_level">Defensive <br>Buildings Level</a></li>
+    <li id="resources_building_variables"> <a href="/lumba/gamedata/resources_building_variables">Resources <br>Building Variables</a></li>
+    <li id="army_building"> <a href="/lumba/gamedata/army_building">Army Buildings</a></li>
+    <li id="other_buildings"> <a href="/lumba/gamedata/other_buildings">Other Buildings</a></li>
+    <li id="town_hall_level"> <a href="/lumba/gamedata/town_hall_level">Town Hall Level</a></li>
+    <li id="decoration"> <a href="/lumba/gamedata/decoration">Decoration</a></li>
+    <li id="spell"> <a href="/lumba/gamedata/spell">Spell</a></li>
+    <li id="spell_level"> <a href="/lumba/gamedata/spell_level">Spell Level</a></li>
+    <li id="obstacles"> <a href="/lumba/gamedata/obstacles">Obstacles</a></li>
+    <li id="trophy"> <a href="/lumba/gamedata/trophy">Trophy</a></li>
+    <li id="acheivements"> <a href="/lumba/gamedata/acheivements">Acheivements</a></li>
+    <!-- <li id="newgame"> <a href="/lumba/gamedata/newgame">New Game</a></li> -->
+    <li id="setting" class="last"> <a href="/lumba/gamedata/setting">Settings</a></li>
+    <li id="purchases" class="last"> <a href="/lumba/gamedata/purchases">Purchases</a></li>
+  </ul>
+  </div>
+<br/><br/>
+  </div>
+<!--
+<table style="width:100%">
+<tr>
+<form accept-charset="UTF-8" action="/lumba/gamedata/googlespreadsheet" id="googlespreadsheetformgamedata" method="post">
+<td>Google spreadsheet url: <%= text_field_tag 'googleurlGamedata', @googleurlGamedata %></td>
+<td><input type="button" id="updategamedatafromgoogle" value="UpdateFromGoogle"/> </td>
+<td><input type="button" id="exportgamedatatogoogle" type="button" value="ExportToGoogle"/></td>
+</form>
+</tr>
+</table>
+-->
+<script>
+  $("#version").val('<%= @game_version%>');
+  $("#cssmenu2ul > li").removeClass("active");
+  $("#<%= @selectedWS%>").addClass("active");
+
+  $( "#uploadgamedatafile" ).click(function() {
+    if($( "#version" ).val() === "") {
+      alert("Please choose game version");
+      return false;
+    } else {
+      var pathname = window.location.pathname;
+      var input = "<input name='currenturl' type='hidden' value='" + pathname + "'>";
+      $('#uploadform').append($(input));
+      $('#uploadform').submit();
+    } 
+  });
+
+  $( "#downloadgamedatafile" ).click(function() {
+    if($( "#version" ).val() === "") {
+      alert("Please choose game version");
+      return false;
+    }
+    else {
+      var input = "<input name='game_version' type='hidden' value='" + $( "#version" ).val() + "'>";
+      $('#downloadform').append($(input));
+      $('#downloadform').submit();
+    }
+  });
+/*
+  $( "#updategamedatafromgoogle" ).click(function() {
+    if($( "#version" ).val() === "") {
+      alert("Please choose game version");
+      return false;
+    }
+    else {
+      $( "#dialog-goolge_form" ).dialog( "open" );
+      $( "#confirmgoogleaccount" ).click(function() {
+        var input = "<input name='game_version' type='hidden' value='" + $( "#version" ).val() + "'>";
+        var input1 = "<input name='commit' type='hidden' value='UpdateFromGoogle'>";
+        var input2 = "<input name='googleemail' type='hidden' value='" + $( "#googleemail" ).val() + "'>";
+        var input3 = "<input name='googlepassword' type='hidden' value='" + $( "#googlepassword" ).val() + "'>";
+        var input4 = "<input name='currenturl' type='hidden' value='" + window.location.pathname + "'>";
+        $('#googlespreadsheetformgamedata').append($(input));
+        $('#googlespreadsheetformgamedata').append($(input1));
+        $('#googlespreadsheetformgamedata').append($(input2));
+        $('#googlespreadsheetformgamedata').append($(input3));
+        $('#googlespreadsheetformgamedata').append($(input4));
+        $('#googlespreadsheetformgamedata').submit();
+        //exportfile(x, true, $( "#password" ).val());
+        $( "#dialog-goolge_form" ).dialog( "close" );
+      });
+    }
+  });
+
+$( "#exportgamedatatogoogle" ).click(function() {
+    if($( "#version" ).val() === "") {
+      alert("Please choose game version");
+      return false;
+    }
+    else {
+      $( "#dialog-goolge_form" ).dialog( "open" );
+      $( "#confirmgoogleaccount" ).click(function() {
+        var input = "<input name='game_version' type='hidden' value='" + $( "#version" ).val() + "'>";
+        var input1 = "<input name='commit' type='hidden' value='ExportToGoogle'>";
+        var input2 = "<input name='googleemail' type='hidden' value='" + $( "#googleemail" ).val() + "'>";
+        var input3 = "<input name='googlepassword' type='hidden' value='" + $( "#googlepassword" ).val() + "'>";
+        var input4 = "<input name='currenturl' type='hidden' value='" + window.location.pathname + "'>";
+        $('#googlespreadsheetformgamedata').append($(input));
+        $('#googlespreadsheetformgamedata').append($(input1));
+        $('#googlespreadsheetformgamedata').append($(input2));
+        $('#googlespreadsheetformgamedata').append($(input3));
+        $('#googlespreadsheetformgamedata').append($(input4));
+        $('#googlespreadsheetformgamedata').submit();
+        //exportfile(x, true, $( "#password" ).val());
+        $( "#dialog-goolge_form" ).dialog( "close" );
+      });
+    }
+  });
+*/
+
+  $('#version').change(function(){
+    var pathname = window.location.pathname;
+    post_to_url("/lumba/switchserver/switchversion", { game_version: $(this).val(),currenturl: pathname })
+  });
+
+</script>

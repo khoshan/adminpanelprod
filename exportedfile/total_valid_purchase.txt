@@ -1,0 +1,2 @@
+Date (00:00:00 - 23:59:59 PT)	Total unique paying
+2014-12-01	22677.41

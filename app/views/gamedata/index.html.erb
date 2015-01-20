@@ -1,0 +1,18 @@
+<%= render "layouts/main_menu" %>
+<%= render "gamedata/menu" %>
+To edit, simply click on the value you want to change
+<table class="ex1" style="font-size:13px">
+    <tbody>
+     <tr>
+       <% @data.each_key do |key|%>
+          <th><%= key%></th>
+       <% end%>
+     </tr>
+     
+     <% @data.each do |key, value|%>
+        <tr>
+          <td width="5%"><%= value%></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>

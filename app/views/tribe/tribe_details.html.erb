@@ -1,0 +1,29 @@
+<%= render "tribe/menu" %>
+<h2>Member List of tribe <%= @name %></h2>
+(Tribe ID: <%= @clanidd %>, Total Daggers: <%= @daggers %>, Tribe rank: <%= @rankk %>)
+<table class="gridtable" align='center'>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>UserId</th>
+      <th>Name</th>
+      <th>Level</th>
+      <th>Daggers</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% if !@tribedetails.nil?%>
+    <% rank = 0%>
+    <% @tribedetails.each_hash do |row|%>
+      <% rank = rank + 1%>
+      <tr>
+        <td><%= rank%></td>
+        <td><%= row['userId']%></td>
+        <td><%=row['name']%></td>
+        <td><%= row['level']%></td>
+        <td><%= row['trophies']%></td>
+      </tr>
+    <%end%>
+  <%end%>
+  </tbody>
+</table>

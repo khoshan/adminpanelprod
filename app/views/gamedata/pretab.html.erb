@@ -1,0 +1,18 @@
+<%= render "gamedata/menu" %>
+<%=button_to "Export pretab", :action=>'pretab', :exportpretab=>'exportpretab'%>
+<table class="ex1" style="font-size:13px" id="tblprefab">
+    <tbody>     <tr><th>pkId</th><th>PrefabName</th><th>PrefabPath</th><th>preload</th><th>cullAbove</th><th>lastMod</th><th>Action</th></tr>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td width="5%" align="center"><div class="prefplID"><%= row['pkID']%></td>
+          <td width="20%" align="center"><div contenteditable class="prefPrefabName"><%= row['PrefabName']%></td>
+          <td width="30%" align="center"><div contenteditable class="prefPrefabPath"><%= row['PrefabPath']%></td>
+          <td width="30%" align="center"><div contenteditable class="prefpreload"><%= row['preload']%></td>
+          <td width='15%' align="center"><div contenteditable class="prefcullAbove"><%= row['cullAbove']%></td>
+          <td width='15%' align="center"><div contenteditable><%= row['lastMod'].in_time_zone(Time.zone)%></td>
+          <td width='15%' align="center"><button value="<%= row['pkID']%>" name="editprefab" type="submit" onclick="copyContentPrefab(this.value);">Save</button></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+</div>

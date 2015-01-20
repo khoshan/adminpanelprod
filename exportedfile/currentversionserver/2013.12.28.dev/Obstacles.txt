@@ -1,0 +1,17 @@
+Type name	Type	Removal time	Experience Gained	Removal Cost Gold	Removal Cost Elixir	Respawn Weight	Removal Benefit Elixir	Removal Benefit Dark Elixir	Init Position	Object Type	PrefabName	DisplayName	NumTileOneSide	HasBase
+Mushroom	0	10	3		100	0.10			4,4,34,6,19,14,20,31	7	Bush2	Bush	2	1
+Bush	1	15	3		250	0.20			15,5,18,8,32,20	7	Bush1	Bush	2	1
+Trunk	2	30	5		1000	0.10			28,4,32,3,37,5,12,14,9,22	7	Tree	Tree	2	1
+Trunk	3	30	5		1000	0.10			4,14,15,35	7	DeadPalm	Dead Palm	2	1
+Trunk	4	30	5		1000	0.20			3,25,36,13	7	CamelSkeleton	Camel Skeleton	2	1
+Tree	5	30	5		2000	0.20			6,24,6,26,12,25,37,19	7	MiniPalm	Mini Palm	2	1
+Tree	6	45	6		7500	0.05			11,4,23,4,30,7,4,19,12,31,22,36,27,33,36,28	7	PalmTree	Palm Tree	2	1
+Tree	7	60	7		10000	0.05			31,12,7,33	7	PalmGroup	Palm Group	2	1
+Stone	8	20	4	500					7,28,20,34,31,25	7	SmallRock	Small Rock	2	1
+Stone	9	20	4	500					4,23,7,22	7	XSmallRocks	Xsmall Rocks	2	1
+Stone	10	20	4	500					12,23,31,30	7	TinyRocks	Tiny Rocks	2	1
+Stone	11	20	4	500					8,3,20,4,9,9	7	CrackedRock	Cracked Rock	2	1
+Stone	12	45	6	10000					24,9,12,27,34,23	7	MediumRock	Medium Rock	2	1
+Stone	13	60	7	20000					5,6,9,12,22,13,36,8,9,28,35,34	7	LargeRock	Large Rock	3	1
+Tombstone	14	0	0	0			20			7	Grave_Light	Grave Light	1	0
+Hero Tombstone	15	0	0	0				5		7	Grave_Dark	Grave Dark	1	0

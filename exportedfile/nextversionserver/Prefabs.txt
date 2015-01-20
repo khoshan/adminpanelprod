@@ -1,0 +1,222 @@
+Prefab name	prefab path	preload	cull above
+ShopItem	Prefabs/Screens/UI/Shop/ShopItem	1	10
+TreasureGem	Prefabs/Screens/UI/Shop/TreasureGem	1	1
+TreasureResource	Prefabs/Screens/UI/Shop/TreasureResource	1	1
+UnitTraining	Prefabs/Screens/UI/UnitTraining	1	5
+SpellReadyItem	Prefabs/Screens/UI/SpellReadyItem	1	5
+TrainingList	Prefabs/Screens/UI/TrainingList	1	1
+UpgradeUnitIcon	Prefabs/Screens/UI/UpgradeUnitIcon	1	18
+DetailRow	Prefabs/Screens/UI/DetailRow	1	6
+InfoBarRow	Prefabs/Screens/UI/InfoBarRow	1	3
+EmptyItem	Prefabs/Screens/UI/EmptyItem	1	30
+ClanIconPrefab	Prefabs/Screens/UI/ClanIconPrefab	1	30
+Tab	Prefabs/Screens/UI/Clans/Tab	1	4
+MyClanRow	Prefabs/Screens/UI/Clans/MyClanRow	1	20
+ViewClanRow	Prefabs/Screens/UI/Clans/ViewClanRow	1	20
+ClanRow	Prefabs/Screens/UI/Clans/ClanRow	1	50
+0TitleBox	Prefabs/Screens/UI/Clans/0TitleBox	1	1
+AskToJoinClanPrefab	Prefabs/Screens/UI/Clans/AskToJoinClanPrefab	1	20
+RequestTroopRow	Prefabs/Screens/UI/Clans/RequestTroopRow	1	5
+ChatMessagePrefab	Prefabs/Screens/UI/Clans/ChatMessagePrefab	1	20
+TopClanRow	Prefabs/Screens/UI/Leaderboard/TopClanRow	1	30
+TournamentBox	Prefabs/Screens/UI/Leaderboard/TournamentBox	1	1
+LeagueBox	Prefabs/Screens/UI/Leaderboard/LeagueBox	1	1
+LeagueRow	Prefabs/Screens/UI/Leaderboard/LeagueRow	1	20
+PassedLeagueRow	Prefabs/Screens/UI/Leaderboard/PassedLeagueRow	1	5
+CampaignNode	Prefabs/Screens/UI/UICampaign/CampaignNode	1	10
+AchievementRow	Prefabs/Screens/UI/AchievementRow	1	5
+DefenseInfoRow	Prefabs/Screens/UI/DefenseInfoRow	1	5
+FriendItem	Prefabs/Screens/UI/FriendItem	1	10
+DonateUnit	Prefabs/Screens/UI/DonateUnit	1	5
+TrainingUnitItem	Prefabs/Screens/UI/TrainingUnitItem	1	15
+UnitInfo	Prefabs/Screens/UI/UnitInfo	1	15
+UsedUnitItem	Prefabs/Screens/UI/UsedUnitItem	1	11
+BattleItem	Prefabs/Screens/UI/BattleItem	1	10
+MessageRow	Prefabs/Screens/UI/Inbox/MessageRow	1	5
+UIShop	Prefabs/Screens/UI/Shop/UIShop	1	1
+UIShopResources	Prefabs/Screens/UI/Shop/UIShopResources	1	1
+UIShopTreasure	Prefabs/Screens/UI/Shop/UIShopTreasure	1	1
+UIShopDecorations	Prefabs/Screens/UI/Shop/UIShopDecorations	1	1
+UIShopArmy	Prefabs/Screens/UI/Shop/UIShopArmy	1	1
+UIShopDefenses	Prefabs/Screens/UI/Shop/UIShopDefenses	1	1
+Bounder	Prefabs/Screens/UI/Shop/Bounder	1	1
+UIShopShield	Prefabs/Screens/UI/Shop/UIShopShield	1	1
+UICampaign	Prefabs/Screens/UI/UICampaign	1	1
+UIShopBuilder	Prefabs/Screens/UI/Shop/UIShopBuilder	1	1
+PopupLeaderboard	Prefabs/Screens/UI/Popup/PopupLeaderboard	1	1
+PopupCreateSpells	Prefabs/Screens/UI/Popup/PopupCreateSpells	1	1
+PopupDefenseNotice	Prefabs/Screens/UI/Popup/PopupDefenseNotice	1	1
+PopupInbox	Prefabs/Screens/UI/Popup/PopupInbox	1	1
+PopupAchievements	Prefabs/Screens/UI/Popup/PopupAchievements	1	1
+PopupHelp	Prefabs/Screens/UI/Popup/PopupHelp	1	1
+PopupAbout	Prefabs/Screens/UI/Popup/PopupAbout	1	1
+PopupResearch	Prefabs/Screens/UI/Popup/PopupResearch	1	1
+PopupRebuildClanCastle	Prefabs/Screens/UI/Popup/PopupRebuildClanCastle	1	1
+PopupInfo	Prefabs/Screens/UI/Popup/PopupInfo	1	1
+PopupError	Prefabs/Screens/UI/Popup/PopupError	1	1
+PopupClan	Prefabs/Screens/UI/Popup/PopupClan	1	1
+PopupSettings	Prefabs/Screens/UI/Popup/PopupSettings	1	1
+PopupLanguage	Prefabs/Screens/UI/Popup/PopupLanguage	1	1
+Popup1stStart	Prefabs/Screens/UI/Popup/Popup1stStart	1	1
+PopupDonateTroops	Prefabs/Screens/UI/Popup/PopupDonateTroops	1	1
+PopupFriends	Prefabs/Screens/UI/Popup/PopupFriends	1	1
+PopupTraining	Prefabs/Screens/UI/Popup/PopupTraining	1	1
+AnimSplat	Prefabs/Effects/Particle System/AnimSplat	1	10
+AnimSplat_big	Prefabs/Effects/Particle System/AnimSplat_big	1	10
+AnimSplat_dark	Prefabs/Effects/Particle System/AnimSplat_dark	1	10
+ArcherQueenHit	Prefabs/Effects/Particle System/ArcherQueenHit	1	10
+BarbarianKingHit	Prefabs/Effects/Particle System/BarbarianKingHit	1	10
+Black Smoke Particle System	Prefabs/Effects/Particle System/Black Smoke Particle System	1	10
+BuilderHutZZZ	Prefabs/Effects/Particle System/BuilderHutZZZ	1	10
+BuildingDestroyed	Prefabs/Effects/Particle System/BuildingDestroyed	1	10
+CannonShoot	Prefabs/Effects/Particle System/CannonShoot	1	10
+CircleTarget	Prefabs/Effects/Particle System/CircleTarget	1	10
+CompleteBD	Prefabs/Effects/Particle System/CompleteBD	1	10
+darkElixir	Prefabs/Effects/Particle System/darkElixir	1	10
+Deploy	Prefabs/Effects/Particle System/Deploy	1	10
+Diamond	Prefabs/Effects/Particle System/Diamond	1	10
+Elixir	Prefabs/Effects/Particle System/Elixir	1	10
+ElixirStorageDestroyed	Prefabs/Effects/Particle System/ElixirStorageDestroyed	1	10
+Exp	Prefabs/Effects/Particle System/Exp	1	10
+Explosion	Prefabs/Effects/Particle System/Explosion	1	10
+Explosion1	Prefabs/Effects/Particle System/Explosion1	1	10
+ExplosiveArrow	Prefabs/Effects/Particle System/ExplosiveArrow	1	10
+FlashSmoke	Prefabs/Effects/Particle System/FlashSmoke	1	10
+Gargoyle_hit	Prefabs/Effects/Particle System/Gargoyle_hit	1	10
+GhostEffect	Prefabs/Effects/Particle System/GhostEffect	1	10
+Gold	Prefabs/Effects/Particle System/Gold	1	10
+Grass	Prefabs/Effects/Particle System/Grass	1	10
+HeroDie	Prefabs/Effects/Particle System/HeroDie	1	10
+Hit	Prefabs/Effects/Particle System/Hit	1	10
+MortarExplosion	Prefabs/Effects/Particle System/MortarExplosion	1	10
+MoveBD	Prefabs/Effects/Particle System/MoveBD	1	2
+MovebuildingParticle	Prefabs/Effects/Particle System/MovebuildingParticle	1	10
+Ring	Prefabs/Effects/Particle System/Ring	1	10
+Rock	Prefabs/Effects/Particle System/Rock	1	10
+SmokeSpringTrap	Prefabs/Effects/Particle System/SmokeSpringTrap	1	10
+SmokeSystem	Prefabs/Effects/Particle System/SmokeSystem	1	10
+Stone	Prefabs/Effects/Particle System/Stone	1	10
+White Smoke Particle System	Prefabs/Effects/Particle System/White Smoke Particle System	1	10
+Wood	Prefabs/Effects/Particle System/Wood	1	10
+Master_AirBombExplosion_01	Prefabs/Effects/Particle System/Master_AirBombExplosion_01	1	6
+Master_AirBombExplosion_02	Prefabs/Effects/Particle System/Master_AirBombExplosion_02	1	6
+Master_LightningSpell_FBX	Prefabs/Effects/SpellEffect_FBX/LightningSpell_FBX/Master_LightningSpell_FBX	1	6
+Master_HealSpell_FBX	Prefabs/Effects/SpellEffect_FBX/HealSpell_FBX/Master_HealSpell_FBX	1	6
+Master_JumpSpell_FBX	Prefabs/Effects/SpellEffect_FBX/JumpSpell_FBX/Master_JumpSpell_FBX	1	6
+Master_RageSpell_FBX	Prefabs/Effects/SpellEffect_FBX/RageSpell_FBX/Master_RageSpell_FBX	1	6
+Archer	Prefabs/Units/Archer/Archer	1	10
+ArcherQueen	Prefabs/Units/ArcherQueen/ArcherQueen	1	10
+Falconer	Prefabs/Units/Falconer/Falconer	1	10
+Falcon	Prefabs/Units/Falcon/Falcon	1	10
+Mercenary	Prefabs/Units/Mercenary/Mercenary	1	10
+BarbarianKing	Prefabs/Units/BarbarianKing/BarbarianKing	1	10
+Builder	Prefabs/Units/Builder/Builder	1	5
+Civilian	Prefabs/Units/Civilian/Civilian	1	5
+Dragon	Prefabs/Units/Dragon/Dragon	1	10
+Giant	Prefabs/Units/Giant/Giant	1	10
+Goblin	Prefabs/Units/Goblin/Goblin	1	10
+Healer	Prefabs/Units/Healer/Healer	1	10
+HogRider	Prefabs/Units/HogRider/HogRider	1	10
+Minion	Prefabs/Units/Minion/Minion	1	10
+Pekka	Prefabs/Units/Pekka/Pekka	1	10
+Valkyrie	Prefabs/Units/Valkyrie/Valkyrie	1	10
+Camel	Prefabs/Units/Camel/Camel	1	10
+Wizard	Prefabs/Units/Wizard/Wizard	1	10
+AirBomb	Prefabs/TileObjects/Buildings/AirBomb/AirBomb	1	5
+RockThrower	Prefabs/TileObjects/Buildings/RockThrower/RockThrower	1	5
+ArcherQueenAltar	Prefabs/TileObjects/Buildings/ArcherQueenAltar/ArcherQueenAltar	1	5
+ArcherTower	Prefabs/TileObjects/Buildings/ArcherTower/ArcherTower	1	5
+ArmyCamp	Prefabs/TileObjects/Buildings/ArmyCamp/ArmyCamp	1	5
+AutoCannon	Prefabs/TileObjects/Buildings/AutoCannon/AutoCannon	1	5
+BarbarianKingAltar	Prefabs/TileObjects/Buildings/BarbarianKingAltar/BarbarianKingAltar	1	5
+TrainingGrounds	Prefabs/TileObjects/Buildings/TrainingGrounds/TrainingGrounds	1	5
+StickOfTNT	Prefabs/TileObjects/Buildings/StickOfTNT/StickOfTNT	1	5
+BuilderHut	Prefabs/TileObjects/Buildings/BuilderHut/BuilderHut	1	5
+JavelinLauncher	Prefabs/TileObjects/Buildings/JavelinLauncher/JavelinLauncher	1	5
+Majlis	Prefabs/TileObjects/Buildings/Majlis/Majlis	1	5
+DarkBarracks	Prefabs/TileObjects/Buildings/DarkBarracks/DarkBarracks	1	5
+OilDerrick	Prefabs/TileObjects/Buildings/OilDerrick/OilDerrick	1	5
+OilStorage	Prefabs/TileObjects/Buildings/OilStorage/OilStorage	1	5
+Decoration1	Prefabs/TileObjects/Buildings/Decoration1/Decoration1	1	5
+Decoration2	Prefabs/TileObjects/Buildings/Decoration2/Decoration2	1	5
+Decoration3	Prefabs/TileObjects/Buildings/Decoration3/Decoration3	1	5
+Well	Prefabs/TileObjects/Buildings/Well/Well	1	5
+ElixirStorage	Prefabs/TileObjects/Buildings/ElixirStorage/ElixirStorage	1	5
+CrateOfTNT	Prefabs/TileObjects/Buildings/CrateOfTNT/CrateOfTNT	1	5
+Carpenter	Prefabs/TileObjects/Buildings/Carpenter/Carpenter	1	5
+Treasury	Prefabs/TileObjects/Buildings/Treasury/Treasury	1	5
+WaterJug	Prefabs/TileObjects/Buildings/WaterJug/WaterJug	1	5
+GoldChest	Prefabs/TileObjects/Buildings/GoldChest/GoldChest	1	5
+ArchersNest	Prefabs/TileObjects/Buildings/ArchersNest/ArchersNest	1	5
+StagingArea	Prefabs/TileObjects/Buildings/StagingArea/StagingArea	1	5
+HiddenDartBlower	Prefabs/TileObjects/Buildings/HiddenDartBlower/HiddenDartBlower	1	5
+TeachersTent	Prefabs/TileObjects/Buildings/TeachersTent/TeachersTent	1	5
+Catapult	Prefabs/TileObjects/Buildings/Catapult/Catapult	1	5
+SeekingAirBomb	Prefabs/TileObjects/Buildings/SeekingAirBomb/SeekingAirBomb	1	5
+HerbalistShop	Prefabs/TileObjects/Buildings/HerbalistShop/HerbalistShop	1	5
+SpringTrap	Prefabs/TileObjects/Buildings/SpringTrap/SpringTrap	1	5
+Diwan	Prefabs/TileObjects/Buildings/Diwan/Diwan	1	1
+WallBase	Prefabs/TileObjects/Buildings/WallBase/WallBase	1	50
+WallConnLeft	Prefabs/TileObjects/Buildings/WallConnLeft/WallConnLeft	1	50
+WallConnRight	Prefabs/TileObjects/Buildings/WallConnRight/WallConnRight	1	50
+BombThrower	Prefabs/TileObjects/Buildings/BombThrower/BombThrower	1	2
+AutoCannon	Prefabs/TileObjects/Buildings/AutoCannon/AutoCannon	1	2
+Destroyed	Prefabs/TileObjects/Buildings/Misc/ConstructionAndDestroyed/Destroyed	1	5
+UnderConstruction	Prefabs/TileObjects/Buildings/Misc/ConstructionAndDestroyed/UnderConstruction	1	5
+Fence	Prefabs/TileObjects/Buildings/Misc/ConstructionAndDestroyed/BuildingFence/Fence	1	5
+RopeLeft	Prefabs/TileObjects/Buildings/Misc/ConstructionAndDestroyed/BuildingFence/RopeLeft	1	5
+RopeRight	Prefabs/TileObjects/Buildings/Misc/ConstructionAndDestroyed/BuildingFence/RopeRight	1	5
+Bush	Prefabs/TileObjects/Obstacles/Bush	1	2
+DarkTombStone	Prefabs/TileObjects/Obstacles/DarkTombStone	1	2
+Mushroom	Prefabs/TileObjects/Obstacles/Mushroom	1	2
+StoneLarge	Prefabs/TileObjects/Obstacles/StoneLarge	1	2
+StonePillar	Prefabs/TileObjects/Obstacles/StonePillar	1	2
+StoneSmall	Prefabs/TileObjects/Obstacles/StoneSmall	1	2
+StoneSmall2	Prefabs/TileObjects/Obstacles/StoneSmall2	1	2
+StoneSmall3	Prefabs/TileObjects/Obstacles/StoneSmall3	1	2
+StoneSmall4	Prefabs/TileObjects/Obstacles/StoneSmall4	1	2
+TombStone	Prefabs/TileObjects/Obstacles/TombStone	1	2
+TreeLarge	Prefabs/TileObjects/Obstacles/TreeLarge	1	2
+TreeMedium	Prefabs/TileObjects/Obstacles/TreeMedium	1	2
+TreeSmall	Prefabs/TileObjects/Obstacles/TreeSmall	1	2
+Trunk1	Prefabs/TileObjects/Obstacles/Trunk1	1	2
+Trunk2	Prefabs/TileObjects/Obstacles/Trunk2	1	2
+Trunk_fallen	Prefabs/TileObjects/Obstacles/Trunk_fallen	1	2
+UnitShadow	Prefabs/Screens/Common/Misc/UnitShadow	1	5
+FloorHightLight	Prefabs/Screens/Common/Objects/FloorHightLight	1	1
+BorderHighLight	Prefabs/Screens/Common/Objects/BorderHighLight	1	50
+BorderHighLight2	Prefabs/Screens/Common/Objects/BorderHighLight2	1	50
+TextMessage	Prefabs/Screens/Common/Misc/TextMessage	1	1
+Circle	Prefabs/Screens/Common/Misc/Circle	1	1
+SelectionGreen	Prefabs/Screens/Common/Objects/HUDTileObject/SelectionGreen	1	5
+SelectionRed	Prefabs/Screens/Common/Objects/HUDTileObject/SelectionRed	1	5
+Grass1	Prefabs/Screens/Common/Objects/HUDTileObject/Grass1	1	5
+Grass2	Prefabs/Screens/Common/Objects/HUDTileObject/Grass2	1	5
+Grass3	Prefabs/Screens/Common/Objects/HUDTileObject/Grass3	1	5
+BuildTimeLabel	Prefabs/Screens/Common/Objects/HUDTileObject/BuildTimeLabel	1	10
+BtnCancel	Prefabs/Screens/Common/Objects/HUDTileObject/BtnCancel	1	10
+HeroHealthBar	Prefabs/Screens/Common/Objects/HUDTileObject/HeroHealthBar	1	2
+BtnHeroCrown	Prefabs/Screens/Common/Objects/HUDTileObject/BtnHeroCrown	1	2
+BtnConfirm	Prefabs/Screens/Common/Objects/HUDTileObject/BtnConfirm	1	10
+LevelLabel	Prefabs/Screens/Common/Objects/HUDTileObject/LevelLabel	1	10
+NameLabel	Prefabs/Screens/Common/Objects/HUDTileObject/NameLabel	1	10
+DirectionArrows	Prefabs/Screens/Common/Objects/HUDTileObject/DirectionArrows	1	1
+EnemyHealthProgress	Prefabs/Screens/Common/Objects/HUDTileObject/EnemyHealthProgress	1	10
+HealthProgress	Prefabs/Screens/Common/Objects/HUDTileObject/HealthProgress	1	10
+CharacterHealthProgress	Prefabs/Screens/Common/Objects/HUDTileObject/CharacterHealthProgress	1	30
+TrainingUnitIcon	Prefabs/Screens/Common/Objects/HUDTileObject/TrainingUnitIcon	1	6
+TrainingProgress	Prefabs/Screens/Common/Objects/HUDTileObject/TrainingProgress	1	6
+BuildProgress	Prefabs/Screens/Common/Objects/HUDTileObject/BuildProgress	1	5
+BoostAnimation	Prefabs/Screens/Common/Objects/HUDTileObject/BoostAnimation	1	1
+CollectMarkGoldMine	Prefabs/Screens/Common/Objects/HUDTileObject/CollectMarkGoldMine	1	5
+CollectMarkElixir	Prefabs/Screens/Common/Objects/HUDTileObject/CollectMarkElixir	1	5
+CollectMarkDarkElixir	Prefabs/Screens/Common/Objects/HUDTileObject/CollectMarkDarkElixir	1	5
+CollectLabel	Prefabs/Screens/Common/Objects/HUDTileObject/CollectLabel	1	5
+SpawnUnitResult	Prefabs/Screens/FightScreen/SpawnUnitResult	1	12
+SpawnUnit	Prefabs/Screens/FightScreen/SpawnUnit	1	11
+Floor	Prefabs/Screens/Common/Misc/Floor	1	1
+GameScreenUI	Prefabs/Screens/UI/GameScreenUI	1	1
+FightScreenUI	Prefabs/Screens/FightScreen/FightScreenUI	1	1
+HelpText	Prefabs/Screens/UI/HelpText	1	20
+StatusLabel	Prefabs/Screens/Common/Objects/HUDTileObject/StatusLabel	1	10
+StatusImage	Prefabs/Screens/Common/Objects/HUDTileObject/StatusImage	1	10

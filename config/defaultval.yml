@@ -1,0 +1,25 @@
+SettingInfo:
+  SaveInterval: 29
+  IapRatio: 0.7
+  Gem_Range_For_Calculate_Time: '1,20,260,1000'
+  Gold_Water_Rangei: '100,1000,10000,100000,1000000,10001250'
+  Oil_Range: '1,10,100,1000,10000,100000'
+  Gem_Range_For_Calculate_Resource: '1,5,25,125,600,3000'
+  TERM_SERVICE_LINK_EN: 'http://www.lum.ba/en/about/terms-of-service'
+  TERM_SERVICE_LINK_AR: 'http://www.lum.ba/ar/about/terms-of-service'
+  POLICY_LINK_EN: 'http://www.lum.ba/en/about/privacy/privacy-policy'
+  POLICY_LINK_AR: 'http://www.lum.ba/ar/about/privacy/privacy-policy'
+  FACEBOOK_LINK: 'https://www.facebook.com/faz3agame'
+  TWITTER_LINK: 'https://twitter.com/Faz3aGame'
+  COME_BACK_NOTIFICATION_DURATION: 172800
+  SIGNATURE_ORDER: 'SIGNATURE_UTC_TIME,SIGNATURE_CLIENT_VERSION,SIGNATURE_SFS_VERSION,SIGNATURE_PLAYER_ID,SIGNATURE_CATEGORY,SIGNATURE_LANGUAGE,SIGNATURE_DEVICE_TYPE,SIGNATURE_OS_VERSION'
+  SHOULD_FIND_SFS_SERVER: 0
+  GAME_MAINTAIN: 0
+TournamentDurations:
+  TournamentDuration: 10080
+  Starttime: '2014/2/25 17:05:00'
+  Rewards: '2500,1250,750'
+Purchases:
+  Identifiers_en: 'ba.lum.tribalrivals.pearls.xsmall.en,ba.lum.tribalrivals.pearls.small.en,ba.lum.tribalrivals.pearls.medium.en,ba.lum.tribalrivals.pearls.large.en,ba.lum.tribalrivals.pearls.xlarge.en'
+  Identifiers_ar: 'ba.lum.tribalrivals.pearls.xsmall.ar,ba.lum.tribalrivals.pearls.small.ar,ba.lum.tribalrivals.pearls.medium.ar,ba.lum.tribalrivals.pearls.large.ar,ba.lum.tribalrivals.pearls.xlarge.ar'
+  Products: '625,1500,3125,8125,17500'

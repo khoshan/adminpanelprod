@@ -1,0 +1,2 @@
+userId	Name	Locale	FacebookId	Email	Level
+28_f950e5e4-ad7a-11e3-99ce-22000ad02fa9	Numb	VN	""	test@gmail.com	87

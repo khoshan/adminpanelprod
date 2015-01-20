@@ -1,0 +1,379 @@
+<a href="<%= @error_string%>"><%= @error_string%></a>
+<br/>
+TimeZone:<input type="radio" name="timetoget" value="1"> UTC <input type="radio" name="timetoget" value="0" checked> (GMT-07:00) Pacific Time (US & Canada)
+<br/>
+<div style="width:100%;text-align:left;font-size:15px;"><u><b>DAU/MAU</b></u></div>
+<table>
+<tr>
+<td><input type="radio" name="mygroup" value="1"> IOS English <input type="radio" name="mygroup" value="2"> IOS Arabic</td>
+<td><input type="radio" name="mygroup" value="3"> Android English <input type="radio" name="mygroup" value="4"> Android Arabic</td>
+<td><input type="radio" name="mygroup" value="0"> Total</td>
+<td></td>
+</tr>
+<tr>
+<td>From Date:</td><td><input type="text" id="daustartdate" class="datepicker" />00:00:00</td>
+<td>To Date:</td><td><input type="text" id="dauenddate" class="datepicker" />23:59:59</td>
+<td><button name="dailyactive" type="submit" id="dailyactive">Daily Active User</button></td>
+<td><button name="newplaying" type="submit" id="newplaying">New Playing User</button></td>
+</tr>
+<tr>
+<!-- <td>From Month :</td><td><input type='text' id='txtDateFrom' /></td> -->
+<td>To Date :</td><td><input type='text' id='txtDateTo' /></td>
+<td><button name="monthlyactive" type="submit" id="monthlyactive">Monthly Active User</button></td>
+</tr>
+</table>
+
+<br/><div style="width:100%;text-align:left;font-size:15px;"><u><b>CCU</b></u></div>
+<table>
+<tr>
+<td>Date:</td><td><input type="text" id="ccustartdate" class="datepicker" />00:00:00-23:59:59</td>
+<td><button name="ccu" type="submit" id="ccu">CCU</button></td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td>Date:</td><td><input type="text" id="ccustartdatetime" class="datepicker" /> Time:<input type="text" id="ccutime" name="ccutime" style="width:150px;"/>(in PT time)</td>
+<td><button name="ccufromtime" type="submit" id="ccufromtime">CCU To Prev 24H</button></td>
+</tr>
+</table>
+
+<br/>
+<div style="width:100%;text-align:left;font-size:15px;"><u><b>Global/Tribe chat</b></u></div>
+<table>
+<tr>
+<td>From Date:</td><td><input type="text" id="globalchatstartdate" class="datepicker" />00:00:00</td>
+<td>To Date:</td><td><input type="text" id="globalchatenddate" class="datepicker" />23:59:59</td>
+<td><button name="globalchat" type="submit" id="globalchat">Global Chat</button></td>
+<td><button name="tribechat" type="submit" id="tribechat">Tribe Chat</button></td>
+</tr>
+</table>
+<br/>
+<div style="width:100%;text-align:left;font-size:15px;"><u><b>Login/Logout time</b></u></div>
+<table>
+<tr>
+<td>UserId:<input type="text" id="userId" name="userId" style="width:250px;"/></td>
+<td>Date:</td><td><input type="text" id="useractionstartdate" class="datepicker" />00:00:00-23:59:59</td>
+<td><button name="useraction" type="submit" id="useraction">Login/Logout</button></td>
+</tr>
+</table>
+<br/><div style="width:100%;text-align:left;font-size:15px;"><u><b>Number of unique users</b></u></div>
+<table>
+<tr>
+<td>Date:</td><td><input type="text" id="numberofuniqueuserstildate" class="datepicker" />23:59:59</td>
+<td><button name="numberofuniqueusers" type="submit" id="numberofuniqueusers">Number of unique users</button></td>
+</tr>
+</table>
+
+<script>
+$("input[name=mygroup][value=0]").attr('checked', 'checked');
+$('#daustartdate').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yy-mm-dd',
+    });
+$('#dauenddate').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yy-mm-dd',
+    });
+
+$('#globalchatstartdate').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yy-mm-dd',
+    });
+$('#globalchatenddate').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yy-mm-dd',
+    });
+
+$('#ccustartdate').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yy-mm-dd',
+    });
+
+$('#ccustartdatetime').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yy-mm-dd',
+    });
+
+$('#txtDateFrom').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yy-mm',
+    });
+
+$('#txtDateTo').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        //dateFormat: 'yy-mm',
+        dateFormat: 'yy-mm-dd',
+    });
+
+$('#numberofuniqueuserstildate').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'yy-mm-dd',
+    });
+
+$( "#useraction" ).click(function() {
+    if($( "#userId" ).val() === "") {
+        alert("Please input userId");
+        return false;
+    }
+    if($( "#useractionstartdate" ).val() === "") {
+        alert("Please choose date");
+        return false;
+    } 
+    var useractionstartdate = $("#useractionstartdate").val() + " 00:00:00 -07:00"
+    var useractionenddate = $("#useractionstartdate").val() + " 23:59:59 -07:00"
+
+    var selectedtimezone = $("input[name='timetoget']:checked");
+    var selectedValtimezone = "";
+    if (selectedtimezone.length > 0) {
+      selectedValtimezone = selectedtimezone.val();
+    } else {
+      alert("Please choose timezone");
+      return false;
+    }
+    if (selectedValtimezone == 1){
+      useractionstartdate = $("#useractionstartdate").val() + " 00:00:00 +00:00"
+      useractionenddate = $("#useractionstartdate").val() + " 23:59:59 +00:00"
+    }
+
+    post_to_url("/lumba/dashboard", { useractionview: "useractionview", useractionstartdate: useractionstartdate, useractionenddate: useractionenddate, userid: $( "#userId" ).val(), timetocheck: selectedValtimezone })
+});
+
+$( "#ccu" ).click(function() {
+    if($( "#ccustartdate" ).val() === "") {
+        alert("Please choose date");
+        return false;
+    } 
+    var ccustartdate = $("#ccustartdate").val() + " 00:00:00 -07:00"
+    var ccuenddate = $("#ccustartdate").val() + " 23:59:59 -07:00"
+
+    var selectedtimezone = $("input[name='timetoget']:checked");
+    var selectedValtimezone = "";
+    if (selectedtimezone.length > 0) {
+      selectedValtimezone = selectedtimezone.val();
+    } else {
+      alert("Please choose timezone");
+      return false;
+    }
+    if (selectedValtimezone == 1){
+      ccustartdate = $("#ccustartdate").val() + " 00:00:00 +00:00"
+      ccuenddate = $("#ccustartdate").val() + " 23:59:59 +00:00"
+    }
+    post_to_url("/lumba/dashboard", { ccuview: "ccuview", ccustartdate: ccustartdate, ccuenddate: ccuenddate, timetocheck: selectedValtimezone })
+});
+
+$( "#ccufromtime" ).click(function() {
+    if($( "#ccustartdatetime" ).val() === "") {
+        alert("Please choose date");
+        return false;
+    } 
+    ccutime
+    if($( "#ccutime" ).val() === "") {
+        alert("Please input time");
+        return false;
+    } 
+    var ccustartdatetime = $("#ccustartdatetime").val() + " " + $("#ccutime").val() + " -07:00"
+
+    var selectedtimezone = $("input[name='timetoget']:checked");
+    var selectedValtimezone = "";
+    if (selectedtimezone.length > 0) {
+      selectedValtimezone = selectedtimezone.val();
+    } else {
+      alert("Please choose timezone");
+      return false;
+    }
+    if (selectedValtimezone == 1){
+      ccustartdatetime = $("#ccustartdatetime").val() + " " + $("#ccutime").val() + " +00:00"
+    }
+    post_to_url("/lumba/dashboard", { ccufromtime: "ccufromtime", ccustartdatetime: ccustartdatetime, timetocheck: selectedValtimezone })
+});
+
+$( "#dailyactive" ).click(function() {
+    if($( "#daustartdate" ).val() === "") {
+        alert("Please choose start date");
+        return false;
+    } 
+    if($( "#dauenddate" ).val() === "") {
+        alert("Please choose end date");
+        return false;
+    }
+
+    var selectedVal = "";
+    var selected = $("input[name='mygroup']:checked");
+    if (selected.length > 0) {
+        selectedVal = selected.val();
+    }
+
+    if (selectedVal === "") {
+      alert("Please choose one category");
+      return false;
+    }
+    var startdate = $("#daustartdate").val() + " 00:00:00 -07:00"
+    var enddate = $("#dauenddate").val() + " 23:59:59 -07:00"
+
+    var selectedtimezone = $("input[name='timetoget']:checked");
+    var selectedValtimezone = "";
+    if (selectedtimezone.length > 0) {
+      selectedValtimezone = selectedtimezone.val();
+    } else {
+      alert("Please choose timezone");
+      return false;
+    }
+    if (selectedValtimezone == 1){
+      startdate = $("#daustartdate").val() + " 00:00:00 +00:00"
+      enddate = $("#dauenddate").val() + " 23:59:59 +00:00"
+    }
+    post_to_url("/lumba/dashboard", { dailyactiveuser: "dailyactiveuser", daustartdate: startdate, dauenddate: enddate, category: selectedVal, timetocheck: selectedValtimezone })
+});
+
+$( "#globalchat" ).click(function() {
+    if($( "#globalchatstartdate" ).val() === "") {
+        alert("Please choose start date");
+        return false;
+    } 
+    if($( "#globalchatenddate" ).val() === "") {
+        alert("Please choose end date");
+        return false;
+    }
+
+    var globalchatstartdate = $("#globalchatstartdate").val() + " 00:00:00 -07:00"
+    var globalchatenddate = $("#globalchatenddate").val() + " 23:59:59 -07:00"
+    var selectedtimezone = $("input[name='timetoget']:checked");
+    var selectedValtimezone = "";
+    if (selectedtimezone.length > 0) {
+      selectedValtimezone = selectedtimezone.val();
+    } else {
+      alert("Please choose timezone");
+      return false;
+    }
+    if (selectedValtimezone == 1){
+      globalchatstartdate = $("#globalchatstartdate").val() + " 00:00:00 +00:00"
+      globalchatenddate = $("#globalchatenddate").val() + " 23:59:59 +00:00"
+    }
+    post_to_url("/lumba/dashboard", { globalchatview: "globalchatview", globalchatstartdate: globalchatstartdate, globalchatenddate: globalchatenddate, timetocheck: selectedValtimezone })
+});
+
+$( "#tribechat" ).click(function() {
+    if($( "#globalchatstartdate" ).val() === "") {
+        alert("Please choose start date");
+        return false;
+    } 
+    if($( "#globalchatenddate" ).val() === "") {
+        alert("Please choose end date");
+        return false;
+    }
+
+    var globalchatstartdate = $("#globalchatstartdate").val() + " 00:00:00 -07:00"
+    var globalchatenddate = $("#globalchatenddate").val() + " 23:59:59 -07:00"
+    var selectedtimezone = $("input[name='timetoget']:checked");
+    var selectedValtimezone = "";
+    if (selectedtimezone.length > 0) {
+      selectedValtimezone = selectedtimezone.val();
+    } else {
+      alert("Please choose timezone");
+      return false;
+    }
+    if (selectedValtimezone == 1){
+      globalchatstartdate = $("#globalchatstartdate").val() + " 00:00:00 +00:00"
+      globalchatenddate = $("#globalchatenddate").val() + " 23:59:59 +00:00"
+    }
+    post_to_url("/lumba/dashboard", { tribechatview: "tribechatview", globalchatstartdate: globalchatstartdate, globalchatenddate: globalchatenddate, timetocheck: selectedValtimezone })
+});
+
+$( "#newplaying" ).click(function() {
+    if($( "#daustartdate" ).val() === "") {
+        alert("Please choose start date");
+        return false;
+    } 
+    if($( "#dauenddate" ).val() === "") {
+        alert("Please choose end date");
+        return false;
+    }
+    var selectedVal = "";
+    var selected = $("input[name='mygroup']:checked");
+    if (selected.length > 0) {
+        selectedVal = selected.val();
+    }
+    if (selectedVal === "") {
+      alert("Please choose one category");
+      return false;
+    }
+    var startdate = $("#daustartdate").val() + " 00:00:00 -07:00"
+    var enddate = $("#dauenddate").val() + " 23:59:59 -07:00"
+    var selectedtimezone = $("input[name='timetoget']:checked");
+    var selectedValtimezone = "";
+    if (selectedtimezone.length > 0) {
+      selectedValtimezone = selectedtimezone.val();
+    } else {
+      alert("Please choose timezone");
+      return false;
+    }
+    if (selectedValtimezone == 1){
+      startdate = $("#daustartdate").val() + " 00:00:00 +00:00"
+      enddate = $("#dauenddate").val() + " 23:59:59 +00:00"
+    }
+    post_to_url("/lumba/dashboard", { newplayinguser: "newplayinguser", daustartdate: startdate, dauenddate: enddate, category: selectedVal, timetocheck: selectedValtimezone })
+});
+
+$( "#monthlyactive" ).click(function() {
+/*
+    if($( "#txtDateFrom" ).val() === "") {
+        alert("Please choose start date");
+        return false;
+    } 
+*/
+    if($( "#txtDateTo" ).val() === "") {
+        alert("Please choose end date");
+        return false;
+    }
+    var selectedVal = "";
+    var selected = $("input[name='mygroup']:checked");
+    if (selected.length > 0) {
+        selectedVal = selected.val();
+    }
+    if (selectedVal === "") {
+      alert("Please choose one category");
+      return false;
+    }
+    var selectedtimezone = $("input[name='timetoget']:checked");
+    var selectedValtimezone = "";
+    if (selectedtimezone.length > 0) {
+      selectedValtimezone = selectedtimezone.val();
+    } else {
+      alert("Please choose timezone");
+      return false;
+    }
+//    post_to_url("/lumba/dashboard", { monthlyactive: "monthlyactive", monthfrom: $("#txtDateFrom").val(), monthto: $("#txtDateTo").val(), category: selectedVal, timetocheck: selectedValtimezone })
+    post_to_url("/lumba/dashboard", { monthlyactive: "monthlyactive", datemonthto: $("#txtDateTo").val(), category: selectedVal, timetocheck: selectedValtimezone })
+});
+
+$( "#numberofuniqueusers" ).click(function() {
+    if($( "#numberofuniqueuserstildate" ).val() === "") {
+        alert("Please choose date");
+        return false;
+    } 
+    var numberofuniqueuserstildate = $("#numberofuniqueuserstildate").val() + " 23:59:59 -07:00"
+
+    var selectedtimezone = $("input[name='timetoget']:checked");
+    var selectedValtimezone = "";
+    if (selectedtimezone.length > 0) {
+      selectedValtimezone = selectedtimezone.val();
+    } else {
+      alert("Please choose timezone");
+      return false;
+    }
+    if (selectedValtimezone == 1){
+      numberofuniqueuserstildate = $("#numberofuniqueuserstildate").val() + " 23:59:59 +00:00"
+    }
+    post_to_url("/lumba/dashboard", { numberofuniqueusers: "numberofuniqueusers", numberofuniqueuserstildate: numberofuniqueuserstildate, timetocheck: selectedValtimezone })
+});
+</script>

@@ -1,0 +1,72 @@
+<%= render "gamedata/menu" %>
+<%= render "gamedata/menu_googlespreadsheet" %>
+<table>
+<tr>
+<td><button type="submit" onclick="exportfileproduction(6, false, '');">Publish production</button></td>
+</tr>
+</table>
+
+
+<div class="outer-container"> <!-- absolute positioned container -->
+<div class="inner-container">
+
+    <div class="table-header">
+        <table id="headertable" width="200px" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="header-cell">Note</th>
+                    <th class="header-cell">Type</th>
+                    <th class="header-cell">Level</th>
+                    <th class="header-cell">BuildCostElixir</th>
+                    <th class="header-cell">BuildCostGold</th>
+                    <th class="header-cell">BuildCostGem</th>
+                    <th class="header-cell">BuildTimeInMinutes</th>
+                    <th class="header-cell">ExperienceGained</th>
+                    <th class="header-cell">Capacity</th>
+                    <th class="header-cell">ProductionRates</th>
+                    <th class="header-cell">HitPoints</th>
+                    <th class="header-cell">TownHallLevelRequired</th>
+                    <th class="header-cell">BoostCostInGems</th>
+                    <th class="header-cell">MaxLevel</th>
+                    <th class="header-cell">ObjectType</th>
+                    <th class="header-cell">CollectablePoint</th>
+                    <th class="header-cell">PrefabName</th>
+                    <th class="header-cell">DisplayName</th>
+                    <th class="header-cell">NumTileOneSide</th>
+                    <th class="header-cell">HasBase</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-body">
+    <table class="ex1" style="font-size:13px" id="tblresources_building_variables">
+    <tbody>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvNote"><%= row['Note'].force_encoding("UTF-8")%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvType"><%= row['Type']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvLevel"><%= row['Level']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvBuildCostElixir"><%= row['BuildCostElixir']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvBuildCostGold"><%= row['BuildCostGold']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvBuildCostGem"><%= row['BuildCostGem']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvBuildTimeInMinutes"><%= row['BuildTimeInMinutes']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvExperienceGained"><%= row['ExperienceGained']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvCapacity"><%= row['Capacity']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvProductionRates"><%= row['ProductionRates']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvHitPoints"><%= row['HitPoints']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvTownHallLevelRequired"><%= row['TownHallLevelRequired']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvBoostCostInGems"><%= row['BoostCostInGems']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvMaxLevel"><%= row['MaxLevel']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvObjectType"><%= row['ObjectType']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvCollectablePoint"><%= row['CollectablePoint']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvPrefabName"><%= row['PrefabName']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvDisplayName"><%= row['DisplayName']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvNumTileOneSide"><%= row['NumTileOneSide']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="rbvHasBase"><%= row['HasBase']%></div></div></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+</div>
+</div>
+</div>

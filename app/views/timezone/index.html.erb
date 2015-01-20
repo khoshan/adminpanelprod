@@ -1,0 +1,35 @@
+Change user Time-Zone <font color="red">(Production server)</font>
+<br/>
+Please select your Time-Zone:
+(Your current Time-Zone is : <%= @timezone %>)
+<form action="/lumba/changeTimezone" method="post">
+<select name="select_timezone">
+  <option value="<%= @timezone %>" selected="selected"><%= @timezone %></option>
+  <option value="GMT-12">GMT-12</option>
+  <option value="GMT-11">GMT-11</option>
+  <option value="GMT-10">GMT-10</option>
+  <option value="GMT-9">GMT-9</option>
+  <option value="GMT-8">GMT-8</option>
+  <option value="GMT-7">GMT-7</option>
+  <option value="GMT-6">GMT-6</option>
+  <option value="GMT-5">GMT-5</option>
+  <option value="GMT-4">GMT-4</option>
+  <option value="GMT-3">GMT-3</option>
+  <option value="GMT-2">GMT-2</option>
+  <option value="GMT-1">GMT-1</option>
+  <option value="GMT">GMT</option>
+  <option value="GMT+1">GMT+1</option>
+  <option value="GMT+2">GMT+2</option>
+  <option value="GMT+3">GMT+3</option>
+  <option value="GMT+4">GMT+4</option>
+  <option value="GMT+5">GMT+5</option>
+  <option value="GMT+6">GMT+6</option>
+  <option value="GMT+7">GMT+7</option>
+  <option value="GMT+8">GMT+8</option>
+  <option value="GMT+9">GMT+9</option>
+  <option value="GMT+10">GMT+10</option>
+  <option value="GMT+11">GMT+11</option>
+  <option value="GMT+12">GMT+12</option>
+</select>
+  <%= submit_tag( "Done" ) %>
+</form>

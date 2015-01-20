@@ -1,0 +1,5 @@
+Type name	Type	Radius	Strike area	Numb of Strike	Time between strikes(s)	Time to create(min)	Boost Time(s)	Spell Factory level require	Max Level
+Lightning Spell	16	2	3.5	6	0.4	30		1	5
+Healing Spell	17	5		40	0.3	30		2	5
+Rage Spell	18	5		60	0.3	45	1	3	5
+Jump Spell	19	5		30	0.3	45	1	4	2

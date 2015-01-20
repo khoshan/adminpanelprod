@@ -1,0 +1,54 @@
+# Logfile created on 2014-11-18 14:28:55 +0700 by logger.rb/44203
+I, [2014-11-18T14:28:55.300216 #41614]  INFO -- : +++++++++++++++++++++++++++no implicit conversion of nil into String
+I, [2014-11-18T14:47:01.704379 #41780]  INFO -- : +++++++++++++++++++++++++++no implicit conversion of nil into String
+I, [2014-11-18T14:47:20.211295 #41780]  INFO -- : +++++++++++++++++++++++++++no implicit conversion of nil into String
+I, [2014-11-18T14:52:01.752727 #41831]  INFO -- : +++++++++++++++++++++++++++no implicit conversion of nil into String
+I, [2014-11-18T15:30:29.101656 #42035]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0, pearls = '1'
+I, [2014-11-18T17:01:08.311499 #42993]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0, oil = '1'
+I, [2014-11-18T18:42:42.809316 #43775]  INFO -- : +++++++++++++++++++++++++++no implicit conversion of nil into String
+I, [2014-11-19T09:55:17.717264 #49769]  INFO -- : +++++++++++++++++++++++++++Lost connection to MySQL server during query
+I, [2014-11-19T12:40:29.054172 #50061]  INFO -- : +++++++++++++++++++++++++++Lost connection to MySQL server during query
+I, [2014-12-01T15:01:04.987444 #96220]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T15:04:28.918302 #96220]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T15:05:49.461247 #96220]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T15:48:30.085065 #96668]  INFO -- : +++++++++++++++++++++++++++Table 'lumba.user_v54' doesn't exist
+I, [2014-12-01T15:48:39.032240 #96668]  INFO -- : +++++++++++++++++++++++++++Table 'lumba.user_v54' doesn't exist
+I, [2014-12-01T17:01:10.900089 #97328]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T17:02:51.136635 #97347]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T17:04:09.304995 #97377]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T17:05:42.125935 #97377]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0, level= '1'
+I, [2014-12-01T17:07:05.811073 #97399]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T17:09:43.711385 #97434]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T17:10:38.764170 #97434]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T17:25:28.371523 #97560]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T17:28:02.584872 #97582]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0, email= 'buoilon@ditnhau.com'
+I, [2014-12-01T17:29:39.973827 #97618]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0, email= 'ghostleader@lumba.com'
+I, [2014-12-01T17:30:02.452619 #97618]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T17:40:14.541302 #97713]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0, email= 'ghostleader@lumba.com'
+I, [2014-12-01T17:52:19.502914 #97830]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-01T17:52:51.766169 #97830]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-03T18:17:48.407042 #38541]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-03T18:28:01.558552 #38664]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-03T18:31:53.970607 #38699]  INFO -- : +++++++++++++++++++++++++++undefined local variable or method `issue' for #<GamestateController:0x007fa6cb5fd600>
+I, [2014-12-03T18:33:00.527368 #38712]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-03T18:39:38.291641 #38776]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-03T18:40:05.018985 #38776]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-03T18:41:24.631722 #38800]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-03T18:52:27.269672 #38892]  INFO -- : +++++++++++++++++++++++++++JIRA::HTTPError
+I, [2014-12-03T18:55:19.931058 #38929]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-03T18:58:02.796781 #38953]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-04T15:03:22.122526 #48837]  INFO -- : +++++++++++++++++++++++++++JIRA::HTTPError
+I, [2014-12-04T16:04:49.903294 #49326]  INFO -- : osama.fattouh@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-04T16:19:28.260398 #49544]  INFO -- : osama.fattouh@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-04T16:31:09.077318 #49668]  INFO -- : anwar.sedam@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-04T16:33:17.207444 #49693]  INFO -- : anwar.sedam@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0
+I, [2014-12-08T18:16:15.719322 #90894]  INFO -- : +++++++++++++++++++++++++++JIRA::HTTPError
+I, [2014-12-08T18:37:14.046196 #91090]  INFO -- : dashboard@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0, trophies = '1', experiencePoint = '1', oil = '1', pearls = '1'
+I, [2014-12-10T17:33:33.657781 #17608]  INFO -- : osama.fattouh@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0, pearls = '123'
+I, [2014-12-10T17:41:39.150862 #17711]  INFO -- : osama.fattouh@lum.ba updated gamestate_v31: insert into updateFromAdminPanel set userId = '31_4c03a203-5d8c-11e4-ad9b-22000a4a0686', status = 0, pearls = '234'
+I, [2014-12-22T11:35:18.914908 #48044]  INFO -- : +++++++++++++++++++++++++++no implicit conversion of String into Integer
+I, [2014-12-22T11:40:05.199029 #48108]  INFO -- : +++++++++++++++++++++++++++no implicit conversion of String into Integer
+I, [2015-01-16T15:52:43.167496 #29063]  INFO -- : +++++++++++++++++++++++++++399: unexpected token at '{"Reporter"=>"", "Date"=>"", "Note"=>""}]}'
+I, [2015-01-16T15:54:12.313608 #29093]  INFO -- : +++++++++++++++++++++++++++undefined local variable or method `userNote' for #<GamestateController:0x007fea2a53c9d0>
+I, [2015-01-16T18:00:34.879430 #30160]  INFO -- : +++++++++++++++++++++++++++undefined local variable or method `uuserNote' for #<GamestateController:0x007f9ccb73e398>
+I, [2015-01-16T18:00:51.580865 #30160]  INFO -- : +++++++++++++++++++++++++++undefined local variable or method `uuserNote' for #<GamestateController:0x007f9ccb5edea8>

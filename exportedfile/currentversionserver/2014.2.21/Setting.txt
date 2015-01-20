@@ -1,0 +1,8 @@
+Key	Value	English Version	Arabic Version
+SAVE_INTERVAL	29
+IAP_RATIO	0.7
+Pile_Of_Gems		625	625
+Bag_Of_Gems		1200	1200
+Sack_Of_Gems		2500	2500
+Box_Of_Gems		6500	6500
+Chest_Of_Gems		14000	14000

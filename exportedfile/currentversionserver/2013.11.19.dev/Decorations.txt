@@ -1,0 +1,20 @@
+Note	Type	Build Cost Elixir	Build Cost Dark Elixir	Build Cost Gold	Build Cost Gem	Level Require	Object Type
+Lantern Pole	0	5000				1	6
+Flower Bed	1			5000		1	6
+Flag	2				50	1	6
+Torch	3	5000				1	6
+Cornflower Bed	4			5000		1	6
+Sunflower Bed	5				10	1	6
+Flower Bed	6	5000				1	6
+Palm Tree	7			5000		1	6
+Rally Flag	8				10	1	6
+Dead Palm	9	1				1	6
+Flag	10	1				1	6
+Rally Flag	11	1				1	6
+Rock Large	12	1				1	6
+Rock Medium	13	1				1	6
+Rock Group	14	1				1	6
+Rock Small	15	1				1	6
+Skull	16	1				1	6
+Torch	17	1				1	6
+Tree	18	1				1	6

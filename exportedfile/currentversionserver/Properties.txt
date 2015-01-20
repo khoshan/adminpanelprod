@@ -1,0 +1,11 @@
+versions=2014.2.22.prod,2014.3.7.prod,2014.3.25.prod,2014.3.29.prod
+maintainVersions=
+subVersions=2014.3.29.prod:1.9.3-1.9.4
+forcedUpdateSubVersionClanIds=
+en_iosAppUrl=https://itunes.apple.com/qa/app/tribal-rivals/id793766270?mt=8
+en_androidAppUrl=
+ar_iosAppUrl=https://itunes.apple.com/qa/app/fz-t/id793770655?mt=8
+ar_androidAppUrl=
+forcedUpdateClanIds=2014.2.22.prod,2014.3.7.prod,2014.3.25.prod
+softMovedVersions=2014.3.25.prod,2014.3.29.prod
+resourceFileNames=Achievements,Arab,ArmyBuildings,Bundles,CampaignReference,CombatUnits,Decorations,DefensiveBuildingLevel,DefensiveBuildings,English,Obstacles,OtherBuildings,ResourceBuildings,Setting,SpellLevels,Spells,TownHallLevel,Trophy,UnitLevels

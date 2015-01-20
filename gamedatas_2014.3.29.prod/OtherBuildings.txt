@@ -1,0 +1,15 @@
+Note	Type	Level	Build Cost Gold	Build Cost Gem	Build Time (minutes)	Experience Gained	Capacity	Hit Points	Town Hall level Required	Max Level	Object Type	PrefabName	DisplayName	NumTileOneSide	HasBase
+diwan	27	1	0	0	0	0	1250	1500	0	9	3	Diwan	Diwan	4	1
+diwan	27	2	1250	20	5	20	1250	1600	0	9	3	Diwan	Diwan	4	1
+diwan	27	3	5000	130	180	130	1250	1850	0	9	3	Diwan	Diwan	4	1
+diwan	27	4	31250	365	1440	365	1250	2100	0	9	3	Diwan	Diwan	4	1
+diwan	27	5	187500	520	2880	520	1250	2400	0	9	3	Diwan	Diwan	4	1
+diwan	27	6	937500	735	5760	735	1250	2800	0	9	3	Diwan	Diwan	4	1
+diwan	27	7	1500000	900	8640	900	1250	3200	0	9	3	Diwan	Diwan	4	1
+diwan	27	8	2500000	1040	11520	1040	1250	3700	0	9	3	Diwan	Diwan	4	1
+diwan	27	9	3750000	1160	14400	1160	1250	4200	0	9	3	Diwan	Diwan	4	1
+majlis	28	0	0	0	0	0	0	0	1	4	3	Majlis	Majlis	4	1
+majlis	28	1	50000	0	0	0	15	1000	3	4	3	Majlis	Majlis	4	1
+majlis	28	2	125000	0	360	185	20	1400	4	4	3	Majlis	Majlis	4	1
+majlis	28	3	1000000	0	1440	365	25	2000	6	4	3	Majlis	Majlis	4	1
+majlis	28	4	2250000	0	2880	520	30	2600	8	4	3	Majlis	Majlis	4	1

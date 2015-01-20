@@ -1,0 +1,29 @@
+<%= render "gamedata/menu" %>
+<%= render "gamedata/menu_googlespreadsheet" %>
+<table>
+<tr>
+<td><button type="submit" onclick="exportfileproduction(1, false, '');">Publish production</button></td>
+</tr>
+</table>
+<div id="table-wrapper">
+  <div id="table-scroll">
+<table class="ex1" style="font-size:13px" id="tblcampaign">
+    <thead>
+        <tr><th><span class="text">Type</th><th><span class="text">Name</th><th><span class="text">RequireCampaignIDtoUnlock</th><th><span class="text">LootableGold</th><th><span class="text">LootableWater</th><th><span class="text">LootableDarkWater</th><th><span class="text">townhallprefab</span></th></tr>
+        </thead>
+    <tbody>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td width="10%" align="center"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="campaigntype"><%= row['Type']%></div></div></td>
+          <td width="15%" align="center"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="campaignname"><%= row['Name']%></div></div></td>
+          <td width="15%" align="center"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="campaignRequireCampaignIDtoUnlock"><%= row['RequireCampaignIDtoUnlock']%></div></div></td>
+          <td width='15%' align="center"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="campaignLootableGold"><%= row['LootableGold']%></div></div></td>
+          <td width='15%' align="center"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="campaignLootableWater"><%= row['LootableWater']%></div></div></td>
+          <td width='15%' align="center"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="campaignLootableDarkWater"><%= row['LootableDarkWater']%></div></div></td>
+          <td width='15%' align="center"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="campaigntownhallprefab"><%= row['townhallprefab']%></div></div></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+</div></div>
+</div>

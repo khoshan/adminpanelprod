@@ -1,0 +1,52 @@
+<%= render "gamedata/menu" %>
+<%= render "gamedata/menu_googlespreadsheet" %>
+<table>
+<tr>
+<td><button type="submit" onclick="exportfileproduction(12, false, '');">Publish production</button></td>
+</tr>
+</table>
+<div class="outer-container"> <!-- absolute positioned container -->
+<div class="inner-container">
+
+    <div class="table-header">
+        <table id="headertable" width="200px" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="header-cell">Type</th>
+                    <th class="header-cell">Level</th>
+                    <th class="header-cell">BuildCostGold</th>
+                    <th class="header-cell">UpgradeCost</th>
+                    <th class="header-cell">UpgradeTimeInHours</th>
+                    <th class="header-cell">LaboratoryLevelRequired</th>
+                    <th class="header-cell">TotalDamage</th>
+                    <th class="header-cell">DamagePerStrike</th>
+                    <th class="header-cell">DamageBoostInPercent</th>
+                    <th class="header-cell">SpeedBoost</th>
+                    <th class="header-cell">SizeLimit</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-body">
+<table class="ex1" style="font-size:13px" id="tblspell_level">
+    <tbody>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelType"><%= row['Type']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelLevel"><%= row['Level']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelBuildCostGold"><%= row['BuildCostGold']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelUpgradeCost"><%= row['UpgradeCost']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelUpgradeTimeInHours"><%= row['UpgradeTimeInHours']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelLaboratoryLevelRequired"><%= row['LaboratoryLevelRequired']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelTotalDamage"><%= row['TotalDamage']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelDamagePerStrike"><%= row['DamagePerStrike']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelDamageBoostInPercent"><%= row['DamageBoostInPercent']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelSpeedBoost"><%= row['SpeedBoost']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spelllevelSizeLimit"><%= row['SizeLimit']%></div></div></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+</div>
+</div>
+</div>

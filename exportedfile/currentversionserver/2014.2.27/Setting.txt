@@ -1,0 +1,12 @@
+Key	Value	English Version	Arabic Version
+SAVE_INTERVAL	29		
+IAP_RATIO	0.7		
+Pile_Of_Gems		625	625
+Bag_Of_Gems		1500	1500
+Sack_Of_Gems		3125	3125
+Box_Of_Gems		8125	8125
+Chest_Of_Gems		17500	17500
+Gem_Range_For_Calculate_Time	1,20,260,1000		
+Gold_Water_Range	100,1000,10000,100000,1000000,10001250		
+Oil_Range	1,10,100,1000,10000,100000		
+Gem_Range_For_Calculate_Resource	1,5,25,125,600,3000		

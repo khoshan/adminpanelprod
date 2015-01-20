@@ -1,0 +1,3 @@
+en_identifiers=ba.lum.tribalrivals.pearls.xsmall.en,ba.lum.tribalrivals.pearls.small.en,ba.lum.tribalrivals.pearls.medium.en,ba.lum.tribalrivals.pearls.large.en,ba.lum.tribalrivals.pearls.xlarge.en
+ar_identifiers=ba.lum.tribalrivals.pearls.xsmall.ar,ba.lum.tribalrivals.pearls.small.ar,ba.lum.tribalrivals.pearls.medium.ar,ba.lum.tribalrivals.pearls.large.ar,ba.lum.tribalrivals.pearls.xlarge.ar
+products=625,1500,3125,8125,17500

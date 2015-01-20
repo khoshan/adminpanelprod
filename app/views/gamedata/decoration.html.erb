@@ -1,0 +1,56 @@
+<%= render "gamedata/menu" %>
+<%= render "gamedata/menu_googlespreadsheet" %>
+<table>
+<tr>
+<td><button type="submit" onclick="exportfileproduction(10, false, '');">Publish production</button></td>
+</tr>
+</table>
+<div class="outer-container"> <!-- absolute positioned container -->
+<div class="inner-container">
+
+    <div class="table-header">
+        <table id="headertable" width="200px" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="header-cell">Note</th>
+                    <th class="header-cell">Type</th>
+                    <th class="header-cell">BuildCostElixir</th>
+                    <th class="header-cell">BuildCostDarkElixir</th>
+                    <th class="header-cell">BuildCostGold</th>
+                    <th class="header-cell">BuildCostGems</th>
+                    <th class="header-cell">LevelRequired</th>
+                    <th class="header-cell">ObjectType</th>
+                    <th class="header-cell">PrefabName</th>
+                    <th class="header-cell">DisplayName</th>
+                    <th class="header-cell">NumTileOneSide</th>
+                    <th class="header-cell">HasBase</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-body">
+
+
+
+<table class="ex1" style="font-size:13px" id="tbldecoration">    <tbody>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoNote"><%= row['Note']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoType"><%= row['Type']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoBuildCostElixir"><%= row['BuildCostElixir']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoBuildCostDarkElixir"><%= row['BuildCostDarkElixir']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoBuildCostGold"><%= row['BuildCostGold']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoBuildCostGems"><%= row['BuildCostGems']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoLevelRequired"><%= row['LevelRequired']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoObjectType"><%= row['ObjectType']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoPrefabName"><%= row['PrefabName']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoDisplayName"><%= row['DisplayName']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoNumTileOneSide"><%= row['NumTileOneSide']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="decoHasBase"><%= row['HasBase']%></div></div></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+</div>
+</div>
+</div>

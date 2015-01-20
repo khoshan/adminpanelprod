@@ -1,0 +1,44 @@
+<table style="width:100%;">
+<tr>
+<td style="width: 70%;text-align: center;">
+  <form id="listtribe" accept-charset="UTF-8" action="/lumba/tribe" enctype="multipart/form-data" method="post">
+<font color="red">(Production server)</font> Game version:  <select id="version_sfs" name="game_version_sfs">
+    <option value="">-</option>
+    <% @version_array.each do |row|%>
+      <option value="<%= row['NextGameVersion']%>"><%= row['NextGameVersion']%></option>
+     <% end%>
+  </select>
+  </form>
+</td>
+
+<td>
+</td>
+</tr>
+</table>
+
+<form accept-charset="UTF-8" id="tribesearchform" action="/lumba/tribe" method="post">
+  Search tribes <%= text_field_tag 'search_tribe', "" %>
+  <input type="button" id="searchsubmit" value="Search"/>
+</form>
+<hr/>
+
+<script>
+$( "#searchsubmit" ).click(function() {
+var searchString = "";
+  searchString = $( "#search_tribe" ).val();
+  if (searchString == ""){
+    alert('Please enter tribe name to search');
+    return false;
+  }
+  post_to_url("/lumba/tribe",{search: "search", search_tribe: searchString})
+  });
+function changeuserid(){
+$("input[type=submit]").hide();;
+}
+  $("#version_sfs").val('<%= @game_version%>');
+$('#version_sfs').change(function(){
+    var pathname = window.location.pathname;
+    post_to_url("/lumba/switchserver/switchversion", { game_version: $(this).val(),currenturl: pathname })
+  });
+</script>
+

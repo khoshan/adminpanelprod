@@ -1,0 +1,17 @@
+<%= render "gamedata/menu" %>
+<%=button_to "Export effects", :action=>'effects', :exporteffects=>'exporteffects'%>
+<table class="ex1" style="font-size:13px" id="tbleffects">
+    <tbody>     <tr><th>pkId</th><th>Type</th><th>Description</th><th>PrefabName</th<th>lastMod</th><th>Action</th></tr>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td width="5%" align="center"><div class="effpkID"><%= row['pkID']%></td>
+          <td width="20%" align="center"><div contenteditable class="effType"><%= row['Type']%></td>
+          <td width="30%" align="center"><div contenteditable class="effDescription"><%= row['Description'].force_encoding('ISO-8859-1').encode('UTF-8')%></td>
+          <td width="30%" align="center"><div contenteditable class="effPrefabName"><%= row['PrefabName'].force_encoding("UTF-8")%></td>
+          <td width='15%' align="center"><div contenteditable><%= row['lastMod'].in_time_zone(Time.zone)%></td>
+          <td width='15%' align="center"><button value="<%= row['pkID']%>" name="editeffect" type="submit" onclick="copyContentEffect(this.value);">Save</button></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+</div>

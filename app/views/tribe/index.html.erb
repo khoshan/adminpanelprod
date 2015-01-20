@@ -1,0 +1,52 @@
+<%= render "tribe/menu" %>
+<form id="tournament" action="/lumba/tribe/tournament" method="post">
+  <button type="submit" id="tournamentsubmit">Tournament</button>
+</form>
+<% if !@tribe_array.nil? %>
+    <h2><%= paginate @tribe_array %></h2>
+<% end %>
+<table class="ex1" style="font-size:13px" id="tbltribe">
+    <thead>
+    <tr>
+      <th><span class="text"/>Id</th>
+      <th><span class="text"/>TribeId</th>
+      <th><span class="text"/>Tribe Name</th>
+      <th><span class="text"/>Members Count</th>
+      <th><span class="text"/>Total Daggers</th>
+      <th>Rank</th>
+    </tr>
+    </thead>
+    <tbody>
+      <%if !@tribe_array.nil?%>
+        <% @tribe_array.each do |row|%>
+          <tr>
+            <td width="15%"><div class="tribe_id"><%= row['id']%></td>
+            <td width="20%"><%= row['clanId']%></td>
+            <td width="30%"><div contenteditable class="tribe_name"><%= row['name'].force_encoding('utf-8')%></td>
+            <td width="30%"><%= row['membersCount']%></td>
+            <td width="30%"><%= row['trophies'] %></td>
+            <td width="30%"><%= row['rank'] %></td>
+            <td width='15%' style="padding-left:40px">
+              <button value="<%= row['id']%>" id="edittribe" onclick="copyContentTribe(this.value);">Edit</button>
+            </td>
+            <td width="15%"><button value="<%= row['id']%>" id="viewtribe" onclick="viewTribe(this.value)">Details</button></td>
+          </tr>
+       <% end%>
+     <%else%>
+      <span style="color:red;">Not Found!</span>
+     <%end%>
+  </tbody>
+</table>
+<% if !@tribe_array.nil? %>
+    <h2><%= paginate @tribe_array %></h2>
+<% end %>
+<script>
+$("#version_sfs").val('<%= @game_version%>');
+$('#version_sfs').change(function(){
+    var pathname = window.location.pathname;
+    post_to_url("/lumba/switchserver/switchversion", { game_version: $(this).val(),currenturl: pathname })
+  });
+function viewTribe(x){
+  post_to_url("/lumba/tribe/tribe_details", {tribeid: x})
+}
+</script>

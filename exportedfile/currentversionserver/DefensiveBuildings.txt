@@ -1,0 +1,14 @@
+Unit	Range start	Range end	Explode time	Attack Speed (s)	Damage type	Damage radius	Unit type Targeted	Preferred Target	Preferred Target bonus	Number of rounds	Max Level	Size Limit	AirRange	Unit Type
+Cannon	0	9		0.8	Single	0	Ground				11			0
+Archer Tower	0	10		1	Single	0	Total				11			1
+Mortar	4	11		5	Splash	1.5	Ground				7			2
+Air Defense	0	10		1	Single	0	Air				7			3
+Wizard Tower	0	7		1.3	Splash	1	Total				7			4
+Hidden Tesla	6	7		0.6	Single	0	Total	9	2		6			5
+X-Bow	0	14		0.128	Single	0	Total			1500	3		11	6
+Walls					Single		Ground				10			7
+Bomb		1.5	1.5		Splash	2	Ground				1			8
+Spring Trap		0.7	0.6		Splash	1	Ground				1	15		9
+Giant Bomb		2	1.5		Splash	2.5	Ground				1			10
+Air Bomb		5	1.2		Splash	5	Air				1			11
+Seeking Air Mine		4	1.2		Single	0	Air				1			12

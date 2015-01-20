@@ -1,0 +1,7 @@
+currentVersion=2013.11.19.dev
+iosAppUrl=http://itunes.apple.com/vn/app/meteor-blitz/id328194605?mt=8
+androidAppUrl=https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=vi
+nextVersion=2013.11.23.dev
+forcedUpdateClanIds=
+softMovedVersions=2013.11.22.dev,2013.11.23.dev
+resourceFileNames=Achievements,Arab,ArmyBuildings,CampaignReference,CombatUnits,Decorations,DefensiveBuildingLevel,DefensiveBuildings,English,Obstacles,OtherBuildings,ResourceBuildings,Setting,SpellLevels,Spells,TownHallLevel,Trophy,UnitLevels

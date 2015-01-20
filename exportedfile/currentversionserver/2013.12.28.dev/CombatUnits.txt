@@ -1,0 +1,21 @@
+Unit	Unit Group	Preferred Target	Preferred Target Damage	Attack Type	Attack Target	Damage Type	Splash radius	Housing Space	Training Time (s)	Movement Speed	Attack Speed (s)	Barracks Level	Range (tiles)	Search Radius (tiles )	Max Level
+Barbarian	Ground	None	1	Melee	Ground	Single	0	1	20	32	1	1	0.4	0	6
+Archer	Ground	None	1	Ranged	Total	Single	0	1	25	48	1	2	3.5	0	6
+Goblin	Ground	Resources	2	Melee	Ground	Single	0	1	30	64	1	3	0.4	0	5
+Giant	Ground	Defenses	1	Melee	Ground	Single	0	5	120	24	2	4	1	0	6
+Wall Breaker	Ground	Walls	40	Melee	Ground	Splash	2	2	120	48	1	5	0.5	0	5
+Balloon	Air	Defenses	1	Ranged	Ground	Splash	1.2	5	600	20	4	6	0.5	0	6
+Wizard	Ground	None	1	Ranged	Total	Splash	0.3	4	600	32	1.5	7	3	0	5
+Healer	Air	None	1	Ranged	Ground	Splash	2	20	1200	32	0.7	8	5	0	3
+Dragon	Air	None	1	Ranged	Total	Splash	0.3	20	1800	32	1.5	9	3	0	3
+P.E.K.K.A	Ground	None	1	Melee	Ground	Single	0	25	2700	32	2.5	10	0.8	0	3
+Minion	Air	None	1	Ranged	Total	Single	0	2	45	64	1	1	2.75	0	5
+Valkyrie	Ground	None	1	Melee	Ground	Splash	0	8	900	48	1.8	3	0.5	0	4
+Hog Rider	Ground	None	1	Melee	Ground	Single	0	6	300	48	1	2	0.6	0	5
+Barbarian King	Ground	None	1	Melee	Ground	Single	0	0	0	32	1.2	0	1	13	30
+Archer Queen	Ground	None	1	Melee	Total	Single	0	0	0	48	0.75	0	5	13	30
+Builder	Ground	None	1	Melee	Ground	Single	0	1	20	60	1	1	0.4	0	6
+VillagerA	Ground	None	1	Melee	Ground	Single	0	1	20	40	1	1	0.4	0	6
+VillagerB	Ground	None	1	Melee	Ground	Single	0	1	20	40	1	1	0.4	0	6
+Black Army	Ground	None	1	Melee	Ground	Single	0	1	20	40	1	1	0.4	0	6
+Soldier	Ground	None	1	Melee	Ground	Single	0	1	20	40	1	1	0.4	0	6

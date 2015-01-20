@@ -1,0 +1,21 @@
+Note	Type	Build Cost Elixir	Build Cost Dark Elixir	Build Cost Gold	Build Cost Gem	Level Require	Object Type	PrefabName	DisplayName	NumTileOneSide	HasBase
+Lantern Pole	0	5000				1	6	LanternPole	Lantern Pole	2	1
+Flower Bed	1			5000		1	6	FlowerBed1	Flower Bed	2	1
+Flag	2				50	1	6	Flag	Flag	2	1
+Torch	3	5000				1	6	Torch	Torch	2	1
+Cornflower Bed	4			5000		1	6	FlowerBed1	Cornflower Bed	2	1
+Sunflower Bed	5				10	1	6	FlowerBed2	Sunflower Bed	2	1
+Flower Bed	6	5000				1	6	FlowerBed3	Flower Bed	2	1
+Palm Tree	7			5000		1	6	DecoPalm	Palm Tree	3	1
+Rally Flag	8				10	1	6	RallyFlag	Rally Flag	2	1
+Dead Palm	9	1				1	6	SP_DeadPalm	Dead Palm	2	1
+Flag	10	1				1	6	SP_Flag	Flag	2	1
+Rally Flag	11	1				1	6	SP_RallyFlag	Rally Flag	2	1
+Rock Large	12	1				1	6	SP_RockLarge	Rock Large	2	1
+Rock Medium	13	1				1	6	SP_RockMedium	Rock Medium	2	1
+Rock Group	14	1				1	6	SP_RocksGroup	Rock Group	3	1
+Rock Small	15	1				1	6	SP_RockSmall	Rock Small	2	1
+Skull	16	1				1	6	SP_Skull	Skull	2	1
+Torch	17	1				1	6	SP_Torch	Torch	2	1
+Tree	18	1				1	6	SP_Tree	Tree	2	1
+Camel Skeleton	19	1				1	6	CamelSkeleton	Camel Skeleton	2	1

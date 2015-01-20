@@ -1,0 +1,50 @@
+<%= render "gamedata/menu" %>
+<%= render "gamedata/menu_googlespreadsheet" %>
+<table>
+<tr>
+<td><button type="submit" onclick="exportfileproduction(11, false, '');">Publish production</button></td>
+</tr>
+</table>
+<div class="outer-container"> <!-- absolute positioned container -->
+<div class="inner-container">
+
+    <div class="table-header">
+        <table id="headertable" width="200px" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="header-cell">TypeName</th>
+                    <th class="header-cell">Type</th>
+                    <th class="header-cell">Radius</th>
+                    <th class="header-cell">StrikeArea</th>
+                    <th class="header-cell">NumberOfStrikes</th>
+                    <th class="header-cell">TimeBetweenStrikesInSeconds</th>
+                    <th class="header-cell">TimeToCreateInSeconds</th>
+                    <th class="header-cell">BoostTimeInSeconds</th>
+                    <th class="header-cell">SpellFactoryLevelRequired</th>
+                    <th class="header-cell">MaxLevel</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-body">
+<table class="ex1" style="font-size:13px" id="tblspell">
+    <tbody>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spellTypeName"><%= row['TypeName']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spellType"><%= row['Type']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spellRadius"><%= row['Radius']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spellStrikeArea"><%= row['StrikeArea']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spellNumberOfStrikes"><%= row['NumberOfStrikes']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spellTimeBetweenStrikesInSeconds"><%= row['TimeBetweenStrikesInSeconds']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spellTimeToCreateInSeconds"><%= row['TimeToCreateInSeconds']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spellBoostTimeInSeconds"><%= row['BoostTimeInSeconds']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spellSpellFactoryLevelRequired"><%= row['SpellFactoryLevelRequired']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="spellMaxLevel"><%= row['MaxLevel']%></div></div></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+</div>
+</div>
+</div>

@@ -1,0 +1,742 @@
+<style>
+    .highlight{
+        background-color:#FF69B4;
+    }
+    table {
+        font-size: 11px;
+    }
+#pending
+{
+}../../../../myAppDev/app/controllers/application_controller.rb
+</style>
+
+<script type="text/javascript">
+    function deselect(e) {
+        $('.pop').slideFadeToggle(function() {
+            e.removeClass('selected');
+        });
+    }
+
+    function deselect1(e) {
+        $('.peep').slideFadeToggle(function () {
+            e.removeClass('selected1');
+        });
+    }
+    $(function() {
+        $('#contact').on('click', function() {
+            if($(this).hasClass('selected')) {
+                deselect($(this));
+            } else {
+                $(this).addClass('selected');
+                $('.pop').slideFadeToggle();
+            }
+            return false;
+        });
+
+        $('.close').on('click', function() {
+            deselect($('#contact'));
+            return false;
+        });
+
+        $('.close1').on('click', function() {
+            deselect1($('#copybattlelog'));
+            return false;
+        });
+
+        $('#copybattlelog').on('click', function() {
+            if($(this).hasClass('selected1')) {
+                deselect1($(this));
+            } else {
+                $(this).addClass('selected1');
+                $('.peep').slideFadeToggle();
+            }
+            return false;
+        });
+    });
+
+    $.fn.slideFadeToggle = function(easing, callback) {
+        return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
+    };
+</script>
+
+<%= render "gamestate/menu" %>
+
+<br/>
+<% if !@list_users.nil? %>
+    <table id="list_user" style="font-size:11px"></table>
+<% end %>
+<br/>
+<% if !@user_detail.nil? %>
+<% if !@settings.nil? %>
+    <form action="/lumba/gamestate/user_details" method="post">
+      <input type="hidden" name="sfs_version" value="<%= @sfs_version %>">
+      <input type="hidden" name="userid_delete" value="<%= @user_id %>">
+      <% if ((@isDeleted.to_s == "0")) %>
+          <span><%= submit_tag("Delete Player", :onclick => "return confirm('Are you sure to delete this player?');") %></span>
+      <% else %>
+          <span>Player is deleted</span>
+      <% end %>
+      <% if (@isFake.to_s == "0") %>
+          <%= submit_tag("Fake User") %>
+      <% else %>
+          <%= submit_tag("Real User") %>
+      <% end %>
+      <%= submit_tag("Download Battle Log") %>
+      <%= submit_tag("Turn off Shield") %>
+      <%= submit_tag("Turn on Shield") %>
+      <select name="selectshieldhours">
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="24">24</option>
+        <option value="48">48</option>
+        <option value="168">168</option>
+      </select>
+      hours
+      <br/>
+      <% if (@isLeaderBoardBlocked.to_s == "0") %>
+          <%= submit_tag("Block from leaderboard", :onclick => "return confirm('Are you sure to block this function?');") %>
+      <% else %>
+          <%= submit_tag("UnBlock from leaderboard", :onclick => "return confirm('Are you sure to unblock this function?');") %>
+      <% end %>
+      <% if (@isClanLocked.to_s == "0") %>
+          <%= submit_tag("Block from tribe", :onclick => "return confirm('Are you sure to block this function?');") %>
+      <% else %>
+          <%= submit_tag("UnBlock from tribe", :onclick => "return confirm('Are you sure to unblock this function?');") %>
+      <% end %>
+      <% if (@isSearchOpponentLocked.to_s == "0") %>
+          <%= submit_tag("Block from searching opponent", :onclick => "return confirm('Are you sure to block this function?');") %>
+      <% else %>
+          <%= submit_tag("UnBlock from searching opponent", :onclick => "return confirm('Are you sure to unblock this function?');") %>
+      <% end %>
+      <% if (@isBeingAttackedLocked.to_s == "0") %>
+          <%= submit_tag("Block from being attacked", :onclick => "return confirm('Are you sure to block this function?');") %>
+      <% else %>
+          <%= submit_tag("UnBlock from being attacked", :onclick => "return confirm('Are you sure to unblock this function?');") %>
+      <% end %>
+    </form>
+    <br/>
+    <form id="downloadgamestatehistory" action="/lumba/gamestate/user_details" method="post">
+      Start datetime: <%= text_field_tag 'starttimehistory', "" %>
+      End datetime: <%= text_field_tag 'endtimehistory', "" %>
+      UserId: <%= text_field_tag 'useridhistory', @user_id %>
+      <input type="button" id="downloadgamestateinfo" value="Download Gamestatehistory"/>
+    </form>
+
+<% end %>
+
+<br/>
+<% if !@game_level.nil? %>
+    <table class="gridtable" id="tblGameItem">
+      <tbody>
+      <tr>
+        <th>Game Item</th>
+        <th>Player Value</th>
+        <th>New Value</th>
+        <th>Pending</th>
+        <th>Reason</th>
+        <th>Note</th>
+      </tr>
+      <tr>
+        <td style="background-color: palegoldenrod;">Online Status</td>
+        <td style="background-color: palegoldenrod;">
+          <% if @activeId.to_i != -1 %>
+              <strong><font color='green'>Online</font></strong>
+          <% else %>
+              <strong><font color='red'>Offline</font></strong>
+          <% end %>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td rowspan="25" style="vertical-align: top;">
+          <div>
+            <table id="tblReportUser">
+              <b>Write a Note about this user. </b><br>
+              <tr>
+                <td style="vertical-align: top;"><p><label for="email"><b>Comment:</b> </label></p></td>
+                <td><textarea style="width: 300; height: 100;" name="reportuser_note" class="reportuser_note"></textarea></td>
+                <td style="display: none"><input type="hidden" name="reportuser_user" class="reportuser_user" value="<%= @reporterEmail %>"/></td>
+              </tr>
+            </table>
+            <p><button value="<%= @user_id %>" name="reportuser" type="submit" onclick="copyReportUser(this.value);">Write</button></p><br>
+            <b>List Notes of this User:</b> <br>
+            <table>
+              <tr>
+                <td><b>Reporter:</b></td>
+                <td><b>Date</b></td>
+                <td><b>Note</b></td>
+              </tr>
+              <% if @uuserNote.eql? nil %>
+                  <tr></tr>
+              <% else %>
+                  <% @userNote['Notes'].each do |lon| %>
+                      <tr>
+                        <td><%= lon['Reporter'] %></td>
+                        <td><%= Time.parse(lon['Date']).strftime("%Y/%m/%d %H:%M:%S") %></td>
+                        <!--<td style="width: 200; word-wrap:break-word;"><%= lon['Note'].force_encoding("UTF-8") %></td>-->
+                        <td>
+                          <textarea disabled style="width:200px; height: 50px; word-wrap:break-word;"><%= lon['Note'].force_encoding("UTF-8") %></textarea>
+                        </td>
+                      </tr>
+                  <% end %>
+              <% end %>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>UserId</td>
+        <td class="gamestate_userId"><%= @user_id %></td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td><%=h @name.force_encoding('utf-8') %></td>
+        <td><input class="gamestate_username" value="<%= @name.force_encoding('utf-8') %>" type="text"/></td>
+        <td>
+          <% if !@pending_name.nil? %> <%= @pending_name.force_encoding('utf-8') %>
+          <% end %></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><%= @email %></td>
+        <td><input class="gamestate_email" type="text"/></td>
+        <td><%= @pending_email %></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>******</td>
+        <td><input class="gamestate_password" type="text"/></td>
+      </tr>
+      <tr>
+        <td>Locale</td>
+        <td><%= @locale %></td>
+        <td><input class="gamestate_locale" value="<%= @locale %>" type="text"/></td>
+        <td><%= @pending_locale %></td>
+      </tr>
+      <tr>
+        <td>FacebookId</td>
+        <td><%= @facebookId %></td>
+        <td>
+          <input placeholder="Insert Facebook ID" class="gamestate_facebookId" value="<%= @facebookId %>" type="text"/>
+        </td>
+        <td><%= @pending_facebookid %></td>
+      </tr>
+      <tr>
+        <td>Level</td>
+        <td width="250"><%= @level %></td>
+        <td><input placeholder="Add/Subtract. Ex: -1 or 1" class="gamestate_Level" value="" type="text"/></td>
+        <td><%= @pending_level %></td>
+        <td><input placeholder="Level Change Reason" class="gamestate_Level_Reason" value="" type="text"/></td>
+      </tr>
+      <tr>
+        <td>Experience Points</td>
+        <td><%= @game_level[1] %></td>
+        <td><input placeholder="Add/Subtract. Ex: -1 or 1" class="gamestate_ExPoints" value="" type="text"/></td>
+        <td><%= @pending_exp %></td>
+        <td><input placeholder="Points Change Reason" class="gamestate_Points_Reason" value="" type="text"/></td>
+      </tr>
+      <tr>
+        <td>Gold</td>
+        <td><%= @game_level[2] %></td>
+        <td><input placeholder="Add/Subtract. Ex: -1 or 1" class="gamestate_Gold" value="" type="text"/></td>
+        <td class="pending"><%= @pending_gold %></td>
+        <td><input placeholder="Gold Change Reason" class="gamestate_Gold_Reason" value="" type="text"/></td>
+      </tr>
+      <tr>
+        <td>Water</td>
+        <td><%= @game_level[3] %></td>
+        <td><input placeholder="Add/Subtract. Ex: -1 or 1" class="gamestate_Water" value="" type="text"/></td>
+        <td class="pending"><%= @pending_water %></td>
+        <td><input placeholder="Water Change Reason" class="gamestate_Water_Reason" value="" type="text"/></td>
+      </tr>
+      <tr>
+        <td>Oil</td>
+        <td><%= @game_level[4] %></td>
+        <td><input placeholder="Add/Subtract. Ex: -1 or 1" class="gamestate_DarkWater" value="" type="text"/></td>
+        <td class="pending"><%= @pending_oil %></td>
+        <td><input placeholder="Oil Change Reason" class="gamestate_Oil_Reason" value="" type="text"/></td>
+      </tr>
+      <tr>
+        <td>Pearls</td>
+        <td><%= @game_level[5] %></td>
+        <td><input placeholder="Add/Subtract. Ex: -1 or 1" class="gamestate_Gems" value="" type="text"/></td>
+        <td><%= @pending_pearls %></td>
+        <td><input placeholder="Pearls Change Reason" class="gamestate_Pearls_Reason" value="" type="text"/></td>
+      </tr>
+      <tr>
+        <td>Diwan Level</td>
+        <td><%= @game_level[6] %></td>
+        <input type="hidden" class="gamestate_TownHallLevel" value=""/>
+        <%= @pending_diwanlevel %>
+        <input type="hidden" class="gamestate_DiwanLevel_Reason" value=""/>
+      </tr>
+      <tr>
+        <td>Dagger</td>
+        <td><%= @trophies %></td>
+        <%if cookies[:login_username].eql?("dashboard@lum.ba") %>
+        <td><input placeholder="Add/Subtract. Ex: -1 or 1" class="gamestate_trophies" value="" type="text"/></td>
+        <td><%= @pending_dagger %></td>
+        <td><input placeholder="Dagger Change Reason" class="gamestate_Dagger_Reason" value="" type="text"/></td>
+        <% else %>
+        <td style="display:none;"><input placeholder="Add/Subtract. Ex: -1 or 1" class="gamestate_trophies" value="" type="text"/></td>
+        <td style="display:none;"><%= @pending_dagger %></td>
+        <% end %>
+
+      </tr>
+      <tr>
+        <td>Shield</td>
+        <td><%= @shieldactive %></td>
+        <td></td>
+        <td><%= @pending_shield %></td>
+      </tr>
+      <tr>
+        <td>isFake</td>
+        <td><%= @isFake %></td>
+        <td><input placeholder="Insert 0 or 1" class="gamestate_isFake" value="" type="text"/></td>
+        <td><%= @pending_isFake %></td>
+      </tr>
+      <tr>
+        <td>Belongs in Tribe</td>
+        <td><%=h @clanName.force_encoding("UTF-8") %></td>
+      </tr>
+      <tr>
+        <td>Position in Tribe</td>
+        <td>
+          <% if !@tribe_position.nil? %> <%= @tribe_position %>
+          <% end %></td>
+      </tr>
+      <tr>
+        <td>Version</td>
+        <td>
+          <% if !@subversion.nil? %> <%= @subversion %>
+          <% end %></td>
+      </tr>
+      <tr>
+        <td>Is BlueBox</td>
+        <td>
+          <% if !@isBlueBox.nil? %> <%= @isBlueBox %>
+          <% end %></td>
+      </tr>
+      <tr>
+        <td>Last Login Time</td>
+        <td>
+          <% if !@lastLoginTime.nil? %> <%= @lastLoginTime %>
+          <% end %> (<%= @user_timezone %>)
+        </td>
+      </tr>
+      <tr>
+        <td>SFS Version</td>
+        <td>
+          <% if !@sfs_version.nil? %> <%= @sfs_version %>
+          <% end %></td>
+      </tr>
+      <tr>
+        <td>Balancer Version</td>
+        <td>
+          <% if !@balancer_version.nil? %> <%= @balancer_version %>
+          <% end %></td>
+      </tr>
+      <tr>
+        <td>CreatedAt (<%= @user_timezone %>)</td>
+        <td>
+          <% if !@createdAt.nil? %> <%= @createdAt %>
+          <% end %></td>
+      </tr>
+      </tbody>
+    </table>
+<% end %>
+<br/>
+<font color=red><%= @saved %></font><br/>
+<button value="<%= @user_id %>" name="editgamestate" type="submit" onclick="copyContentGameState(this.value);">Save</button>
+    <br/><br/>
+
+    <form action="/contact"><button type="button" id="contact">Report Jira Bug</button></form><br>
+
+<div class="messagepop pop">
+  <table class="gridtable" id="tblGameItemJira">
+    Project Name: Tribal Rivals<br>
+    Reporter: <%= @reporterEmail %><br>
+    <tr>
+      <td><p><label for="email">Summary: </label></p></td>
+      <td><input type="text" size="30" name="jira_title" class="jtitle"/></td>
+    </tr>
+    <tr>
+      <td><p><label for="priority">Priority: </label></p></td>
+      <td>
+        <select name="jira_priority" class="jpriority">
+          <option value="Major" selected>Major</option>
+          <option value="Blocker">Blocker</option>
+          <option value="Critical">Critical</option>
+          <option value="Minor">Minor</option>
+          <option value="Trivial">Trivial</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><p><label for="body">Description: </label></p></td>
+      <td><textarea rows="6" name="jira_description" class="jdescription" cols="35"></textarea></td>
+    </tr>
+  </table>
+  <p><button value="<%= @user_id %>" name="editgamestate" type="submit" onclick="copyContentJira(this.value);">Create</button> or <a class="close" href="/">Cancel</a></p>
+</div>
+
+    <form action="/copybattlelog"><button type="button" id="copybattlelog">Copy Battle Logs</button></form>
+
+    <div class="messagepop1 peep">
+      <table class="gridtable1" id="tblCopyBattleLog">
+        Copy Battle Log <br>
+        <font color="red"> *Note: the destination data will be overwritten.</font><br>
+        Source userId: <%= @user_id %> <br>
+        <tr>
+          <td><p><label for="email">Destination userID </label></p></td>
+          <td><input type="text" size="50" name="cpbl_destination_userid" class="cpbl_destination_uid"/></td>
+        </tr>
+      </table>
+      <p><button value="<%= @user_id %>" name="copybattlelog" type="submit" onclick="copyBattlelog(this.value);">Copy</button> or <a class="close1" href="/">Cancel</a></p>
+    </div>
+
+<% if !@settings.nil? %>
+    <h3>Setting:</h3>
+    <table class="gridtable" id="tblGameItemSetting">
+      <% @settings.each { |key, value| %>
+          <tr>
+            <td><%= key %></td>
+            <td contenteditable class="gamestate_setting"><%= value %></td>
+          </tr>
+          <br/>
+      <% } %>
+<% end %>
+</table>
+
+<br/><br/>
+<h3>Purchase history</h3>
+<% if !@prch_infos.nil? %>
+    <table class="gridtable" style="font-size:10px" id="tblpurchaseinfo">
+      <thead>
+      <tr>
+        <th><span class="text">diwanLevel</span></th>
+        <th><span class="text">coins</span></th>
+        <th><span class="text">water</span></th>
+        <th><span class="text">oil</span></th>
+        <th><span class="text">pearls</span></th>
+        <th><span class="text">daggers</span></th>
+        <th><span class="text">status</span></th>
+        <th><span class="text">purchasedPearls</span></th>
+        <th><span class="text">purchasedItemId</span></th>
+        <th><span class="text">paidAmount</span></th>
+        <th><span class="text">currency</span></th>
+        <th>PaidAmount(USD)</th>
+        <th><span class="text">createdAt (<%= @user_timezone %>)</span></th>
+        <th><span class="text">createdAtUTC</span></th>
+        <th><span class="text"></span></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @prch_infos.each do |row| %>
+          <tr>
+            <td width="5%" align="center"><%= row['diwanLevel'] %></td>
+            <td width="5%" align="center"><%= row['coins'] %></td>
+            <td width="5%" align="center"><%= row['water'] %></td>
+            <td width="5%" align="center"><%= row['oil'] %></td>
+            <td width="5%" align="center"><%= row['pearls'] %></td>
+            <td width="5%" align="center"><%= row['daggers'] %></td>
+            <td width="15%" align="center"><%= row['status'] %></td>
+            <td width="5%" align="center"><%= row['purchasedPearls'] %></td>
+            <td width="15%" align="center"><%= row['purchasedItemId'] %></td>
+            <td width="5%" align="center"><%= row['paidAmount'] %></td>
+            <td width="5%" align="center"><%= row['currency'] %></td>
+            <td width="5%" align="center"><%= row['paidAmountUSD'] %></td>
+            <td width="15%" align="center"><%= row['createdAt'] %> (<%= @user_timezone %>)</td>
+            <td width="15%" align="center"><%= row['createdAtUtc'] %> UTC</td>
+            <td width="5%">
+              <form action="/lumba/gamestate/user_details" method="post">
+                <input type="hidden" name="purchase_id" value="<%= row['id'] %>">
+                <input type="hidden" name="user_id" value="<%= @user_id %>">
+                <input type="hidden" name="sfs_version" value="<%= @sfs_version %>">
+                <%= submit_tag("VerifyReceipt") %>
+              </form>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
+<h3>Total valid purchases:</h3> <%= @validpur %> times: <%= @totalmoney %> USD
+<% if !@verifyresult.nil? %>
+    <h3>Verify Receipt Result:</h3> <%= @verifyresult %>
+<% end %>
+<br/>
+<% if !@deviceInfo.nil? %>
+    <h3>DeviceInfo:</h3>
+        Device Model: <%= @APPLE_DEVICE_IDENTIFIER_TO_NAME["#{@deviceInfo['deviceModel'].force_encoding('UTF-8')}"] %><br/>
+        Device Name: <%= @deviceInfo['deviceName'].force_encoding("UTF-8") %><br/>
+        Device Type: <%= @deviceInfo['deviceType'].force_encoding("UTF-8") %><br/>
+<% end %>
+<h3>Defence Log</h3>
+<% if !@defencelog.nil? %>
+    <table class="gridtable" style="font-size:10px" id="tbldefenceinfo">
+      <thead>
+      <tr>
+        <th><span class="text">attacker</span></th>
+        <th><span class="text">GainedTrophy</span></th>
+        <th><span class="text">Defender</span></th>
+        <th><span class="text">LootTrophy</span></th>
+        <th><span class="text">numStars</span></th>
+        <th><span class="text">percentDamage</span></th>
+        <th>userClanId</th>
+        <th>userClanName
+        <th>opponentClanId</th>
+        <th>opponentClanName</th>
+        <th>Created At (<%= @user_timezone %>)</th>
+        <th>Defender gained Shield</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @defencelog.each do |row| %>
+          <tr>
+            <td align="center"><%= row['username'].force_encoding("utf-8") %></td>
+            <td align="center"><%= row['gainedTrophy'] %></td>
+            <td align="center"><%= row['opponentName'].force_encoding("utf-8") %></td>
+            <td align="center"><%= row['lootTrophy'] %></td>
+            <td align="center"><%= row['numStars'] %></td>
+            <td align="center"><%= row['percentDamage'] %></td>
+            <td align="center"><%= row['userClanId'] %></td>
+            <td align="center"><%= row['userClanName'].force_encoding("UTF-8") %></td>
+            <td align="center"><%= row['opponentClanId'] %></td>
+            <td align="center"><%= row['opponentClanName'].force_encoding("UTF-8") %></td>
+            <td align="center"><%= row['createdAt'] %> (<%= @user_timezone %>)</td>
+            <% if (row['percentDamage'] >= 90) %>
+                <td align="center">16 hours</td>
+            <% elsif (row['percentDamage'] >= 40) %>
+                <td align="center">12 hours</td>
+            <% elsif (row['percentDamage'] < 40 && row['numStars']>=1) %>
+                <td align="center">12 hours</td>
+            <% elsif (row['percentDamage'] < 40 && row['numStars']<1) %>
+                <td align="center">0 hour</td>
+            <% end %>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
+<br/>
+<h3>Attack Log</h3>
+<% if !@attacklog.nil? %>
+    <table class="gridtable" style="font-size:10px" id="tblattackinfo">
+      <thead>
+      <tr>
+        <th><span class="text">attacker</span></th>
+        <th><span class="text">GainedTrophy</span></th>
+        <th><span class="text">Defender</span></th>
+        <th><span class="text">LootTrophy</span></th>
+        <th><span class="text">numStars</span></th>
+        <th><span class="text">percentDamage</span></th>
+        <th>userClanId</th>
+        <th>userClanName
+        <th>opponentClanId</th>
+        <th>opponentClanName</th>
+        <th>Created At (<%= @user_timezone %>)</th>
+        <th>Defender gained Shield</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @attacklog.each do |row| %>
+          <tr>
+            <td align="center"><%= row['username'].force_encoding("utf-8") %></td>
+            <td align="center"><%= row['gainedTrophy'] %></td>
+            <td align="center"><%= row['opponentName'].force_encoding("utf-8") %></td>
+            <td align="center"><%= row['lootTrophy'] %></td>
+            <td align="center"><%= row['numStars'] %></td>
+            <td align="center"><%= row['percentDamage'] %></td>
+            <td align="center"><%= row['userClanId'] %></td>
+            <td align="center"><%= row['userClanName'].force_encoding("UTF-8") %></td>
+            <td align="center"><%= row['opponentClanId'] %></td>
+            <td align="center"><%= row['opponentClanName'].force_encoding("UTF-8") %></td>
+            <td align="center"><%= row['createdAt'] %> (<%= @user_timezone %>)</td>
+            <% if (row['percentDamage'] >= 90) %>
+                <td align="center">16 hours</td>
+            <% elsif (row['percentDamage'] >= 40) %>
+                <td align="center">12 hours</td>
+            <% elsif (row['percentDamage'] < 40 && row['numStars']>=1) %>
+                <td align="center">12 hours</td>
+            <% elsif (row['percentDamage'] < 40 && row['numStars']<1) %>
+                <td align="center">0 hour</td>
+            <% end %>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
+<br/>
+
+
+<table id="history_change" style="font-size:11px"></table>
+<table id="pearls_history_change" style="font-size:11px"></table>
+<% end %>
+
+
+<script>
+    $("#pearls_history_change").gridview(
+            {
+                method: 'GET',
+                url: '/lumba/gamestate/show_pearls_history/',
+                dataType: 'json',
+                cols : [
+                    {display: 'actionChange', name : 'actionChange', width : 120, align: 'left'},
+                    {display: 'resourceType', name : 'resourceType', width : 80, align: 'left'},
+                    {display: 'amounts', name : 'amounts', width : 120, align: 'center'},
+                    {display: 'rest', name : 'rest', width : 120, align: 'center'},
+                    {display: 'info', name : 'info', width : 180, align: 'center'},
+                    {display: 'createdAt', name : 'createdAt', width : 140, align: 'center'},
+                    {display: 'createdAt (<%= @user_timezone %>)', name : 'createdAtPDT', width : 140, align: 'center'}
+                ],
+                title: 'Pearls History',
+                rp: 10,
+                height: 250
+            }
+    );
+    $("#list_user").gridview(
+            {
+                method: 'GET',
+                url: '/lumba/gamestate/list_user/',
+                dataType: 'json',
+                cols : [
+                    {display: 'userId', name : 'userId', width : 240, align: 'left'},
+                    {display: 'Name', name : 'Name', width : 200, align: 'left'},
+                    {display: 'Email', name : 'Email', width : 200, align: 'center'},
+                    {display: 'Daggers', name : 'Daggers', width : 100, align: 'center'},
+                    {display: 'Detail', name : 'Detail', width : 100, align: 'center'}
+                ],
+                title: 'List Users Result',
+                rp: 20,
+                height: 600
+            }
+    );
+    $("#history_change").gridview(
+            {
+                method: 'GET',
+                url: '/lumba/gamestate/show_lumba_history/',
+                dataType: 'json',
+                cols : [
+                    {display: 'userChange', name : 'userChange', width : 40, align: 'left'},
+                    {display: 'action', name : 'action', width : 120, align: 'left'},
+                    {display: 'FromEmail', name : 'FromEmail', width : 120, align: 'center'},
+                    {display: 'ToEmail', name : 'ToEmail', width : 120, align: 'center'},
+                    {display: 'PwdChange', name : 'PwdChange', width : 120, align: 'center'},
+                    {display: 'FromName', name : 'FromName', width : 120, align: 'center'},
+                    {display: 'Name Change', name : 'ToName', width : 120, align: 'center'},
+                    {display: 'NameChangeReason', name : 'NameChangeReason', width : 120, align: 'center'},
+                    {display: 'FromLocal', name : 'FromLocal', width : 60, align: 'left'},
+                    {display: 'Local Change', name : 'ToLocal', width : 60, align: 'left'},
+                    {display: 'LocalChangeReason', name : 'LocalChangeReason', width : 120, align: 'center'},
+                    {display: 'FromLevel', name : 'FromLevel', width : 60, align: 'center'},
+                    {display: 'Level Change', name : 'ToLevel', width : 60, align: 'center'},
+                    {display: 'LevelChangeReason', name : 'LevelChangeReason', width : 120, align: 'center'},
+                    {display: 'FromExPoint', name : 'FromExPoint', width : 60, align: 'left'},
+                    {display: 'ExPoint Change', name : 'ToExPoint', width : 60, align: 'left'},
+                    {display: 'ExPointChangeReason', name : 'ExPointChangeReason', width : 120, align: 'center'},
+                    {display: 'FromGold', name : 'FromGold', width : 60, align: 'center'},
+                    {display: 'Gold Change', name : 'ToGold', width : 60, align: 'center'},
+                    {display: 'GoldChangeReason', name : 'GoldChangeReason', width : 120, align: 'center'},
+                    {display: 'FromWater', name : 'FromWater', width : 60, align: 'left'},
+                    {display: 'Water Change', name : 'ToWater', width : 60, align: 'left'},
+                    {display: 'WaterChangeReason', name : 'WaterChangeReason', width : 120, align: 'center'},
+                    {display: 'FromOil', name : 'FromOil', width : 60, align: 'center'},
+                    {display: 'Oil Change', name : 'ToOil', width : 60, align: 'center'},
+                    {display: 'OilChangeReason', name : 'OilChangeReason', width : 120, align: 'center'},
+                    {display: 'FromPearls', name : 'FromPearls', width : 60, align: 'left'},
+                    {display: 'Pearls Change', name : 'ToPearls', width : 60, align: 'left'},
+                    {display: 'PearlsChangeReason', name : 'PearlsChangeReason', width : 120, align: 'center'},
+                    {display: 'FromDiwanLevel', name : 'FromDiwanLevel', width : 60, align: 'left'},
+                    {display: 'DiwanLevel Change', name : 'ToDiwanLevel', width : 60, align: 'left'},
+                    {display: 'DiwanLevelChangeReason', name : 'DiwanLevelChangeReason', width : 120, align: 'center'},
+                    {display: 'FromDagger', name : 'FromDagger', width : 60, align: 'center'},
+                    {display: 'Dagger Change', name : 'ToDagger', width : 60, align: 'center'},
+                    {display: 'DaggerChangeReason', name : 'DaggerChangeReason', width : 120, align: 'center'},
+                    {display: 'FromShield', name : 'FromShield', width : 60, align: 'left'},
+                    {display: 'Shield Change', name : 'ToShield', width : 60, align: 'left'},
+                    {display: 'lastMod', name : 'lastMod', width : 140, align: 'center'},
+                    {display: 'lastMod (<%= @user_timezone %>)', name : 'lastModPDT', width : 140, align: 'center'}
+                ],
+                title: 'Lumba History',
+                rp: 10,
+                height: 250
+            }
+    );
+
+    $("#downloadgamestateinfo").click(function () {
+        if (($("#useridhistory").val() === "")) {
+            alert("Please input userId to download gamestate history");
+            return false;
+        }
+        if (($("#starttimehistory").val() === "")) {
+            alert("Please input start datetime to download gamestate history");
+            return false;
+        }
+        if (($("#endtimehistory").val() === "")) {
+            alert("Please input end datetime to download gamestate history");
+            return false;
+        }
+        var datefrom = new Date($("#starttimehistory").val());
+        var dateto = new Date($("#endtimehistory").val())
+        if ((dateto - datefrom) / 60000 > 2880) {
+            alert("Start date and end date should within 2 day (2880 minutes)");
+            return false;
+        }
+        var input = "<input name='sfs_version' type='hidden' value='" + $("#sfs_version").val() + "'>";
+        var input1 = "<input name='commit' type='hidden' value='downloadgamestateinfo'>";
+        var input2 = "<input name='starttimehistory' type='hidden' value='" + $("#starttimehistory").val() + "'>";
+        var input3 = "<input name='endtimehistory' type='hidden' value='" + $("#endtimehistory").val() + "'>";
+        var input4 = "<input name='useridhistory' type='hidden' value='" + $("#useridhistory").val() + "'>";
+        $('#downloadgamestatehistory').append($(input));
+        $('#downloadgamestatehistory').append($(input1));
+        $('#downloadgamestatehistory').append($(input2));
+        $('#downloadgamestatehistory').append($(input3));
+        $('#downloadgamestatehistory').append($(input4));
+        $('#downloadgamestatehistory').submit();
+    });
+
+    $("#fixrequestmessage").click(function () {
+        var userid = $('#tblGameItem .gamestate_userId').text();
+        var lastRequestMessage = $("#oldlastrequestmessage").text();
+        post_to_url("/lumba/gamestate/user_details", { fixrequestmessage: "fixrequestmessage", userId: userid, lastRequestMessage: lastRequestMessage});
+        return false;
+    });
+
+	$(document).ready(function() {
+		$( ".pending" )
+			.filter(function(){
+			return $(this).html() < 0;
+		})
+      .parent().css('background-color', 'red');
+	  });
+
+	function requestHandler(sender, args) {
+
+        if (args.get_error() == undefined) {
+
+            // Your normal code goes here
+            $( ".pending" )
+			.filter(function(){
+			return $(this).html() < 0;
+			})
+	      .parent().css('background-color', 'red');
+        }
+        else
+            alert(args.get_error()); // Do something
+    }
+</script>

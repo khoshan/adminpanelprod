@@ -1,0 +1,48 @@
+<table>
+<tr>
+<td>
+<%= form_tag({:action => :index}, :multipart => true) do %>
+<font color="red">(Production server)</font> Game version: <select id="version" name="game_version">
+    <option value="">-</option>
+    <% @version_array.each do |row|%>
+      <option value="<%= row['NextGameVersion']%>"><%= row['NextGameVersion']%></option>
+     <% end%>
+  </select>
+Choose bundle file to upload:
+<input type="file" name="files[]" multiple>
+  <%= submit_tag "Upload" %>
+<% end %>
+</td>
+</tr>
+</table>
+<td><button type="submit" onclick="exportfileproduction(20, false, '');">Publish production</button></td>
+
+<button name="editmultibundle" type="submit" onclick="copyContentBundle(1);">Save</button>
+<table class="ex1" style="font-size:13px" id="tblsetbundle">
+    <tbody>
+     <tr><th>pkId</th><th>Key</th><th>Value</th></tr>
+     <% @datas.each_hash do |row|%>
+        <tr>
+          <td width="5%"><div class="bundlepkId"><%= row['pkId']%></div></td>
+          <td width="20%"><div contenteditable class="bundlekey"><input type="hidden" value="<%= row['pkId']%>"/><%= row['bundlekey']%></td>
+          <td width="30%"><div contenteditable class="bundlevalue"><input type="hidden" value="<%= row['pkId']%>"/><%= row['bundlevalue']%></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+
+
+
+<script>
+$("#version").val('<%= @game_version%>');
+$( ".bundlekey" ).blur(function() {
+  pkIdAr.push($(this).find("input").val());
+});
+$( ".bundlevalue" ).blur(function() {
+  pkIdAr.push($(this).find("input").val());
+});
+$('#version').change(function(){
+    var pathname = window.location.pathname;
+    post_to_url("/lumba/switchserver/switchversion", { game_version: $(this).val(),currenturl: pathname })
+  });
+</script>

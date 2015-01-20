@@ -1,0 +1,39 @@
+mysql:
+  address: lumba.ckyzvr2punhb.eu-west-1.rds.amazonaws.com
+  port: 3306
+  username: sgsvn #root
+  password: buncha11 #lumbapassword
+  dbname: LumbaAppData
+mysql_lumba:
+#  address: localhost
+#  port: 143
+#  username: root
+#  password: lumbapassword
+#  dbname: lumba
+  address: lumba.ckyzvr2punhb.eu-west-1.rds.amazonaws.com
+  port: 3306
+  username: sgsvn
+  password: buncha11
+  dbname: lumba
+mysql_lumba_iap:
+  address: lumba.ckyzvr2punhb.eu-west-1.rds.amazonaws.com
+  port: 3306
+  username: sgsvn
+  password: buncha11
+  dbname: lumba_iap
+host:
+  address: abc
+sfs_server:
+#  address1: lumbarunner@ec2-54-217-198-228.eu-west-1.compute.amazonaws.com
+#  address2: lumbarunner@ec2-46-137-144-237.eu-west-1.compute.amazonaws.com
+#  address1: lumbarunner@ec2-54-228-106-202.eu-west-1.compute.amazonaws.com
+  address1: lumbarunner@ec2-54-75-238-163.eu-west-1.compute.amazonaws.com
+  address2: lumbarunner@ec2-54-75-238-163.eu-west-1.compute.amazonaws.com
+  address3: lumbarunner@ec2-54-75-238-163.eu-west-1.compute.amazonaws.com
+  password: buncha11
+balancer_server:
+  address1: lumbarunner@ec2-54-74-183-47.eu-west-1.compute.amazonaws.com
+  address2: lumbarunner@ec2-54-74-183-47.eu-west-1.compute.amazonaws.com
+  password: buncha11
+server_stage:
+  server: ec2-54-195-70-23.eu-west-1.compute.amazonaws.com

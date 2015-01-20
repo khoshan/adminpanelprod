@@ -1,0 +1,93 @@
+<html DIR="LTR">
+<head>
+  <title>AdminPage</title>
+  <meta charset="UTF-8">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag '/js/jquery-1.10.2.min.js' %>
+  <%= javascript_include_tag '/js/jquery.browser.min.js' %>
+  <%= javascript_include_tag '/js/lumbajs.js' %> 
+  <%= javascript_include_tag '/js/jquery.jeditable.js' %>
+  <%= javascript_include_tag '/js/javascript_functions.js' %>
+  <%= javascript_include_tag '/js/tabcontent.js' %>
+  <%= javascript_include_tag '/js/jquery-ui.js' %>
+  <%= javascript_include_tag '/js/grid.js' %>
+
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "/css/main.css" %>
+  <!-- <%= stylesheet_link_tag "/css/jchartfx.css" %> -->
+  <%= stylesheet_link_tag "/css/template1/tabcontent.css" %>
+  <%= stylesheet_link_tag "/css/jquery-ui.css" %>
+  <%= stylesheet_link_tag "/css/grid/grid"%>
+
+  <link rel="shortcut icon" href="/loginBG1.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="/css/jquery-ui.css" />
+  <script src="/js/jquery-ui.js"></script>
+
+  <script>
+  $( document ).ready(function() {
+    pkIdAr = new Array();
+  });
+
+  $(function() {
+    $(".datepicker").datepicker({dateFormat: 'yy-mm-dd'});
+  });
+
+  $(function() {
+    var name = $( "#name" ),
+      email = $( "#email" ),
+      password = $( "#password" ),
+      allFields = $( [] ).add( name ).add( email ).add( password ),
+      tips = $( ".validateTips" );
+
+    $( "#dialog-form" ).dialog({
+      autoOpen: false,
+      height: 250,
+      width: 350,
+      modal: true,
+      close: function() {
+        allFields.val( "" ).removeClass( "ui-state-error" );
+      }
+    });
+
+    $( "#dialog-goolge_form" ).dialog({
+      autoOpen: false,
+      height: 250,
+      width: 350,
+      modal: true,
+      close: function() {
+        allFields.val( "" ).removeClass( "ui-state-error" );
+      }
+    });
+ 
+  });
+  </script> 
+
+</head>
+<body width="95%">
+<div class="outsize">
+<%= render "layouts/main_menu" %>
+<div class="container">
+<%= yield %>
+</div>
+<%= render "layouts/footer" %>
+</div>
+
+<div id="dialog-form" title="Confirm password" style="background-color: rgb(240, 248, 255); width: auto; min-height: 94px; max-height: none; height: auto;">
+        <label for="password">Password</label>
+    <input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all" />
+  <button id="confirmpasswordbtn">Ok</button>
+</div>
+</body>
+</html>
+
+<div id="dialog-goolge_form" title="Confirm google account" style="background-color: rgb(240, 248, 255); width: auto; min-height: 94px; max-height: none; height: auto;">
+    <label for="googleemail">Email</label>
+    <input type="text" name="googleemail" id="googleemail" value="" class="text ui-widget-content ui-corner-all" />
+    <br/>
+    <label for="googlepassword">Password</label>
+    <input type="password" name="googlepassword" id="googlepassword" value="" class="text ui-widget-content ui-corner-all" />
+  <button id="confirmgoogleaccount">Ok</button>
+</div>
+</body>
+</html>

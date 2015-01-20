@@ -1,0 +1,51 @@
+<%= render "gamedata/menu" %>
+<%= render "gamedata/menu_googlespreadsheet" %>
+<table>
+<tr>
+<td><button type="submit" onclick="exportfileproduction(9, false, '');">Publish production</button></td>
+</tr>
+</table>
+
+<div class="outer-container"> <!-- absolute positioned container -->
+<div class="inner-container">
+
+    <div class="table-header">
+        <table id="headertable" width="200px" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="header-cell">Type</th>
+                    <th class="header-cell">Level1</th>
+                    <th class="header-cell">Level2</th>
+                    <th class="header-cell">Level3</th>
+                    <th class="header-cell">Level4</th>
+                    <th class="header-cell">Level5</th>
+                    <th class="header-cell">Level6</th>
+                    <th class="header-cell">Level7</th>
+                    <th class="header-cell">Level8</th>
+                    <th class="header-cell">Level9</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-body">
+      <table class="ex1" style="font-size:13px" id="town_hall_level">
+        <tbody>
+        <% @datas.each_hash do |row|%>
+        <tr>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="thlType"><%= row['Type']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="thlLevel1"><%= row['Level1']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="thlLevel2"><%= row['Level2']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="thlLevel3"><%= row['Level3']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="thlLevel4"><%= row['Level4']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="thlLevel5"><%= row['Level5']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="thlLevel6"><%= row['Level6']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="thlLevel7"><%= row['Level7']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="thlLevel8"><%= row['Level8']%></div></div></td>
+          <td class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="thlLevel9"><%= row['Level9']%></div></div></td>
+        </tr>
+     <% end%>
+  </tbody>
+</table>
+</div>
+</div>
+</div>

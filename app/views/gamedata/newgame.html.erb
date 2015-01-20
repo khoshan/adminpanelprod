@@ -1,0 +1,79 @@
+<%= render "gamedata/menu" %>
+<button value="1" name="editgamestate" type="submit" onclick="createNewGame(this.value);">New</button>
+<table>
+<tr>
+<td>Bush number:</td>
+<td><%= text_field_tag 'bush_number', @bush_number %></td>
+<td>Tree number:</td>
+<td><%= text_field_tag 'tree_number', @tree_number %></td>
+</tr>
+<tr>
+<td>Dead Palm number:</td>
+<td><%= text_field_tag 'deadpalm_number', @deadpalm_number %></td>
+<td>Camel Skeleton number:</td>
+<td><%= text_field_tag 'camelskeleton_number', @camelskeleton_number %></td>
+</tr>
+<tr>
+<td>Miny Palm Tree number:</td>
+<td><%= text_field_tag 'minipalmtree_number', @minipalmtree_number %></td>
+<td>Palm Tree number:</td>
+<td><%= text_field_tag 'palmtree_number', @palmtree_number %></td>
+</tr>
+<tr>
+<td>Palm Tree Group number:</td>
+<td><%= text_field_tag 'palmtreegroup_number', @palmtreegroup_number %></td>
+<td>Small Rock number:</td>
+<td><%= text_field_tag 'smallrock_number', @smallrock_number %></td>
+</tr>
+<tr>
+<td>X-Small Rock number:</td>
+<td><%= text_field_tag 'xsmallrock_number', @xsmallrock_number %></td>
+<td>Tiny Rock number:</td>
+<td><%= text_field_tag 'tinyrock_number', @tinyrock_number %></td>
+</tr>
+<tr>
+<td>Crackedrock number:</td>
+<td><%= text_field_tag 'crackedrock_number', @crackedrock_number %></td>
+<td>Medium rock number:</td>
+<td><%= text_field_tag 'mediumrock_number', @mediumrock_number %></td>
+</tr>
+<tr>
+<td>Large rock number:</td>
+<td><%= text_field_tag 'largerock_number', @largerock_number %></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<br/><br/>
+
+<button value="1" name="editgamestate" type="submit" onclick="copyContentNewGame(this.value);">Edit</button>
+
+<%if !@game_level.nil?%>
+<table class="gridtable" id="tblnewGameItem">
+  <tr><td>Level</td><td contenteditable class="gamestate_Level"><%= @game_level[0]%></td> </tr>
+  <tr><td>Experience Points</td><td contenteditable class="gamestate_ExPoints"><%= @game_level[1]%></td> </tr>
+  <tr><td>Gold</td><td contenteditable class="gamestate_Gold"><%= @game_level[2]%></td> </tr>
+  <tr><td>Water</td><td contenteditable class="gamestate_Water"><%= @game_level[3]%></td> </tr>
+  <tr><td>Dark Water</td><td contenteditable class="gamestate_DarkWater"><%= @game_level[4]%></td> </tr>
+  <tr><td>Gems</td><td contenteditable class="gamestate_Gems"><%= @game_level[5]%></td> </tr>
+  <tr><td>Town Hall Level</td><td contenteditable class="gamestate_TownHallLevel"><%= @game_level[6]%></td> </tr>
+  <tr><td>Daggers</td><td contenteditable class="gamestate_trophies"><%= @trophies%></td> </tr>
+  </tbody></table>
+<%end%>
+<%if !@settings.nil?%>
+<table class="gridtable" id="tblnewGameItemSetting">
+  <% @settings.each {|key, value|%>
+    <tr><td><%= key%></td><td contenteditable class="gamestate_setting"><%= value%></td></tr>
+    <br/>
+  <%  }%>
+<%end%>
+</table>
+
+<table class="gridtable" id="tblnewGame">
+<%if !@object.nil?%>
+<% @object.each {|key, value|%>
+    <tr><td contenteditable class="gamestate_object_key"><%= key%></td><td style="text-align: left;" contenteditable class="gamestate_object_value"><%= value%></span></td></tr>
+    </span>
+  <%  }%>
+<%end%>
+</table>

@@ -1,0 +1,64 @@
+<%= render "gamedata/menu" %>
+<%= render "gamedata/menu_googlespreadsheet" %>
+<table>
+<tr>
+<td><button type="submit" onclick="exportfileproduction(2, false, '');">Publish production</button></td>
+</tr>
+</table>
+
+<div class="outer-container"> <!-- absolute positioned container -->
+<div class="inner-container">
+
+    <div class="table-header">
+        <table id="headertable" width="200px" cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="header-cell">Unit</th>
+                    <th class="header-cell">Unit Group</th>
+                    <th class="header-cell">PreferredTarget</th>
+                    <th class="header-cell">PreferredTargetDamage</th>
+                    <th class="header-cell">AttackType</th>
+                    <th class="header-cell">AttackTarget</th>
+                    <th class="header-cell">DamageType</th>
+                    <th class="header-cell">SplashRadius</th>
+                    <th class="header-cell">HousingSpace</th>
+                    <th class="header-cell">TrainingTimeSeconds</th>
+                    <th class="header-cell">MovementSpeed</th>
+                    <th class="header-cell">AttackSpeed</th>
+                    <th class="header-cell">BarracksLevel</th>
+                    <th class="header-cell">RangeInTiles</th>
+                    <th class="header-cell">SearchRadiusInTiles</th>
+                    <th class="header-cell">MaxLevel</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="table-body">
+      <table class="ex1" style="font-size:13px" id="tblcombat_units">
+    <tbody>
+      <% @datas.each_hash do |row|%>
+        <tr>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatUnit"><%= row['Unit']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatunitgroup"><%= row['Unit Group']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatPreferredTarget"><%= row['PreferredTarget']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatPreferredTargetDamage"><%= row['PreferredTargetDamage']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatAttackType"><%= row['AttackType']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatAttackTarget"><%= row['AttackTarget']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="cobatDamageType"><%= row['DamageType']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatSplashRadius"><%= row['SplashRadius']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatHousingSpace"><%= row['HousingSpace']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatTrainingTimeSeconds"><%= row['TrainingTimeSeconds']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatMovementSpeed"><%= row['MovementSpeed']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatAttackSpeed"><%= row['AttackSpeed']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatBarracksLevel"><%= row['BarracksLevel']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatRangeInTiles"><%= row['RangeInTiles']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatSearchRadiusInTiles"><%= row['SearchRadiusInTiles']%></div></div></td>
+          <td align="center" class="body-cell"><div><input type="hidden" value="<%= row['pkID']%>"/><div contenteditable class="combatMaxLevel"><%= row['MaxLevel']%></div></div></td>
+        </tr>
+     <% end%>
+    </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
